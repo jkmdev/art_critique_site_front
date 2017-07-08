@@ -1,43 +1,142 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" href="app.css">
-  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
-</head>
-<body>
-  <ul class="menu">
-    <li><a href="#!/view1">view1</a></li>
-    <li><a href="#!/view2">view2</a></li>
-  </ul>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Image Rater Application</title>
 
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+    <!-- Bootstrap -->
+    <link href="bower_components\bootstrap\dist\css\bootstrap.min.css" rel="stylesheet">
+    <link href="styles\basic.css" rel="stylesheet">
 
-  <div ng-view></div>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-  <div>Angular seed app: v<span app-version></span></div>
+  </head>
+  <body class="background">
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
-</body>
+    <nav id="mainNav" class="navbar-fixed-top navbar-custom affix-top header">
+
+        <div class="container"> 
+
+          <button type="button" id="main-button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+            <span class="sr-only">Toggle navigation</span> <span class="nav-text">MENU</span>
+          </button>
+
+          <div class="col-xs-4 col-md-4 logo">
+          </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="page-scroll nav-text">
+                        <a href="#"><span class="glyphicon glyphicon-user"></span> Account</a>
+                    </li>
+                    <li class="page-scroll nav-text">
+                        <a href="#">Login</a>
+                    </li>
+                    <li class="page-scroll nav-text">
+                        <a href="#">Register</a>
+                    </li>
+                    <li class="page-scroll nav-text">
+                        <a href="#">Site</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <div class="container">
+      
+    <!--HEADER CONTENT-->
+
+      <div class="row header-space">
+
+
+      </div>
+
+      <!--USER COMMENT-->
+
+      <div class="row">
+        <div class="col-md-2 col-md-offset-2">
+          <span class="uploader-text">Uploader Comments</span>
+        </div>
+        <div class="col-md-6">
+          <span class="uploader-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in massa in ipsum posuere tincidunt commodo vitae augue. Vivamus eleifend imperdiet cursus. Donec cursus magna a sapien tincidunt volutpat. </span>
+        </div>
+        <div class="col-md-2">
+
+        </div>
+      </div>
+
+
+      <!--IMAGE CONTAINER-->
+
+      <div class="row">
+        <div class="col-md-2">
+          <img src="images/arrow-left.png" class="arrow">
+          </img>
+        </div>
+        <div class="col-md-8 image-container">
+          <div class="row image-container-tools">
+            <div class="col-md-8">
+            </div>
+          </div>
+          <div class="row image-menu-bg">
+            <div class="col-md-4 image-container-project">
+              image_Name.jpg
+            </div>
+          </div>
+          <div class="row">
+            <img src="images/statue.png" class="image-content center-block img-responsive"></img>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <img src="images/arrow-right.png" class="pull-right arrow">
+          </img>
+        </div>
+      </div>
+
+      <!--RATING AREA-->
+
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 stars">
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 viewer-comments">
+        </div>
+      </div>
+
+      </div>
+
+        <!--RULES/MISC. AREA-->
+
+        <div class="rules-background">
+
+        </div>
+
+        <!--FOOTER-->
+
+        <div class="footer-background">
+
+        </div>
+
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
 </html>
