@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="en" ng-app="myApp">
   <head>
     <meta charset="utf-8">
+    <meta name="julia" content="Image Rater Web Application">
+    <meta name="description" content="Responsive AngularJS website for critiquing art">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -9,7 +12,16 @@
 
     <!-- Bootstrap -->
     <link href="bower_components\bootstrap\dist\css\bootstrap.min.css" rel="stylesheet">
-    <link href="styles\basic.css" rel="stylesheet">
+
+    <link href="assets\css\basic.css" rel="stylesheet">
+    <link href="assets\css\navigation.css" rel="stylesheet">
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="app.module.js"></script>
+    <script src="image-rating/image-rating.controller.js"></script>
+    <script src="image-rating/image-rating.service.js"></script>
+    <script src="image-rating/loading.directive.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,124 +31,28 @@
     <![endif]-->
 
   </head>
-  <body class="background">
 
-    <nav id="mainNav" class="navbar-fixed-top navbar-custom affix-top header">
+  <body>
 
-        <div class="container"> 
-
-          <button type="button" id="main-button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-            <span class="sr-only">Toggle navigation</span> <span class="nav-text">MENU</span>
-          </button>
-
-          <div class="col-xs-4 col-md-4 logo">
-          </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="page-scroll nav-text">
-                        <a href="#"><span class="glyphicon glyphicon-user"></span> Account</a>
-                    </li>
-                    <li class="page-scroll nav-text">
-                        <a href="#">Login</a>
-                    </li>
-                    <li class="page-scroll nav-text">
-                        <a href="#">Register</a>
-                    </li>
-                    <li class="page-scroll nav-text">
-                        <a href="#">Site</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-
-    <div class="container">
-      
     <!--HEADER CONTENT-->
 
-      <div class="row header-space">
-
-
-      </div>
-
-      <!--USER COMMENT-->
-
-      <div class="row">
-        <div class="col-md-2 col-md-offset-2">
-          <span class="uploader-text">Uploader Comments</span>
-        </div>
-        <div class="col-md-6">
-          <span class="uploader-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in massa in ipsum posuere tincidunt commodo vitae augue. Vivamus eleifend imperdiet cursus. Donec cursus magna a sapien tincidunt volutpat. </span>
-        </div>
-        <div class="col-md-2">
-
-        </div>
-      </div>
-
-
-      <!--IMAGE CONTAINER-->
-
-      <div class="row">
-        <div class="col-md-2">
-          <img src="images/arrow-left.png" class="arrow">
-          </img>
-        </div>
-        <div class="col-md-8 image-container">
-          <div class="row image-container-tools">
-            <div class="col-md-8">
-            </div>
-          </div>
-          <div class="row image-menu-bg">
-            <div class="col-md-4 image-container-project">
-              image_Name.jpg
-            </div>
-          </div>
-          <div class="row">
-            <img src="images/statue.png" class="image-content center-block img-responsive"></img>
-          </div>
-        </div>
-        <div class="col-md-2">
-          <img src="images/arrow-right.png" class="pull-right arrow">
-          </img>
-        </div>
-      </div>
+    <div ng-include="'layout/navigation.view.html'"></div>
 
       <!--RATING AREA-->
 
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2 stars">
-
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2 viewer-comments">
-        </div>
-      </div>
-
-      </div>
+    <div ng-include="'image-rating/image-rating.view.html'" ></div>
 
         <!--RULES/MISC. AREA-->
 
-        <div class="rules-background">
-
-        </div>
+    <div ng-include="'layout/info.view.html'"></div>
 
         <!--FOOTER-->
 
-        <div class="footer-background">
-
-        </div>
-
-    </div>
+    <div ng-include="'layout/footer.view.html'"></div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <!--<script src="js/bootstrap.min.js"></script>-->
   </body>
 </html>

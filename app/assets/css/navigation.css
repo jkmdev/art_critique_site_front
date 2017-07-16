@@ -1,0 +1,38 @@
+.header {
+  background-color: #86C232;
+  width: 100%;
+  height: 40px;
+}
+
+.logo {
+  background-color: #61892F;
+
+  height: 40px;
+}
+
+#navbar-settings {
+  max-width: 50%;
+  width: auto;
+  height: 40px;
+  padding: 7px;
+  list-style-type: none;
+}
+
+.nav-text {
+  margin-top: 10px;
+  display:inline;
+ }
+
+.nav-text a {
+  text-decoration: none;
+  font-size: 18px;
+  font-family: "Arial";
+  color: #000000;
+  line-height: 1.2;
+  text-align: left;
+  padding: 10px;
+}
+
+.nav-text a:visited {
+  color: #FFFFFF;
+}
