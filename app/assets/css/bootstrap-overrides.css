@@ -1,0 +1,18 @@
+#bootstrap-overrides .navbar-default .navbar-nav>li>a {
+  text-decoration: none;
+  font-size: 18px;
+  font-family: "Arial";
+  color: #ffffff;
+  line-height: 1.2;
+  text-align: left;
+}
+
+#bootstrap-overrides .navbar-default .navbar-nav>li>a:hover {
+  color: #61892F;
+}
+
+#bootstrap-overrides .nav {
+	margin-top: 0px;
+    background-color: #86C232;
+}
+

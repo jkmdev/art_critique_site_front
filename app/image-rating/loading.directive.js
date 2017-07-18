@@ -5,15 +5,15 @@
         .module('myApp')
         .directive('imgLoading', imgLoading);
 
-    //img-loading.$inject = ['dependencies'];
+    //imgLoading.$inject = ['dependencies'];
 
     /* @ngInject */
     function imgLoading() {
 
         var directive = {
             bindToController: true,
-            templateUrl: 'loading.directive.html',
-            controller: ImageRatingController,
+            templateUrl: 'image-rating/loading.directive.html',
+            controller: 'ImageRatingController',
             controllerAs: 'vm',
             link: link,
             restrict: 'E',
@@ -25,11 +25,11 @@
         return directive;
 
         function link(scope, element, attrs) {
+            element.addClass('loading-anim');
+            element.addClass('animated');
+            element.addClass('flash');
+            element.addClass('absolute-center');
         }
     }
 
-    /* @ngInject */
-    function imgLoading() {
-
-    }
 })();

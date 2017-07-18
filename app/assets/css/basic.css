@@ -44,6 +44,10 @@ body {
   color: #6B6E70;
 }
 
+.image-settings {
+  max-height: 520px;
+}
+
 .image-container-tools {
   background-color: #6B6E70;
   height: 25px;
@@ -60,9 +64,9 @@ body {
 }
 
 .image-content {
-  max-width: 600px;
-  max-height: 520px;
-  padding: 10px;
+  max-width: 750px;
+  max-height: 480px;
+  padding-top: 10px;
 }
 
 .stars {
@@ -98,8 +102,6 @@ body {
   height: 40px;
   width: 100%;
 }
-
-
 
 
 
