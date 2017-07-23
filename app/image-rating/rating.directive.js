@@ -3,16 +3,15 @@
 
     angular
         .module('myApp')
-        .directive('imgLoading', imgLoading);
+        .directive('imgRating', imgRating);
 
-    imgLoading.$inject = ['$animate'];
+    //directive.$inject = ['dependencies'];
 
-    /* @ngInject */
-    function imgLoading($animate) {
+    function imgRating() {
 
         var directive = {
             bindToController: true,
-            templateUrl: 'image-rating/loading.directive.html',
+            templateUrl: 'image-rating/rating.directive.html',
             controller: 'ImageRatingController',
             controllerAs: 'vm',
             link: link,
@@ -25,7 +24,6 @@
         return directive;
 
         function link(scope, element, attrs) {
-
         }
     }
 

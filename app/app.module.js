@@ -4,6 +4,7 @@
 
 	angular
         .module('myApp', [
-            'ui.bootstrap'
+            'ui.bootstrap',
+            'ngAnimate'
         ]);
 })();

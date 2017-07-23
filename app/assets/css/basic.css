@@ -69,10 +69,20 @@ body {
   padding-top: 10px;
 }
 
+.loading-anim {
+  position: absolute;
+  color: white;
+}
+
 .stars {
   margin-top: 20px;
   height: 50px;
   background-color: #86C232;
+}
+
+.stars.ng-move {
+  transition: all 0.5s linear;
+  opacity: 0;
 }
 
 #user-comment-cont {

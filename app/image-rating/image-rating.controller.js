@@ -27,7 +27,6 @@
         activate();
 
         $timeout(function(){
-            vm.imageAmount = vm.images.length;
             if(!vm.checkEmpty()) {
                 vm.currentImage = vm.images[vm.currentImageIndex].title;
             } 
@@ -36,6 +35,7 @@
         function activate() {
             return imageService.getImages().then(function(data) {
                 vm.images = data;
+                vm.imageAmount = vm.images.length;
             });
         }
 
