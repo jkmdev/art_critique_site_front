@@ -12,7 +12,7 @@
 
         var directive = {
             bindToController: true,
-            templateUrl: 'image-rating/loading.directive.html',
+            templateUrl: 'rating-page/image-rating/loading.directive.html',
             controller: 'ImageRatingController',
             controllerAs: 'vm',
             link: link,

@@ -1,30 +1,28 @@
 (function() {
-    'use strict';
 
-    angular
-        .module('myApp')
-        .directive('imgRating', imgRating);
+	angular
+		.module('myApp')
+		.directive('imgComments', imgComments);
 
-    //directive.$inject = ['dependencies'];
+	function imgComments() {
 
-    function imgRating() {
-
-        var directive = {
+		var directive = {
             bindToController: true,
-            templateUrl: 'image-rating/rating.directive.html',
+            templateUrl: 'rating-page/image-rating/uploader.directive.html',
             controller: 'ImageRatingController',
             controllerAs: 'vm',
             link: link,
             restrict: 'E',
             scope: {
-            	max: '='
-            }
+            },
+            bindToController: true
         };
 
         return directive;
 
         function link(scope, element, attrs) {
+
         }
-    }
+	}
 
 })();

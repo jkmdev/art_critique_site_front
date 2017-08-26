@@ -20,40 +20,45 @@
         vm.disabled = false;
         vm.imageAmount;
 
-        vm.checkEmpty = checkEmpty;
+        vm.isEmpty = isEmpty;
         vm.nextImage = nextImage;
         vm.previousImage = previousImage;
 
-        activate();
+        vm.count = 55;
 
-        $timeout(function(){
-            if(!vm.checkEmpty()) {
-                vm.currentImage = vm.images[vm.currentImageIndex].title;
-            } 
-        }, 2000);
+        activate();
 
         function activate() {
             return imageService.getImages().then(function(data) {
                 vm.images = data;
                 vm.imageAmount = vm.images.length;
+                $timeout(function(){
+                    if(!vm.isEmpty()) {
+                        vm.currentImage = vm.images[vm.currentImageIndex].title;
+                    } 
+                }, 2000);
             });
         }
 
-        function checkEmpty() {
+        function isEmpty() {
             var isEmpty = false;
-            console.log(vm.imageAmount);
-            if (vm.imageAmount == 0) {
+            if (vm.imageAmount <= 1) {
                 vm.empty = "No images left in que!";
                 isEmpty = true;
             }
             return isEmpty;
         }
 
-        function nextImage() {
+        function submitEntry() {
+            
+        }
 
-            vm.currentImageIndex++;
-            vm.currentImage = vm.images[vm.currentImageIndex].title;
-            vm.imageAmount--;
+        function nextImage() {
+            if (!isEmpty()) {
+                vm.currentImageIndex++;
+                vm.currentImage = vm.images[vm.currentImageIndex].title;
+                vm.imageAmount--;
+            }
         }
 
         function previousImage() {
