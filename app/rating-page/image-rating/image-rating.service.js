@@ -25,6 +25,12 @@
                return response;
             });;
         }
+
+        function saveComment() {
+            return $http.post('data/feedback.json').then (function successCallback(response) {
+                
+            });
+        }
     }
 
 })();

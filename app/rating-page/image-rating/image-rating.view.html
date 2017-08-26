@@ -21,9 +21,9 @@
 
       <div class="row" >
 
-        <div class="col-md-2 uploader-comment-cont">
+        <div class="col-md-3 uploader-comment-cont">
 
-
+          <img-comments></img-comments>
           <!--<span class="glyphicon glyphicon-triangle-left arrow" ng-click="image.previousImage()"></span>
           </img>-->
           <!--<br>
@@ -37,15 +37,13 @@
           -->
         </div>
 
-        <div class="test col-md-8 image-container">
+        <div class="test col-md-9 image-container">
 
           <div class="row image-container-tools">
-            <div class="col-md-8">
-            </div>
           </div>
 
           <div class="row image-menu-bg">
-            <div class="col-md-4 image-container-project">
+            <div class="col-md-4 image-container-project"> <!--TURN THIS INTO A UI BOOTSTRAP CAROSEL-->
               <span class="animated fadeIn">{{image.currentImage}}</span>
             </div>
           </div>
@@ -59,12 +57,6 @@
 
         </div>
 
-          <div class="col-md-1">
-            <span class="glyphicon glyphicon-triangle-right pull-right arrow" ng-click="image.nextImage()" ></span>
-            </img>
-
-          </div>
-
       </div>
 
     <!--USER FEEDBACK-->    
@@ -74,8 +66,15 @@
         </div>
 
         <div class="row">
-          <div id="user-comment-cont" class="col-md-offset-2 col-md-8">
+          <div id="user-comment-cont" class="col-md-12">
           <textarea placeholder="Enter your comment here (2000 characters max)." id="user-comment" maxlength="2000"></textarea> 
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-1">
+            <span class="glyphicon glyphicon-triangle-right pull-right arrow" ng-click="image.nextImage()" ></span>
+
           </div>
         </div>
 

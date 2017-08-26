@@ -6,7 +6,8 @@
         .module('myApp', [
             'ui.bootstrap',
             'ngRoute',
-            'ngStorage'
+            'ui.router'
+            //'ngStorage'
         ]).config(configure);
 
     configure.$inject = ['$routeProvider'];
