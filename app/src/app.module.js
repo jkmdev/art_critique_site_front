@@ -15,7 +15,7 @@
     function configure ($routeProvider) {
     	$routeProvider
     	.when("/", {
-        	templateUrl : 'rating-page/image-rating/image-rating.view.html'
+        	templateUrl : 'pages/rating-page/rating-page.view.html'
     	})
     	/*.when("/graph", {
     		templateUrl : 'graph-page/graph/graph.view.html'
