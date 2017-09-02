@@ -1,0 +1,1 @@
+angular.module('rater.models.pages', []);

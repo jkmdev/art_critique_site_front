@@ -21,9 +21,9 @@
 
       <div class="row">
 
-        <div class="col-md-3 uploader-comment-cont">
+<!--         <div class="uploader-comment-cont">
 
-          <img-comments></img-comments>
+          <img-comments></img-comments> -->
           <!--<span class="glyphicon glyphicon-triangle-left arrow" ng-click="image.previousImage()"></span>
           </img>-->
           <!--<br>
@@ -35,9 +35,9 @@
           <span class="uploader-text"><strong>Other comments:</strong></span><br><br>
           <span class="uploader-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in massa in ipsum posuere tincidunt commodo vitae augue. Vivamus eleifend imperdiet cursus.</span><br>
           -->
-        </div>
+<!--         </div> -->
 
-        <div class="test col-md-9 image-container">
+        <div class="col-md-offset-2 col-md-8 image-container">
 
           <div class="row image-container-tools">
           </div>
@@ -48,7 +48,7 @@
             </div>
           </div>
 
-          <div class="test row">
+          <div class="row">
             <img ng-if="image.currentImage.length > 0" ng-src="../assets/images/{{image.currentImage}}" class="absolute-center animated fadeIn img-responsive center-block image-content">
             <img-loading ng-if="image.currentImage.length == 0"></img-loading>
             <span class="col-md-offset-2 col-md-8" id="no-image" ng-bind="image.empty"> 
@@ -61,12 +61,12 @@
 
     <!--USER FEEDBACK-->    
 
-        <div class="row">
-          <!--<img-rating star-amount="5"></img-rating>-->
-        </div>
+<!--         <div class="row">
+          <img-rating star-amount="5"></img-rating>
+        </div> -->
 
         <div class="row">
-          <div id="user-comment-cont" class="col-md-12">
+          <div id="user-comment-cont" class="col-md-offset-2 col-md-8">
           <textarea placeholder="Enter your comment here (2000 characters max)." id="user-comment" maxlength="2000"></textarea> 
           </div>
         </div>

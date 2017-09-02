@@ -17,7 +17,7 @@
 
         function getImages() {
             //STEP 2: ask data service for data, wait for promise
-        	return $http.get('data/gallery.json').then( function successCallback(response) {
+        	return $http.get('src/data/gallery.json').then( function successCallback(response) {
                 //STEP 3: set data, resolve promise
                vm.gallery = response.data.gallery
                return response.data.gallery;
