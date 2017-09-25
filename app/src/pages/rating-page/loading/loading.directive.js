@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('myApp')
+        .module('app.rating-page')
         .directive('imgLoading', imgLoading);
 
     imgLoading.$inject = ['$animate'];
@@ -13,7 +13,7 @@
         var directive = {
             bindToController: true,
             templateUrl: 'rating-page/image-rating/loading.directive.html',
-            controller: 'ImageRatingController',
+            controller: 'ImageRatingCtrl',
             controllerAs: 'vm',
             link: link,
             restrict: 'E',

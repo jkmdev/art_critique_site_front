@@ -3,37 +3,28 @@
 
 
 	angular
-        .module('myApp', [
-            'pages',
-            'pages.rating-page',
+        .module('app', [
+            'app.rating-page',
             'ui.bootstrap',
-            'ngRoute',
             'ui.router'
             //'ngStorage'
         ])
 
         .config(configure);
 
-        configure.$inject = ['$routeProvider', '$stateProvider'];
+        configure.$inject = ['$stateProvider'];
 
-        function configure ($routeProvider, $stateProvider) {
-
-        	/*.when("/graph", {
-        		templateUrl : 'graph-page/graph/graph.view.html'
-        	}
-        	)*/
+        function configure ($stateProvider) {
 
             $stateProvider
-            .state("graph-page", {
-                url:'/graph',
-                templateUrl: 'src/pages/rating-page/graph/graph-page.view.html'
-            })
 
-            $stateProvider
-            .state("rating-page", {
-                url:'/rate',
-                templateUrl: 'src/pages/rating-page/rating-page.view.html'
-            })
+            	.state("rate", {
+                        url: '',
+                        template: '<img-rating-page></img-rating-page>'
+                	}
+            	)
+
+            ;
 
             //url route provider for default page goes here
 
@@ -41,4 +32,5 @@
 
 })();
 
-//'ngAnimate'
+    // url: '',
+    // template: '<img-rating-page></img-rating-page>'

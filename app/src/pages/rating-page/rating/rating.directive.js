@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('myApp')
+        .module('app')
         .directive('imgRating', imgRating);
 
     //directive.$inject = ['dependencies'];
@@ -11,8 +11,8 @@
 
         var directive = {
             bindToController: true,
-            templateUrl: 'rating-page/image-rating/rating.directive.html',
-            controller: 'ImageRatingController',
+            templateUrl: "src/pages/rating-page/rating/rating.view.html",
+            controller: 'ImageRatingCtrl',
             controllerAs: 'vm',
             link: link,
             restrict: 'E',

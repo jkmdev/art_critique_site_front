@@ -23,14 +23,14 @@
 }
 
 .arrow {
-  font-size: 50px;
+  font-size: 100px;
   color: #61892F;
-  padding-top: 270px;
+  padding-top: 250px;
 }
 
 /*****IMAGE CONTAINER*****/
 
-.image-container {
+.image-viewer-container {
   background-color: #222629;
   margin-top: 40px;
   height: 500px;
@@ -38,23 +38,53 @@
   overflow: hidden;
 }
 
+.image-container {
+  position: relative;
+}
+
+
 #no-image {
   font-size: 18px;
   text-align:center;
   margin-top: 210px;
+  top: -50px;
   color: #6B6E70;
+}
+
+#image-options {
+  height: 50px;
+  background-color: #474B4F;
+  color: white;
+}
+
+#options-selection {
+  height: 100%;
+}
+
+.options-panel {
+  height: 50px;
+  border: 1px solid #6B6E70;
+}
+
+#goal-panel {
+  background-color: green;
+}
+
+#feedback-panel {
+  background-color: blue;
+}
+
+#misc-panel {
+  background-color: orange;
+}
+
+#uploader-text {
+  height: 100%;
+  background-color: #6B6E70;
 }
 
 .image-settings {
   max-height: 520px;
-}
-
-.image-container-tools {
-  background-color: #6B6E70;
-  height: 25px;
-}
-
-.image-menu-bg {
   background-color: #474B4F;
 }
 
@@ -72,6 +102,10 @@
 
 .loading-anim {
   position: absolute;
+  color: white;
+}
+
+.loading-text {
   color: white;
 }
 

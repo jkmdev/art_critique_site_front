@@ -1,5 +1,5 @@
 {"gallery":[
-    { "id":0, "title":"image_1.jpg" },
-    { "id":1, "title":"image_2.jpg" },
-    { "id":2, "title":"image_3.jpg" }
+    { "contentId":123, "title":"image_1.jpg" },
+    { "contentId":456, "title":"image_2.jpg" },
+    { "contentId":789, "title":"image_3.jpg" }
 ]}

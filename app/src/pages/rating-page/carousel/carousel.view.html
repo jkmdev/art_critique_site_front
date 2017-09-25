@@ -1,0 +1,44 @@
+<div class="col-md-offset-2 col-md-8 image-viewer-container">
+
+  <div class="row" id="image-options">
+
+    <div class="col-md-4" id="options-selection"> <!--TURN THIS INTO A UI BOOTSTRAP CAROSEL-->
+      <div class="row">
+        <div id="goal-panel" class="col-md-4 options-panel" ng-click="changePanel(1)">
+        </div>
+        <div id="feedback-panel" class="col-md-4 options-panel" ng-click="changePanel(2)" >
+        </div>
+        <div id="misc-panel" class="col-md-4 options-panel" ng-click="changePanel(3)">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-8" id="uploader-text"> <!--TURN THIS INTO A UI BOOTSTRAP CAROSEL-->
+      {{uploaderText}}
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="image-continer">
+
+      <img ng-show="contentTitle" ng-src="../assets/images/{{contentTitle}}" class="absolute-center animated fadeIn img-responsive center-block image-content">
+
+      <div ng-show="!contentTitle" class="loading-text">No images to display...</div>
+
+      <span class="col-md-offset-2 col-md-8" id="no-image" ng-bind="image.empty"> 
+      </span>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="col-md-1">
+  <span class="glyphicon glyphicon-triangle-right arrow" ng-click="nextImage()" ></span>
+</div>
+
+<!-- <span class="animated fadeIn">{{image.currentImage}}</span> -->

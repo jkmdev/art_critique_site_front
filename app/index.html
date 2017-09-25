@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app="app">
   <head>
     <meta charset="utf-8">
     <meta name="julia" content="Image Rater Web Application">
@@ -30,13 +30,12 @@
 
 
     <script src="app.module.js"></script>
-    <script src="src/common/models/pages.model.js"></script>
-    <script src="src/pages/pages.js"></script>
+    <script src="src/models/rating-page.model.js"></script>
     <script src="src/pages/rating-page/rating-page.module.js"></script>
-    <script src="src/common/models/rating-page.model.js"></script>
-    <script src="src/pages/rating-page/rating-page.controller.js"></script>
-    <script src="src/pages/rating-page/rating-page.service.js"></script>
+    <script src="src/pages/rating-page/rating-page.directive.js"></script>
     <script src="src/pages/rating-page/rating/rating.directive.js"></script>
+    <script src="src/pages/rating-page/carousel/carousel.directive.js"></script>
+    <script src="src/pages/rating-page/comments/comments.directive.js"></script>
     <!--<script src="pages/graph-page/graph/graph.controller.js"></script>
     <script src="pages/graph-page/graph/graph.view.html"></script>-->
 
@@ -55,15 +54,13 @@
 
     <div ng-include="'src/layout/navigation.view.html'"></div>
 
-      <!--RATING AREA-->
+    <!--RATING AREA-->
 
-    <div ui-view ></div>
-
-        <!--RULES/MISC. AREA-->
+    <div ui-view></div>
 
     <div ng-include="'src/layout/info.view.html'"></div>
 
-        <!--FOOTER-->
+    <!--FOOTER-->
 
     <div ng-include="'src/layout/footer.view.html'"></div>
 

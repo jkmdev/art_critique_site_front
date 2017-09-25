@@ -1,4 +1,8 @@
-angular.module('pages.rating-page', [
-	'rater.models.pages',
-	'rater.models.rating-page'
-]);
+(function() {
+	'use strict';
+
+	angular.module('app.rating-page', [
+		'app.models.rating-page'
+	]);
+
+})();
