@@ -10,14 +10,12 @@
     function imgComments() {
 
         var directive = {
-            bindToController: true,
             templateUrl: "src/pages/rating-page/comments/comments.view.html",
-            controller: CommentsCtrl,
-            controllerAs: 'vm',
+            require: '^imgRatingPage',
             link: link,
             restrict: 'EA',
             scope: {
-            },
+            }
         };
 
         return directive;
@@ -30,11 +28,11 @@
 
     //CarouselCtrl.$inject = ['$scope', 'RatingModel'];
 
-    function CommentsCtrl(RatingModel) {
+    // function CommentsCtrl(RatingModel) {
 
-        var vm = this;
-        vm.title = 'CommentsCtrll';
+    //     var vm = this;
+    //     vm.title = 'CommentsCtrll';
 
-    }
+    // }
 
-});
+})();
