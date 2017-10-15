@@ -5,7 +5,7 @@
         .module('app.rating-page')
         .directive('imgRatingPage', imgRatingPage);
 
-    //directive.$inject = [];
+    //imgRatingPage.$inject = [];
 
     function imgRatingPage() {
 
@@ -28,7 +28,7 @@
 
 	}
 
-    //CarouselCtrl.$inject = ['$scope', 'RatingModel'];
+    RatingCtrl.$inject = ['RatingModel'];
 
     function RatingCtrl(RatingModel) {
 
@@ -37,45 +37,54 @@
 
         vm.content = {};
         vm.currentIndex = 0; 
-        vm.contentTitle = '';
-        vm.uploaderComments = {};
-        vm.uploaderText = '';
-        vm.userComments = [];
+        vm.currentUserComment = '';
+        
+        vm.saveContent = RatingModel.saveContent;
+        vm.searchContent = RatingModel.searchContent;
 
-        vm.checkEmpty = checkEmpty;
+        vm.setContent = setContent;
         vm.nextImage = nextImage;
-        vm.getContent = getContent;
 
         activate();
 
         function activate() {
-            vm.getContent();
+
+            RatingModel.getContent().then(function(content) {
+
+                console.log(content);
+                vm.setContent(content);
+
+            });
+
         }
 
-        function checkEmpty() {
+        function setContent(content) {
+
+                if (typeof content == 'undefined') { 
+                        vm.content = {};
+                        vm.content.contentTitle = ''; 
+                } else {
+                       vm.content = content;
+                       vm.content.uploaderText = vm.content.uploaderComments.goal;
+                }   
+
         }
 
-        function nextImage() {
-           vm.currentIndex++;
-           vm.getContent();
+        function nextImage() { 
+
+
+            if (!(typeof vm.content == 'undefined')) {
+                vm.content.userComments.unshift(
+                    { rating: 0, "comment": vm.content.currentUserComment}
+                );
+                vm.saveContent(vm.content);
+            }
+
+            vm.currentIndex++;
+            vm.setContent(RatingModel.getContentAtIndex(vm.currentIndex));
+
         }
 
-        function getContent() {
-            RatingModel.getOneContent(vm.currentIndex)
-                .then(function(content) {
-                    console.log(content);
-
-                    if (content) {
-                        vm.content = content;
-                        vm.contentTitle = content.contentTitle;
-                        vm.uploaderComments = content.uploaderComments;
-                        vm.userComments = content.userComments;
-                        vm.uploaderText = vm.uploaderComments.goal;
-                    } else {
-                        vm.contentTitle = '';
-                    } 
-                });
-        }
     }
 
 })();

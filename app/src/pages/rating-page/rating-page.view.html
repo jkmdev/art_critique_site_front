@@ -2,61 +2,17 @@
 
 <div class="container">
 
-  <!--ULOADER COMMENT-->
-
-      <!--<div class="row">
-          <div class="row uploader-comment-cont ">
-            <div class="col-xs-2 col-md-2 col-md-offset-2">
-              <span class="uploader-text"><strong>Need feedback on:</strong></span><br><br>
-              <span class="uploader-text"><strong>Other comments:</strong></span>
-            </div>
-            <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-0">
-              <span class="uploader-request">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span><br><br>
-              <span class="uploader-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in massa in ipsum posuere tincidunt commodo vitae augue. Vivamus eleifend imperdiet cursus. Donec cursus magna a sapien tincidunt volutpat. </span><br>
-            </div>
-            <div class="col-md-2">
-            </div>
-          </div>
-      </div>-->
-
-      <!--IMAGE-->
+      <!--IMAGE CAROUSEL-->
 
       <div class="row">
 
-<!--         <div class="uploader-comment-cont">
-
-          <img-comments></img-comments> -->
-          <!--<span class="glyphicon glyphicon-triangle-left arrow" ng-click="image.previousImage()"></span>
-          </img>-->
-          <!--<br>
-          <span class="uploader-text"><strong>Uploader Comments</strong></span><br><br>
-          <span class="uploader-text"><strong>Goal of piece:</strong></span><br><br>
-          <span class="uploader-request">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span><br><br>
-          <span class="uploader-text"><strong>Need feedback on:</strong></span><br><br>
-          <span class="uploader-request">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span><br><br>
-          <span class="uploader-text"><strong>Other comments:</strong></span><br><br>
-          <span class="uploader-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in massa in ipsum posuere tincidunt commodo vitae augue. Vivamus eleifend imperdiet cursus.</span><br>
-          -->
-<!--         </div> -->
-
-          <img-carousel uploader-text="vm.uploaderText" content-title="vm.contentTitle"></img-carousel>
+          <img-carousel uploader-text="vm.content.uploaderText" content-title="vm.content.contentTitle"></img-carousel>
 
       </div>
 
     <!--USER FEEDBACK-->    
 
-<!--         <div class="row">
-          <img-rating star-amount="5"></img-rating>
-        </div>
- -->
-        <div class="row">
-          <img-comments></img-comments>
-        </div>
+          <img-comments current-user-comment="vm.content.currentUserComment" user-comments="vm.content.userComments"></img-comments>
 
-       <!--  <div class="row">
-          <div class="col-md-1">
-            <span class="glyphicon glyphicon-triangle-right pull-right arrow" ng-click="image.nextImage()" ></span>
-
-          </div>
-        </div> -->
+</div>
 

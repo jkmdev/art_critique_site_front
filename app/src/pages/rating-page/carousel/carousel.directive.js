@@ -32,11 +32,11 @@
 
             scope.changePanel = function(panel) {
                 if (panel == 1) {
-                    ctrl.uploaderText = ctrl.uploaderComments.goal;
+                    ctrl.content.uploaderText = ctrl.content.uploaderComments.goal;
                 } else if (panel == 2) {
-                    ctrl.uploaderText = ctrl.uploaderComments.need;
+                    ctrl.content.uploaderText = ctrl.content.uploaderComments.need;
                 } else if (panel == 3) {
-                    ctrl.uploaderText = ctrl.uploaderComments.other;
+                    ctrl.content.uploaderText = ctrl.content.uploaderComments.other;
                 }
             }
 

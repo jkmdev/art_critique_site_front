@@ -121,12 +121,17 @@
 
 /*****USER COMMENT*****/
 
-#user-comment-cont {
+#current-comment-cont {
   margin-top: 20px;
+  margin-bottom: 60px;
   border: 2px solid #86C232;
 }
 
-#user-comment {
+user-comments-cont {
+
+}
+
+#current-comment {
   margin-top: 5px;
   color: #86C232;
   width:100%;
@@ -137,5 +142,34 @@
   min-height: 75px;
   background: transparent;
   border: none;
+}
+
+#user-comments {
+/*  padding: 10px;*/
+  border: 2px solid #86C232;
+/*  font-size: 14px;
+  height: 100px;*/
+/*  background-color: blue; */
+}
+
+.user-comments-arrows {
+  height: 80px;
+  border: 2px solid #86C232;
+/*  background-color: green;*/
+}
+
+.user-comments-downarrow {
+  height: 50%;
+  border: 2px solid #86C232;
+}
+
+.user-comments-uparrow {
+  height: 50%;
+  border: 2px solid #86C232;
+}
+
+.user-comment {
+  border: 2px solid #86C232;
+/*  margin: 20px;*/
 }
 

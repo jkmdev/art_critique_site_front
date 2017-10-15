@@ -19,7 +19,7 @@
             $stateProvider
 
             	.state("rate", {
-                        url: '',
+                        url: '/',
                         template: '<img-rating-page></img-rating-page>'
                 	}
             	)

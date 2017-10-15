@@ -15,6 +15,8 @@
             link: link,
             restrict: 'EA',
             scope: {
+                currentUserComment: '=',
+                userComments: '='
             }
         };
 
@@ -25,14 +27,5 @@
         }
 
 	}
-
-    //CarouselCtrl.$inject = ['$scope', 'RatingModel'];
-
-    // function CommentsCtrl(RatingModel) {
-
-    //     var vm = this;
-    //     vm.title = 'CommentsCtrll';
-
-    // }
 
 })();
