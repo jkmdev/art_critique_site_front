@@ -1,0 +1,25 @@
+ <div class="row">
+
+	 <div id="current-comment-cont" class="col-md-offset-2 col-md-8">
+	  	<textarea id="current-comment" ng-model="currentUserComment" placeholder="Enter your comment here (2000 characters max)."  maxlength="2000"></textarea> 
+	 </div>
+
+ </div>
+
+ <div id="user-comments-cont" class="row">
+
+	 <div id="user-comments" class="col-md-offset-2 col-md-8" ng-repeat="content in userComments">
+	 	<div class="row">
+			<div class="user-comments-arrows col-md-2">
+				<div class="row user-comments-uparrow">
+				</div>
+				<div class="row user-comments-downarrow">
+				</div>
+	 		</div>
+	 		<div class="user-comment col-md-10">
+		 		{{content.comment}}
+		 	</div>
+	 	</div>
+	 </div>
+
+ </div>
