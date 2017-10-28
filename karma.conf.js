@@ -11,22 +11,29 @@ module.exports = function(config) {
     files: [
       'app/bower_components/angular/angular.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
+      'app/bower_components/angular-ui-router/release/angular-ui-router.js',
       'app/app.module.js',
+      'app/src/models/*.model.js',
       'app/src/**/*.module.js',
       'app/src/**/*.directive.js',
+      'app/src/**/*.view.html',
       'app/src/**/*.spec.js'
     ],
-
-
-    // list of files to exclude
-    exclude: [
-    ],
-
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'app/src/**/*.view.html': ['ng-html2js']
     },
+
+    ngHtml2JsPreprocessor: {
+      //stripPrefix: 'build/',
+      moduleName: 'app.templates'
+    }
+
+        // list of files to exclude
+    // exclude: [
+    // ]
 
 
     // test results reporter to use

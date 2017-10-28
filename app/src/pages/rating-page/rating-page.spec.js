@@ -32,3 +32,31 @@
 // });
 
 console.log('It runs!!');
+
+describe('imgRatingPage', function() {
+
+	beforeEach(module('app'));
+	beforeEach(module('app.templates'));
+
+	beforeEach(inject(function ($rootScope, $compile) {
+
+		console.log('...and here!!');
+
+        // elm = angular.element('<img-rating-page></img-rating-page>');
+
+        // scope = $rootScope.$new();
+
+        // // scope.customMessage = '<div>foo</div>';
+        // // scope.items = [{id:1, title:'title a'}, {id:2, title:'title b'}];
+        // elem = $compile(elm)(scope);
+        // scope.$digest();
+
+   
+    }));
+
+    it('should be instantiated', function() {
+    	console.log('spec');
+    })
+
+	console.log('...it runs here too!!!');
+});
