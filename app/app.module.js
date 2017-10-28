@@ -5,7 +5,7 @@
 	angular
         .module('app', [
             'app.rating-page',
-            'ui.bootstrap',
+            // 'ui.bootstrap',
             'ui.router'
             //'ngStorage'
         ])
@@ -19,7 +19,7 @@
             $stateProvider
 
             	.state("rate", {
-                        url: '/',
+                        url: '',
                         template: '<img-rating-page></img-rating-page>'
                 	}
             	)

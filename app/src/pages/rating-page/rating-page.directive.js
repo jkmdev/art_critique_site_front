@@ -17,7 +17,12 @@
             link: link,
             restrict: 'EA',
             scope: {
-            },
+
+
+                
+            }
+
+
         };
 
         return directive;
