@@ -9,15 +9,17 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'app/bower_components/angular/angular.js',
-      'app/bower_components/angular-mocks/angular-mocks.js',
-      'app/bower_components/angular-ui-router/release/angular-ui-router.js',
+      'bower_components/angular/angular.js',
+      'bower_components/angular-mocks/angular-mocks.js',
+      'bower_components/angular-ui-router/release/angular-ui-router.js',
+      'bower_components/karma-read-json/karma-read-json.js',
       'app/app.module.js',
       'app/src/models/*.model.js',
       'app/src/**/*.module.js',
       'app/src/**/*.directive.js',
       'app/src/**/*.view.html',
-      'app/src/**/*.spec.js'
+      'app/src/**/*.spec.js',
+      {pattern:'app/src/data/*.json', included: false}
     ],
 
     // preprocess matching files before serving them to the browser
@@ -28,7 +30,8 @@ module.exports = function(config) {
 
     ngHtml2JsPreprocessor: {
       //stripPrefix: 'build/',
-      moduleName: 'app.templates'
+      stripPrefix: 'app/',
+      moduleName: 'templates'
     }
 
         // list of files to exclude

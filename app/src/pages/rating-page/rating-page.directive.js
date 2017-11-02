@@ -3,7 +3,8 @@
 
     angular
         .module('app.rating-page')
-        .directive('imgRatingPage', imgRatingPage);
+        .directive('imgRatingPage', imgRatingPage)
+        .controller('RatingCtrl', RatingCtrl);
 
     //imgRatingPage.$inject = [];
 
@@ -44,14 +45,15 @@
 
         vm.setContent = setContent;
         vm.nextImage = nextImage;
+        vm.activate = activate;
 
         activate();
 
         function activate() {
 
-            RatingModel.getContent().then(function(content) {
+            // vm.setContent(RatingModel.getContent());
 
-                console.log(content);
+            RatingModel.getContent().then(function(content) {
                 vm.setContent(content);
 
             });

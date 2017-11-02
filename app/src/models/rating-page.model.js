@@ -6,11 +6,10 @@
 		.service('RatingModel', function($http) {
 
 			var model = this;
+			var allContent = [];
 			var URLS = {
 				allContent: 'src/data/content.json'
 			};
-
-			var allContent = [];
 
 			model.getContentAtIndex = function getContentAtIndex(index) {
 				return allContent[index];
@@ -21,9 +20,8 @@
 					.then(function (result) {
 						allContent = result.data.allContent;
 						console.log(allContent);
-						return allContent[0];
+						return allContent;
 					});
-
 			}
 
 			model.saveContent = function saveContent(newContent) {
@@ -32,8 +30,6 @@
 						originalContent = newContent;
 					}
 				});
-
-				
 			}
 
 		});

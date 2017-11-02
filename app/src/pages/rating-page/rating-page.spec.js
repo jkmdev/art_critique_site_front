@@ -1,62 +1,68 @@
-// console.log("FIRST");
-
-// describe('app.rating-page tests', function() {
-
-// 	console.log("It runs!");
-
-// 	beforeEach(module('app.rating-page'));
-
-// 	var ratingCtrl;
-
-// 	beforeEach(inject(function(_$controller_){
-//     	ratingCtrl = $controller('RatingCtrl', {});
-//   	}));
-
-//   	//critical
-
-//   	describe('RatingCtrl'), function() {
-
-//   		console.log('???????');
-
-// 	  	it('when the page loads image content appears', function() {
-// 	  		expect(ratingCtrl.content).toBeDefined();
-// 	  		console.log(ratingCtrl.content);
-// 	  		//expect(ratingCtrl.content).not.toBeUndefined();
-// 	  	});
-// 	  	//it('when I click the next button, new image content displays', function() {});
-
-// 	  	//nice to have
-
-//   }
-
-// });
-
-console.log('It runs!!');
-
 describe('imgRatingPage', function() {
 
-	beforeEach(module('app'));
-	beforeEach(module('app.templates'));
+	// var valid_respond = readJSON('src/data/content.json');
+ // 	$httpBackend.whenGET(/.*/).respond(valid_respond);
 
-	beforeEach(inject(function ($rootScope, $compile) {
+ 	var elem, ctrl, scope;
 
-		console.log('...and here!!');
+ 	var httpBackend, RatingModel;
 
-        // elm = angular.element('<img-rating-page></img-rating-page>');
+	beforeEach(module('app.rating-page')); //include module
+	beforeEach(module('templates')); //include precompiled templates
 
-        // scope = $rootScope.$new();
+	beforeEach(inject(function ($httpBackend, $rootScope, $compile, _$controller_, _RatingModel_) {
 
-        // // scope.customMessage = '<div>foo</div>';
-        // // scope.items = [{id:1, title:'title a'}, {id:2, title:'title b'}];
-        // elem = $compile(elm)(scope);
-        // scope.$digest();
+		//init variables
 
-   
+		RatingModel = _RatingModel_;
+		scope = $rootScope.$new();
+
+		//obtain json data/file
+
+  		httpBackend = $httpBackend;
+  		httpBackend.when('GET','src/data/content.json').respond('src/data/content.json');
+
+  		//obtain directive and dom
+
+        elem = angular.element('<img-rating-page></img-rating-page>');
+        elem = $compile(elem)(scope);
+
+        //obtain directive's controller
+
+        ctrl = _$controller_('RatingCtrl', {$scope: scope});
+        
+        ctrl.activate();
+        scope.$digest();
+
     }));
 
     it('should be instantiated', function() {
-    	console.log('spec');
-    })
 
-	console.log('...it runs here too!!!');
+    	// ctrl.what = {	
+    	// 	'huh': '??'
+    	// };
+    	RatingModel.getContent().then(function(content) {
+    		ctrl.content = content;
+    		console.log(ctrl.content);
+    		//expect(ctrl.content).toBeDefined();
+    	});
+
+    	httpBackend.flush();
+
+    	
+    	//console.log(ctrl.content);
+    	//expect(ctrl.content).to.be.an('array');
+    	//_$httpBackend.flush();
+
+    });
+
+    //what does this need to be doing to work properly...?
+
+    // if there are images in the queue, the first image should be loaded
+    // if there are no images, then nothing loads
+    // all images can be loaded 
+
 });
+
+//References
+//http://www.syntaxsuccess.com/viewarticle/unit-testing-bindtocontroller-and-controlleras
