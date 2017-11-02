@@ -1,15 +1,15 @@
-(function() {
+// (function() {
 
-	angular
-		.module('myApp')
-		.factory('graphData', graphData);
+// 	angular
+// 		.module('myApp')
+// 		.factory('graphData', graphData);
 
-		graphData.$inject = ['$http'];
+// 		graphData.$inject = ['$http'];
 
-		function graphData($http) {
+// 		function graphData($http) {
 
 			
 
-		}
+// 		}
 
-})();}
+// })();}
