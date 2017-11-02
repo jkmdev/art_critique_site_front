@@ -19,8 +19,8 @@
 				return $http.get(URLS.allContent)
 					.then(function (result) {
 						allContent = result.data.allContent;
-						console.log(allContent);
-						return allContent;
+						//console.log(allContent);
+						return allContent[0];
 					});
 			}
 

@@ -55,7 +55,6 @@
 
             RatingModel.getContent().then(function(content) {
                 vm.setContent(content);
-
             });
 
         }
