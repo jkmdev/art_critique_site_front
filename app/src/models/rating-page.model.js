@@ -3,7 +3,11 @@
 
 	angular
 		.module('app.models.rating-page', [])
-		.service('RatingModel', function($http) {
+		.service('RatingModel', RatingModel);
+
+		RatingModel.$inject = ['$rootScope', '$http', 'broadcastService'];
+
+		function RatingModel($rootScope, $http, broadcastService) {
 
 			var model = this;
 			var allContent = [];
@@ -15,13 +19,18 @@
 				return allContent[index];
 			}
 
-			model.getContent = function getContent() {
+			model.searchContent = function searchContent() {
 				return $http.get(URLS.allContent)
 					.then(function (result) {
 						allContent = result.data.allContent;
-						//console.log(allContent);
-						return allContent[0];
+						//$rootScope.$broadcast("RatingModel.getContent(): content Obtained");
+						broadcastService.contentObtainedIn('RatingModel.getContent() content Obtained');
+						//return allContent;
 					});
+			}
+
+			model.getContent = function getContent() {
+				return allContent
 			}
 
 			model.saveContent = function saveContent(newContent) {
@@ -32,7 +41,7 @@
 				});
 			}
 
-		});
+		};
 	
 })();
 
