@@ -20,7 +20,6 @@
 			$rootScope.$on('rating-page callback', function (event, data) {
     			//console.log(data); // 'Some data'
   			});
-			console.log('contentObtained');
 		};
 
 	}

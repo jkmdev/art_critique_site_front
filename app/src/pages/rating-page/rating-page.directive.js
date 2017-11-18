@@ -24,11 +24,9 @@
         return directive;
 
         function link(scope, element, attrs, ctrl) {
-
-            scope.$on('RatingModel.getContent() content Obtained', function(event, data) {
+            scope.$on('RatingModel.getContent(): content Obtained', function(event, data) {
                 ctrl.setContent();
             });
-
         }
 
 	}
@@ -46,6 +44,7 @@
         
         vm.saveContent = RatingModel.saveContent;
         vm.searchContent = RatingModel.searchContent;
+        vm.getContent = RatingModel.getContent;
 
         vm.setContent = setContent;
         vm.nextImage = nextImage;
@@ -63,10 +62,10 @@
 
             if (typeof content == 'undefined') { 
                 vm.content = {};
-                    vm.content.contentTitle = ''; 
+                vm.content.contentTitle = ''; 
             } else {
-                   vm.content = content;
-                   vm.content.uploaderText = vm.content.uploaderComments.goal;
+                vm.content = content;
+               vm.content.uploaderText = vm.content.uploaderComments.goal;
             }   
 
         }

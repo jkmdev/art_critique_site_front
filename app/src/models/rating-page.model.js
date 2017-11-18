@@ -5,9 +5,9 @@
 		.module('app.models.rating-page', [])
 		.service('RatingModel', RatingModel);
 
-		RatingModel.$inject = ['$rootScope', '$http', 'broadcastService'];
+		RatingModel.$inject = ['$rootScope', '$http'];
 
-		function RatingModel($rootScope, $http, broadcastService) {
+		function RatingModel($rootScope, $http) {
 
 			var model = this;
 			var allContent = [];
@@ -23,8 +23,8 @@
 				return $http.get(URLS.allContent)
 					.then(function (result) {
 						allContent = result.data.allContent;
-						//$rootScope.$broadcast("RatingModel.getContent(): content Obtained");
-						broadcastService.contentObtainedIn('RatingModel.getContent() content Obtained');
+						$rootScope.$broadcast("RatingModel.getContent(): content Obtained");
+						//broadcastService.contentObtainedIn('RatingModel.getContent() content Obtained');
 						//return allContent;
 					});
 			}
