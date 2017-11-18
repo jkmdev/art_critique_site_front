@@ -24,14 +24,16 @@
         return directive;
 
         function link(scope, element, attrs, ctrl) {
-
+            scope.$on('RatingModel.getContent(): content Obtained', function(event, data) {
+                ctrl.setContent();
+            });
         }
 
 	}
 
-    RatingCtrl.$inject = ['RatingModel'];
+    RatingCtrl.$inject = ['RatingModel', '$http'];
 
-    function RatingCtrl(RatingModel) {
+    function RatingCtrl(RatingModel, $http) {
 
         var vm = this;
         vm.title = 'RatingCtrl';
@@ -42,6 +44,7 @@
         
         vm.saveContent = RatingModel.saveContent;
         vm.searchContent = RatingModel.searchContent;
+        vm.getContent = RatingModel.getContent;
 
         vm.setContent = setContent;
         vm.nextImage = nextImage;
@@ -50,24 +53,20 @@
         activate();
 
         function activate() {
-
-            // vm.setContent(RatingModel.getContent());
-
-            RatingModel.getContent().then(function(content) {
-                vm.setContent(content);
-            });
-
+            RatingModel.searchContent();
         }
 
-        function setContent(content) {
+        function setContent() {
 
-                if (typeof content == 'undefined') { 
-                        vm.content = {};
-                        vm.content.contentTitle = ''; 
-                } else {
-                       vm.content = content;
-                       vm.content.uploaderText = vm.content.uploaderComments.goal;
-                }   
+            var content = RatingModel.getContent()[0];
+
+            if (typeof content == 'undefined') { 
+                vm.content = {};
+                vm.content.contentTitle = ''; 
+            } else {
+                vm.content = content;
+               vm.content.uploaderText = vm.content.uploaderComments.goal;
+            }   
 
         }
 
