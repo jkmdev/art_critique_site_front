@@ -4,13 +4,10 @@ describe('imgRatingPage', function() {
 
  	var httpBackend, RatingModel;
 
-    //beforeEach(module('app'));
 	beforeEach(module('app.rating-page')); //include module
 	beforeEach(module('templates')); //include precompiled templates
 
 	beforeEach(inject(function ($httpBackend, $http, $rootScope, $compile, _$controller_, _RatingModel_) {
-
-		//init variables
 		
 		scope = $rootScope.$new();
         RatingModel = _RatingModel_;
@@ -24,6 +21,9 @@ describe('imgRatingPage', function() {
         spyOn(RatingModel, 'getContent').and.returnValue(
             mockedContent
         );
+
+        ctrl.activate();
+        ctrl.setContent();
 
         // directive implementation
 
@@ -41,38 +41,33 @@ describe('imgRatingPage', function() {
         // httpBackend.flush();
     });
 
-    describe('imgCarousel', function() {
+    //STORY: as a user I want to view submitted images so I can comment on them
 
-        //STORY: as a user I want to view submitted images so I can comment on them
+    describe('imgCarousel', function() {
 
         //ACCEPTANCE CRITERIA:
 
         it('should load content when user first visits page', function(){
-            ctrl.activate();
-            ctrl.setContent();
-            expect(ctrl.contentTitle).toEqual(mockedContent.contentTitle);
+            console.log(ctrl.content.contentTitle);
+            expect(ctrl.content).not.toBe(undefined);
+            expect(ctrl.content.contentTitle).toEqual(mockedContent[0].contentTitle);
         });
 
         it('should allow user to view next image', function(){
-            ctrl.activate();
-            ctrl.setContent();
             ctrl.nextImage();
-
-            expect(ctrl.currentIndex).not.toBe(0);
+            console.log(ctrl.content.contentTitle);
+            expect(ctrl.content.currentIndex).not.toBe(0);
         });
-
-        it('should allow user to view all images in queue', function(){
-
-        });
-
-        // it('should display a message when the user is at the end of queue', function(){
-        // });
 
     });
 
+    //STORY: as a user I want to comment on and view other commenter's images
+
     describe('imgComments', function() {
 
-        //STORY: as a user I want to view other commenter's images
+        //ACCEPTANCE CRITERIA:
+
+
 
     });
 

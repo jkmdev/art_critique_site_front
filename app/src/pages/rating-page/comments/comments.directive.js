@@ -1,6 +1,8 @@
 (function() {
     'use strict';
 
+    //Function: to control functions related to the rating page comments section
+
     angular
         .module('app.rating-page')
         .directive('imgComments', imgComments);
