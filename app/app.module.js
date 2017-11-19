@@ -5,6 +5,7 @@
 	angular
         .module('app', [
             'app.rating-page',
+            'app.upload-page',
             // 'ui.bootstrap',
             'ui.router'
             //'ngStorage'
@@ -23,6 +24,11 @@
                         template: '<img-rating-page></img-rating-page>'
                 	}
             	)
+                .state("upload", {
+                        url: '/upload',
+                        template: '<img-upload-page></img-upload-page>'
+                    }
+                )
 
             ;
 

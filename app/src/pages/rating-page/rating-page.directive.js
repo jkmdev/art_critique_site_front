@@ -1,6 +1,9 @@
 (function() {
     'use strict';
 
+    //Function: To facilitate operations between various components on rating
+    //page and the rating page model. Controls shared variables accross components
+
     angular
         .module('app.rating-page')
         .directive('imgRatingPage', imgRatingPage)
@@ -27,6 +30,9 @@
             scope.$on('RatingModel.getContent(): content Obtained', function(event, data) {
                 ctrl.setContent();
             });
+            // scope.on('vm.contentTitle', function(val) {
+            //     console.log('eck');
+            // });
         }
 
 	}
@@ -41,6 +47,7 @@
         vm.content = {};
         vm.currentIndex = 0; 
         vm.currentUserComment = '';
+        vm.queueSize = 3; //turn into constant later
         
         vm.saveContent = RatingModel.saveContent;
         vm.searchContent = RatingModel.searchContent;
@@ -58,13 +65,13 @@
 
         function setContent() {
 
-            var content = RatingModel.getContent()[0];
+            var content = RatingModel.getContent()[vm.currentIndex];
 
-            if (typeof content == 'undefined') { 
-                vm.content = {};
-                vm.content.contentTitle = ''; 
+            if (content === undefined) { 
+               vm.content = undefined;
+               //vm.content.contentTitle = ''; 
             } else {
-                vm.content = content;
+               vm.content = content;
                vm.content.uploaderText = vm.content.uploaderComments.goal;
             }   
 
@@ -72,16 +79,17 @@
 
         function nextImage() { 
 
+            if (vm.content !== undefined) {
 
-            if (!(typeof vm.content == 'undefined')) {
                 vm.content.userComments.unshift(
-                    { rating: 0, "comment": vm.content.currentUserComment}
+                    { rating: 0, "comment": vm.currentUserComment}
                 );
                 vm.saveContent(vm.content);
-            }
 
-            vm.currentIndex++;
-            vm.setContent(RatingModel.getContentAtIndex(vm.currentIndex));
+                vm.currentIndex++;
+                vm.setContent();
+                //vm.setContent(RatingModel.getContentAtIndex(vm.currentIndex));
+            }
 
         }
 

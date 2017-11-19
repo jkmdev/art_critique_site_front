@@ -1,6 +1,8 @@
 (function() {
     'use strict';
 
+    //Function: To control functions related to the image carousel
+
     angular
         .module('app.rating-page')
         .directive('imgCarousel', imgCarousel);
