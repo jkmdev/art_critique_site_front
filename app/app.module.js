@@ -18,7 +18,10 @@
         function configure ($stateProvider) {
 
             $stateProvider
-
+                // .state('app', {
+                //     abstract: true,
+                //     templateUrl: ''
+                // })
             	.state("rate", {
                         url: '',
                         template: '<img-rating-page></img-rating-page>'
