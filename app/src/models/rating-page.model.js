@@ -20,9 +20,11 @@
 			}
 
 			model.searchContent = function searchContent() {
+				//console.log('searchContent() runs');
 				return $http.get(URLS.allContent)
 					.then(function (result) {
-						allContent = result.data.allContent;
+						allContent = result.data;
+						//console.log('searchContent() callback runs');
 						$rootScope.$broadcast("RatingModel.getContent(): content Obtained");
 						//broadcastService.contentObtainedIn('RatingModel.getContent() content Obtained');
 						//return allContent;
@@ -30,7 +32,8 @@
 			}
 
 			model.getContent = function getContent() {
-				return allContent
+				//console.log('getContent() runs');
+				return allContent;
 			}
 
 			model.saveContent = function saveContent(newContent) {

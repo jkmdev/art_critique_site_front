@@ -65,13 +65,11 @@
 
         function setContent() {
 
-            var content = RatingModel.getContent()[vm.currentIndex];
+            //console.log('setContent() runs');
 
-            if (content === undefined) { 
-               vm.content = undefined;
-               //vm.content.contentTitle = ''; 
-            } else {
-               vm.content = content;
+            vm.content = RatingModel.getContent()[vm.currentIndex];
+
+            if (vm.content !== undefined) { 
                vm.content.uploaderText = vm.content.uploaderComments.goal;
             }   
 

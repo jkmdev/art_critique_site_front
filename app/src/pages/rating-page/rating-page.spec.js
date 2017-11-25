@@ -18,12 +18,16 @@ describe('imgRatingPage', function() {
             200, mockedContent
         );
 
-        spyOn(RatingModel, 'getContent').and.returnValue(
-            mockedContent
-        );
+        // spyOn(RatingModel, 'getContent').and.returnValue(
+        //     mockedContent
+        // );
 
-        ctrl.activate();
-        ctrl.setContent();
+        // spyOn(RatingModel, 'searchContent').and.callThrough();
+        // spyOn(RatingModel, 'getContent').and.callThrough();
+
+        RatingModel.getContent();
+
+        // ctrl.setContent();
 
         // directive implementation
 
@@ -36,27 +40,33 @@ describe('imgRatingPage', function() {
     }));
 
     afterEach(function() {
-        // httpBackend.verifyNoOutstandingExpectation();
-        // httpBackend.verifyNoOutstandingRequest();
-        // httpBackend.flush();
+        httpBackend.verifyNoOutstandingExpectation();
+        httpBackend.verifyNoOutstandingRequest();
     });
 
     //STORY: as a user I want to view submitted images so I can comment on them
 
     describe('imgCarousel', function() {
 
+        //not testing how well/if controller obtains data
+        //just that it manipulated this data properly
+
         //ACCEPTANCE CRITERIA:
 
         it('should load content when user first visits page', function(){
-            console.log(ctrl.content.contentTitle);
+            httpBackend.flush();
+            ctrl.setContent();
             expect(ctrl.content).not.toBe(undefined);
             expect(ctrl.content.contentTitle).toEqual(mockedContent[0].contentTitle);
+            
         });
 
         it('should allow user to view next image', function(){
+            httpBackend.flush();
+            ctrl.setContent();
             ctrl.nextImage();
-            console.log(ctrl.content.contentTitle);
-            expect(ctrl.content.currentIndex).not.toBe(0);
+            //console.log(ctrl.content.contentTitle);
+            expect(ctrl.currentIndex).toBe(1);
         });
 
     });
@@ -67,11 +77,15 @@ describe('imgRatingPage', function() {
 
         //ACCEPTANCE CRITERIA:
 
+        // it('should allow user to view next image', function(){
 
+        // });
 
     });
 
 });
+
+//expect(myGreatJSLib.doSomething).toHaveBeenCalled();
 
    var mockedContent = [
 
@@ -133,3 +147,18 @@ describe('imgRatingPage', function() {
 // var fakeHttpPromise = {
 //     success: function() {}
 // };
+
+// expect(fn).toThrow(e); 
+// expect(instance).toBe(instance); 
+// expect(mixed).toBeDefined(); 
+// expect(mixed).toBeFalsy(); 
+// expect(number).toBeGreaterThan(number); 
+// expect(number).toBeLessThan(number); 
+// expect(mixed).toBeNull(); 
+// expect(mixed).toBeTruthy(); 
+// expect(mixed).toBeUndefined(); 
+// expect(array).toContain(member); 
+// expect(string).toContain(substring); 
+// expect(mixed).toEqual(mixed); 
+// expect(mixed).toMatch(pattern);
+// Read more at https: www.pluralsight.com/guides/front-end-javascript/introduction-to-angular-test-driven-development#1XOqHftCVhDEd9sV.99
