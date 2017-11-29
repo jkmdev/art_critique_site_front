@@ -39,10 +39,14 @@
         var vm = this;
         vm.title = 'RatingCtrl';
 
+        vm.user = {};
+
         activate();
 
+        ///////////
+
         function activate() {
-            
+            vm.user = UploadModel.getUser(8);
         }
 
     }

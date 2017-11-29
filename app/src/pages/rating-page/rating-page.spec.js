@@ -46,7 +46,7 @@ describe('imgRatingPage', function() {
 
     //STORY: as a user I want to view submitted images so I can comment on them
 
-    describe('imgCarousel', function() {
+    describe('imgCarousel', function() { 
 
         //not testing how well/if controller obtains data
         //just that it manipulated this data properly
@@ -65,7 +65,6 @@ describe('imgRatingPage', function() {
             httpBackend.flush();
             ctrl.setContent();
             ctrl.nextImage();
-            //console.log(ctrl.content.contentTitle);
             expect(ctrl.currentIndex).toBe(1);
         });
 
@@ -147,18 +146,3 @@ describe('imgRatingPage', function() {
 // var fakeHttpPromise = {
 //     success: function() {}
 // };
-
-// expect(fn).toThrow(e); 
-// expect(instance).toBe(instance); 
-// expect(mixed).toBeDefined(); 
-// expect(mixed).toBeFalsy(); 
-// expect(number).toBeGreaterThan(number); 
-// expect(number).toBeLessThan(number); 
-// expect(mixed).toBeNull(); 
-// expect(mixed).toBeTruthy(); 
-// expect(mixed).toBeUndefined(); 
-// expect(array).toContain(member); 
-// expect(string).toContain(substring); 
-// expect(mixed).toEqual(mixed); 
-// expect(mixed).toMatch(pattern);
-// Read more at https: www.pluralsight.com/guides/front-end-javascript/introduction-to-angular-test-driven-development#1XOqHftCVhDEd9sV.99
