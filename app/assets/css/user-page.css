@@ -1,0 +1,15 @@
+#user-header {
+	margin-top: 20px;
+	height: 150px;
+	border: 1px solid black;
+}
+
+.user-header-stats {
+	height: 100%;
+}
+
+.user-header-upload {
+	margin-top: 15px;
+	height: 80%;
+	border: 1px solid black;
+}

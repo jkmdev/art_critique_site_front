@@ -3,11 +3,11 @@
 
 	angular
 		.module('app.models.upload-page', [])
-		.service('UploadModel', UploadModel);
+		.service('UserModel', UserModel);
 
-		//UploadModel.$inject = ['$rootScope', '$http'];
+		//UserModel.$inject = ['$rootScope', '$http'];
 
-		function UploadModel() {
+		function UserModel() {
 
 			var model = this;
 

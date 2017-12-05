@@ -3,11 +3,13 @@
 
 	angular
 		.module('app.models.rating-page', [])
-		.service('RatingModel', RatingModel);
+		.service('ContentModel', ContentModel);
 
-		RatingModel.$inject = ['$rootScope', '$http'];
+		ContentModel.$inject = ['$rootScope', '$http'];
 
-		function RatingModel($rootScope, $http) {
+		// !rating model, moreso ContentModel
+
+		function ContentModel($rootScope, $http) {
 
 			var model = this;
 			var allContent = [];
@@ -25,8 +27,8 @@
 					.then(function (result) {
 						allContent = result.data;
 						//console.log('searchContent() callback runs');
-						$rootScope.$broadcast("RatingModel.getContent(): content Obtained");
-						//broadcastService.contentObtainedIn('RatingModel.getContent() content Obtained');
+						$rootScope.$broadcast("ContentModel.getContent(): content Obtained");
+						//broadcastService.contentObtainedIn('ContentModel.getContent() content Obtained');
 						//return allContent;
 					});
 			}

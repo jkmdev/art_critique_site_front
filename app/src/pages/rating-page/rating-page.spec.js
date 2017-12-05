@@ -2,15 +2,15 @@ describe('imgRatingPage', function() {
 
  	var elem, ctrl, scope;
 
- 	var httpBackend, RatingModel;
+ 	var httpBackend, ContentModel;
 
 	beforeEach(module('app.rating-page')); //include module
 	beforeEach(module('templates')); //include precompiled templates
 
-	beforeEach(inject(function ($httpBackend, $http, $rootScope, $compile, _$controller_, _RatingModel_) {
+	beforeEach(inject(function ($httpBackend, $http, $rootScope, $compile, _$controller_, _ContentModel_) {
 		
 		scope = $rootScope.$new();
-        RatingModel = _RatingModel_;
+        ContentModel = _ContentModel_;
         ctrl = _$controller_('RatingCtrl', {$scope: scope});
 
   		httpBackend = $httpBackend;
@@ -18,14 +18,14 @@ describe('imgRatingPage', function() {
             200, mockedContent
         );
 
-        // spyOn(RatingModel, 'getContent').and.returnValue(
+        // spyOn(ContentModel, 'getContent').and.returnValue(
         //     mockedContent
         // );
 
-        // spyOn(RatingModel, 'searchContent').and.callThrough();
-        // spyOn(RatingModel, 'getContent').and.callThrough();
+        // spyOn(ContentModel, 'searchContent').and.callThrough();
+        // spyOn(ContentModel, 'getContent').and.callThrough();
 
-        RatingModel.getContent();
+        ContentModel.getContent();
 
         // ctrl.setContent();
 

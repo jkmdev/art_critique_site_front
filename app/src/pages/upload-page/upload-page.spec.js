@@ -4,16 +4,16 @@ describe('imgUploadPage', function() {
 
  	var elem, ctrl, scope;
 
- 	var httpBackend, UploadModel;
+ 	var httpBackend, UserModel;
 
 	beforeEach(module('app.upload-page')); //include module
 	beforeEach(module('templates')); //include precompiled templates
 
-	beforeEach(inject(function ($httpBackend, $http, $rootScope,_$controller_, _UploadModel_) {
+	beforeEach(inject(function ($httpBackend, $http, $rootScope,_$controller_, _UserModel_) {
 
 		scope = $rootScope.$new();
 		ctrl = _$controller_('UploadCtrl', {$scope: scope});
-		UploadModel = _UploadModel_;
+		UserModel = _UserModel_;
 
 	}));
 
@@ -31,6 +31,12 @@ describe('imgUploadPage', function() {
     });
 
     it('should allow the user to upload their own image', function(){
+    	spyOn(UserModel, 'uploadImage');
+    	ctrl.uploadImage();
+    	expect(UserModel.uploadImage).toHaveBeenCalled();
+    });
+
+    it('should notify the user when an image is uploaded', function() {
     });
 
     it('should contain a profile section for the user', function(){
