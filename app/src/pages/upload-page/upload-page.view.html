@@ -1,1 +1,44 @@
-<p>test</p>
+<div class="container">
+
+	<!-- Upload content -->
+
+	<div class="row">
+
+		<div id="user-header" class="col-md-12">
+
+			<div class="user-header-stats col-md-4">
+<!-- 
+							userName: 'ngelic',
+				imagesPosted: 6,
+				commentPoints: 2,
+				accountAge: 3 -->
+
+				<h2>Username: {{vm.user.userName}}</h2>
+				<h5>Images Posted: {{vm.user.imagesPosted}}</h5>
+				<h5>Comment Points: {{vm.user.commentPoints}}</h5>
+				<h5>Account Age: {{vm.user.accountAge}}</h5>
+
+			</div>
+
+			<div class="user-header-upload col-md-offset-6 col-md-2 text-center">
+
+				<element nv-file-drop uploader="{FileUploader}"></element>
+				<!-- <h4>UPLOAD</h4> -->
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- uploaded content -->
+
+<!-- 	<div class="row">
+
+		<div ng-repeat="upload in uploadedContent">
+
+		</div>
+
+	</div> -->
+
+</div>

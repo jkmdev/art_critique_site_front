@@ -7,7 +7,8 @@
             'app.rating-page',
             'app.upload-page',
             // 'ui.bootstrap',
-            'ui.router'
+            'ui.router',
+            'angularFileUpload'
             //'ngStorage'
         ])
 

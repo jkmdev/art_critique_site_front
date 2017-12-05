@@ -32,17 +32,21 @@
 
 	}
 
-    UploadCtrl.$inject = ['UploadModel', '$http'];
+    UploadCtrl.$inject = ['UserModel', '$http'];
 
-    function UploadCtrl(UploadModel, $http) {
+    function UploadCtrl(UserModel, $http) {
 
         var vm = this;
         vm.title = 'RatingCtrl';
 
+        vm.user = {};
+
         activate();
 
+        ///////////
+
         function activate() {
-            
+            vm.user = UserModel.getUser(8);
         }
 
     }

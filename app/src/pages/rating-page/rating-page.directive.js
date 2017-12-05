@@ -27,7 +27,7 @@
         return directive;
 
         function link(scope, element, attrs, ctrl) {
-            scope.$on('RatingModel.getContent(): content Obtained', function(event, data) {
+            scope.$on('ContentModel.getContent(): content Obtained', function(event, data) {
                 ctrl.setContent();
             });
             // scope.on('vm.contentTitle', function(val) {
@@ -37,9 +37,9 @@
 
 	}
 
-    RatingCtrl.$inject = ['RatingModel', '$http'];
+    RatingCtrl.$inject = ['ContentModel', '$http'];
 
-    function RatingCtrl(RatingModel, $http) {
+    function RatingCtrl(ContentModel, $http) {
 
         var vm = this;
         vm.title = 'RatingCtrl';
@@ -49,9 +49,9 @@
         vm.currentUserComment = '';
         vm.queueSize = 3; //turn into constant later
         
-        vm.saveContent = RatingModel.saveContent;
-        vm.searchContent = RatingModel.searchContent;
-        vm.getContent = RatingModel.getContent;
+        vm.saveContent = ContentModel.saveContent;
+        vm.searchContent = ContentModel.searchContent;
+        vm.getContent = ContentModel.getContent;
 
         vm.setContent = setContent;
         vm.nextImage = nextImage;
@@ -60,14 +60,14 @@
         activate();
 
         function activate() {
-            RatingModel.searchContent();
+            ContentModel.searchContent();
         }
 
         function setContent() {
 
             //console.log('setContent() runs');
 
-            vm.content = RatingModel.getContent()[vm.currentIndex];
+            vm.content = ContentModel.getContent()[vm.currentIndex];
 
             if (vm.content !== undefined) { 
                vm.content.uploaderText = vm.content.uploaderComments.goal;
@@ -86,7 +86,7 @@
 
                 vm.currentIndex++;
                 vm.setContent();
-                //vm.setContent(RatingModel.getContentAtIndex(vm.currentIndex));
+                //vm.setContent(ContentModel.getContentAtIndex(vm.currentIndex));
             }
 
         }
