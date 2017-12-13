@@ -6,6 +6,7 @@
         .module('app', [
             'app.rating-page',
             'app.upload-page',
+            'ngFileUpload',
             // 'ui.bootstrap',
             'ui.router'
             //'ngStorage'

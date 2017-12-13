@@ -13,7 +13,7 @@
 
         var directive = {
             templateUrl: "src/pages/rating-page/comments/comments.view.html",
-            require: '^imgRatingPage',
+            require: '^^imgRatingPage',
             link: link,
             restrict: 'EA',
             scope: {

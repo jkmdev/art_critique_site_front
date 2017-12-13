@@ -7,7 +7,7 @@
     angular
         .module('app.upload-page')
         .directive('imgUploadPage', imgUploadPage)
-        .controller('UploadCtrl', UploadCtrl);
+        .controller('UploadPageCtrl', UploadPageCtrl);
 
     //imgRatingPage.$inject = [];
 
@@ -16,11 +16,12 @@
         var directive = {
             bindToController: true,
             templateUrl: "src/pages/upload-page/upload-page.view.html",
-            controller: UploadCtrl,
+            controller: UploadPageCtrl,
             controllerAs: 'vm',
             link: link,
             restrict: 'EA',
             scope: {
+
             }
         };
 
@@ -28,18 +29,33 @@
 
         function link(scope, element, attrs, ctrl) {
 
+            scope.$watch('vm.image', function(newValue) {
+                console.log(newValue);
+            });
+
+            scope.getImage = function() {
+                return ctrl.image;
+            }
+
+            scope.submit = function() {
+                ctrl.uploadImage(ctrl.image);
+            }
+            
         }
 
 	}
 
-    UploadCtrl.$inject = ['UserModel', '$http'];
+    UploadPageCtrl.$inject = ['UserModel', '$http'];
 
-    function UploadCtrl(UserModel, $http) {
+    function UploadPageCtrl(UserModel, $http) {
 
         var vm = this;
         vm.title = 'RatingCtrl';
 
         vm.user = {};
+        vm.image = 'test';
+
+        vm.uploadImage = UserModel.uploadImage;
 
         activate();
 

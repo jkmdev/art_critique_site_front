@@ -15,7 +15,7 @@
             // bindToController: true,
             templateUrl: "src/pages/rating-page/carousel/carousel.view.html",
             // controller: CarouselCtrl,
-            require: '^imgRatingPage',
+            require: '^^imgRatingPage',
             link: link,
             restrict: 'EA',
             scope: {
