@@ -1,6 +1,8 @@
 (function() {
     'use strict';
 
+    console.log('imgUpload loads');
+
     //Function: To facilitate operations between various components on rating
     //page and the rating page model. Controls shared variables accross components
 
@@ -13,20 +15,30 @@
     function imgUpload() {
 
         var directive = {
-            require: '^imgUploadPage',
+            bindToController: true,
+            templateUrl: 'src/pages/upload-page/uploader/uploader.view.html',
+            controller: ImgUploadCtrl,
             link: link,
+            controllerAs: 'vm',
             restrict: 'EA',
             scope: {
-            },
-            template:'testing'
+                image: '='
+            }
         };
 
         return directive;
 
         function link(scope, element, attrs, ctrl) {
 
+
         }
 
+    }
+
+    function ImgUploadCtrl(UserModel) {
+        var vm = this;
+
+        
     }
 
 })();

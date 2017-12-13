@@ -21,7 +21,14 @@
 			</div>
 
 			<div class="col-md-offset-6 col-md-2">
-				<img-upload></img-upload>
+				<!-- <img-upload image="vm.image"></img-upload> -->
+				<div ngf-select="" ngf-drop="" ng-model="vm.image"  class="drop-box" ngf-drop-available="dropAvailable">Select File
+				  <span ng-show="dropAvailable"> or Drop File</span>
+				</div>
+				              
+				<button type="submit" ng-click="submit()">Submit</button>
+				{{vm.image.name}}
+
 			</div>
 
 		</div>
