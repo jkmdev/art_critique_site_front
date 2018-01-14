@@ -17,3 +17,10 @@
 
 	<img ngf-thumbnail="files" class="thumb">
 	          <i ng-show="myForm.file.$error.required"> -->
+
+<div ngf-select="" ngf-drop="" ng-model="vm.image"  class="drop-box" ngf-drop-available="dropAvailable">Select File
+				  <span ng-show="dropAvailable"> or Drop File</span>
+				</div>
+				              
+				<button type="submit" ng-click="submit()">Submit</button>
+				{{vm.image.name}}

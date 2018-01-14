@@ -1,4 +1,4 @@
-(function() {
+(function() {   
     'use strict';
 
     //Function: To facilitate operations between various components on rating
@@ -47,7 +47,7 @@
 
     UploadPageCtrl.$inject = ['UserModel', '$http'];
 
-    function UploadPageCtrl(UserModel, $http) {
+    function UploadPageCtrl(UserModel) {
 
         var vm = this;
         vm.title = 'RatingCtrl';
