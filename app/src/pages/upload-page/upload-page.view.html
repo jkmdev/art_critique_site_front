@@ -8,7 +8,7 @@
 
 			<div class="user-header-stats col-md-4">
 <!-- 
-							userName: 'ngelic',
+				userName: 'ngelic',
 				imagesPosted: 6,
 				commentPoints: 2,
 				accountAge: 3 -->
@@ -21,14 +21,7 @@
 			</div>
 
 			<div class="col-md-offset-6 col-md-2">
-				<!-- <img-upload image="vm.image"></img-upload> -->
-				<div ngf-select="" ngf-drop="" ng-model="vm.image"  class="drop-box" ngf-drop-available="dropAvailable">Select File
-				  <span ng-show="dropAvailable"> or Drop File</span>
-				</div>
-				              
-				<button type="submit" ng-click="submit()">Submit</button>
-				{{vm.image.name}}
-
+				<img-upload image="vm.image"></img-upload>
 			</div>
 
 		</div>

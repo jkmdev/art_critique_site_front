@@ -8,7 +8,8 @@
 
     angular
         .module('app.upload-page')
-        .directive('imgUpload', imgUpload);
+        .directive('imgUpload', imgUpload)
+        .controller('UploadCtrl', UploadCtrl);
 
     //imgRatingPage.$inject = [];
 
@@ -17,7 +18,7 @@
         var directive = {
             bindToController: true,
             templateUrl: 'src/pages/upload-page/uploader/uploader.view.html',
-            controller: ImgUploadCtrl,
+            controller: UploadCtrl,
             link: link,
             controllerAs: 'vm',
             restrict: 'EA',
@@ -35,10 +36,8 @@
 
     }
 
-    function ImgUploadCtrl(UserModel) {
+    function UploadCtrl() {
         var vm = this;
-
-        
     }
 
 })();
