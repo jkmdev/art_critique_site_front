@@ -1,6 +1,6 @@
 
 
-describe('imgUploadPage', function() {
+describe('Upload Page Directive', function() {
 
  	var elem, ctrl, scope;
 
@@ -10,7 +10,7 @@ describe('imgUploadPage', function() {
 	beforeEach(module('app.upload-page')); //include module
 	beforeEach(module('templates')); //include precompiled templates
 
-	beforeEach(inject(function ($httpBackend, $http, $rootScope,_$controller_) {
+	beforeEach(inject(function ($httpBackend, $http, $rootScope,_$controller_, $injector) {
 
 		scope = $rootScope.$new();
 		ctrl = _$controller_('UploadPageCtrl', {$scope: scope});

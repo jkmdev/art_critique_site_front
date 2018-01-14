@@ -13,6 +13,8 @@ module.exports = function(config) {
       'bower_components/angular-mocks/angular-mocks.js',
       'bower_components/angular-ui-router/release/angular-ui-router.js',
       'bower_components/karma-read-json/karma-read-json.js',
+      'bower_components/ng-file-upload-shim/ng-file-upload-shim.min.js',
+      'bower_components/ng-file-upload/ng-file-upload.js',
       'app/app.module.js',
       'app/src/models/*.model.js',
       'app/src/**/*.module.js',
@@ -32,7 +34,9 @@ module.exports = function(config) {
       //stripPrefix: 'build/',
       stripPrefix: 'app/',
       moduleName: 'templates'
-    }
+    },
+
+    reporters: ['progress'],
 
         // list of files to exclude
     // exclude: [
@@ -64,7 +68,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    //browsers: ['Firefox'],
+    browsers: ['Chrome'],
 
 
     // Continuous Integration mode

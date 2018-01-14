@@ -21,7 +21,7 @@
             link: link,
             restrict: 'EA',
             scope: {
-
+                results: '='
             }
         };
 

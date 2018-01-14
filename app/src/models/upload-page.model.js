@@ -5,21 +5,26 @@
 		.module('app.models.upload-page', [])
 		.service('UserModel', UserModel);
 
-		//UserModel.$inject = ['$rootScope', '$http'];
+		UserModel.$inject = ['Upload', '$rootScope', '$http'];
 
-		function UserModel(Upload) {
+		function UserModel(Upload, $rootScope, $http) {
 
 			var model = this;
+			model.userContent = [];
+			var URLS = {
+				userContent: 'src/data/content.json'
+			};
 
-			var user = {
+			model.user = {
 				userName: 'ngelic',
 				imagesPosted: 6,
 				commentPoints: 2,
-				accountAge: 3
+				accountAge: 3,
+				uploaderId: 123
 			};
 
 			model.getUser = function(id) {
-				return user;
+				return model.user;
 			}
 
 			model.uploadImage = function uploadImage(image) {
@@ -35,6 +40,27 @@
 		            var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
 		            console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
 		        });
+			}
+
+			model.searchContent = function(userId) {
+				//searches database; select * from contentTable where userId = userId
+				return $http.get(URLS.userContent).then(function (result) {
+						console.log(result.data);
+						model.userContent = result.data;	
+						$rootScope.$broadcast("UserModel.searchContent(): content Obtained");
+				});
+
+
+				//console.log(model.userContent);
+				//return model.userContent;
+				//console.log('searchContent() callback runs');
+				//$rootScope.$broadcast("ContentModel.getContent(): content Obtained");
+				//broadcastService.contentObtainedIn('ContentModel.getContent() content Obtained');
+				//return allContent;
+			}
+
+			model.getContent = function() {
+				return model.userContent;
 			}
 
 		};
