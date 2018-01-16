@@ -15,6 +15,7 @@ module.exports = function(config) {
       'bower_components/karma-read-json/karma-read-json.js',
       'bower_components/ng-file-upload-shim/ng-file-upload-shim.min.js',
       'bower_components/ng-file-upload/ng-file-upload.js',
+      'bower_components/angular-bootstrap/ui-bootstrap.min.js',
       'app/app.module.js',
       'app/src/models/*.model.js',
       'app/src/**/*.module.js',

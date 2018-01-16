@@ -14,6 +14,7 @@ describe('Upload Results Directive', function() {
 		scope = $rootScope.$new();
 		ctrl = _$controller_('ResultCtrl', {$scope: scope}, {result: content});
 		$compile = _$compile_;
+		
 		elem = $compile('<img-result result="content"></img-result>')($rootScope);
 		$rootScope.$digest();
 		
@@ -22,8 +23,10 @@ describe('Upload Results Directive', function() {
 	}));
 
     it('it must show the image as well as its title', function() {
-    	expect(ctrl.result).toBeDefined();
-    	expect(elem.html()).toContain('image_1.jpg');
+    	//expect(ctrl.result).toBeDefined();
+    	//expect(elem.html()).toContain('image_1.jpg');
+    	elem.find('div')[0].click();
+
     });
 
     it('it must display an error message if the content is invalid', function() {
@@ -32,7 +35,7 @@ describe('Upload Results Directive', function() {
     });
 
     it('it create a modal when viewDetails is triggered', function() {
-
+    	expect()
     });
 
 });
