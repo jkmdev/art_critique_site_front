@@ -1,9 +1,10 @@
 
-	[
+[
 
 		{"contentId": 1,
 		 "contentTitle":"image_1.jpg",
 		 "uploaderId": 123,
+		 "dateUploaded": 1991,
 		 "uploaderComments": 
 		 	{"goal": "create best other", "need": "Not sure.", "other": "..."}
 		 ,
@@ -22,6 +23,7 @@
 		{"contentId": 2,
 		 "contentTitle":"image_2.jpg",
 		 "uploaderId": 123,
+		 "dateUploaded": 1990,
 		 "uploaderComments":
 		 	{"goal": "Better linework", "need": "Crit on linework.", "other": "Not sure what to put here. :/"}
 		 ,
@@ -40,6 +42,7 @@
 		{"contentId": 3,
 		 "contentTitle":"image_3.jpg",
 		 "uploaderId": 123,
+		 "dateUploaded": 1992,
 		 "uploaderComments":
 		 	{"goal": "Be better than DaVinci himself", "need": "to git gud", "other": "Wish my linework was better..."}
 		 ,

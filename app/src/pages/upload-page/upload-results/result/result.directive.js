@@ -6,22 +6,22 @@
 
     angular
         .module('app.upload-page')
-        .directive('imgUploadResults', imgUploadResults)
-        .controller('UploadResultsCtrl', UploadResultsCtrl);
+        .directive('imgResult', imgResult)
+        .controller('ResultCtrl', ResultCtrl);
 
     //imgRatingPage.$inject = [];
 
-    function imgUploadResults() {
+    function imgResult() {
 
         var directive = {
             bindToController: true,
-            templateUrl: "src/pages/upload-page/upload-results/upload-results.view.html",
-            controller: UploadResultsCtrl,
+            templateUrl: "src/pages/upload-page/upload-results/result/result.view.html",
+            controller: ResultCtrl,
             controllerAs: 'vm',
             link: link,
             restrict: 'EA',
             scope: {
-                results: '='
+                result: '='
             }
         };
 
@@ -29,9 +29,9 @@
 
         function link(scope, element, attrs, ctrl) {
 
-            scope.$watch('vm.results', function(newValue) {
-                //console.log(newValue);
-            });
+            // scope.$watch('vm.results', function(newValue) {
+            //     console.log(newValue);
+            // });
 
             // scope.getImage = function() {
             //     return ctrl.image;
@@ -43,7 +43,7 @@
 
     //UploadResultsCtrl.$inject = ['UserModel'];
 
-    function UploadResultsCtrl() {
+    function ResultCtrl() {
 
         var vm = this;
 

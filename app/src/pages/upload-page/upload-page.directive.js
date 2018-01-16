@@ -33,13 +33,8 @@
                 console.log(newValue);
             });
 
-            // scope.$watch('vm.uploadedResults', function(newValue) {
-            //     console.log(newValue);
-            // }, true);
-
             scope.$on('UserModel.searchContent(): content Obtained', function(event, data) {
                 ctrl.uploadedResults = ctrl.getContent();
-                console.log(ctrl.uploadedResults);
             });
 
             scope.getImage = function() {
