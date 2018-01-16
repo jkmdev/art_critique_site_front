@@ -10,11 +10,14 @@
 
 	 <div id="user-comments" class="col-md-offset-2 col-md-8" ng-repeat="content in userComments">
 	 	<div class="row">
-			<div class="user-comments-arrows col-md-2">
-				<div class="row user-comments-uparrow">
+			<div class="user-comments-arrows col-md-1">
+				<div class="row user-comments-uparrow" ng-click="increaseScore(content)">
 				</div>
-				<div class="row user-comments-downarrow">
+				<div class="row user-comments-downarrow" ng-click="decreaseScore(content)">
 				</div>
+	 		</div>
+	 		<div class="user-comment-score col-md-1">
+	 			{{content.rating}}
 	 		</div>
 	 		<div class="user-comment col-md-10">
 		 		{{content.comment}}

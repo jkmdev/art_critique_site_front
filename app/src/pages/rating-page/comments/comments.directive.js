@@ -26,6 +26,14 @@
 
         function link(scope, element, attrs, ctrl) {
 
+            scope.increaseScore = function(content) {
+                content.rating++;
+            }
+
+            scope.decreaseScore = function(content) {
+                content.rating--;
+            }
+
         }
 
 	}

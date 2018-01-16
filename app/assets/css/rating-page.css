@@ -124,7 +124,7 @@
 #current-comment-cont {
   margin-top: 20px;
   margin-bottom: 60px;
-  border: 2px solid #86C232;
+  border: 1px solid black;
 }
 
 user-comments-cont {
@@ -146,7 +146,7 @@ user-comments-cont {
 
 #user-comments {
 /*  padding: 10px;*/
-  border: 2px solid #86C232;
+  border: 1px solid black;
 /*  font-size: 14px;
   height: 100px;*/
 /*  background-color: blue; */
@@ -154,22 +154,30 @@ user-comments-cont {
 
 .user-comments-arrows {
   height: 80px;
-  border: 2px solid #86C232;
+  border: 1px solid black;
 /*  background-color: green;*/
+}
+
+.user-comment-score {
+  height: 80px;
+  border: 1px solid black;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 80px;
 }
 
 .user-comments-downarrow {
   height: 50%;
-  border: 2px solid #86C232;
+  border: 1px solid black;
 }
 
 .user-comments-uparrow {
   height: 50%;
-  border: 2px solid #86C232;
+  border: 1px solid black;
 }
 
 .user-comment {
-  border: 2px solid #86C232;
+  border: 1px solid black;
 /*  margin: 20px;*/
 }
 
