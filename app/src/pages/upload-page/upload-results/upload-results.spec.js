@@ -1,18 +1,19 @@
 
-describe('Upload Results Directive', function() {
+describe('imgUploadResults directive: ', function() {
 
- 	var elem, ctrl, scope;
+ 	var elem, ctrl, scope, modal;
 
- 	var httpBackend, $compile, $rootScope;
+ 	var httpBackend, $compile, $rootScope, $document;
 
 	beforeEach(module('app.upload-page')); //include module
 	beforeEach(module('templates')); //include precompiled templates
 
-	beforeEach(inject(function ($httpBackend, $http, _$rootScope_,_$controller_,_$compile_) {
+	beforeEach(inject(function (_$uibModal_, $httpBackend, $http, _$rootScope_,_$controller_,_$compile_, _$document_) {
 
 		//init
 		$rootScope = _$rootScope_;
 		$compile = _$compile_;
+		$document = _$document_;
 		scope = $rootScope.$new();
 
 		//controller
@@ -24,12 +25,22 @@ describe('Upload Results Directive', function() {
 		$rootScope.results = content;
 		$rootScope.$digest();
 
+		//modal
+		modal = _$uibModal_;
+  		spyOn(modal, 'open').and.callFake(function(){
+            //actualOptions = options;
+            return fakeModal;
+        });
+
+  		//other
+  		// content[0].contentTitle = 'Hey';
+    // 	$rootScope.$digest();
+    // 	dump(content);
+    // 	console.log(images.eq(1).attr('ng-src'));
+
 	}));
 
 	afterEach(function() {
-        // httpBackend.verifyNoOutstandingExpectation();
-        // httpBackend.verifyNoOutstandingRequest();
-        // httpBackend.flush();
     });
 
     it('should iterate over an array of results objects', function() {
@@ -51,78 +62,95 @@ describe('Upload Results Directive', function() {
     	expect(divs.eq(7).text().trim()).toEqual('image_3.jpg');
     });
 
-    it('it must allow me to view more details about the submission when I click on it', function() {
+    it('trigger modal when result is clicked', function() {
+    	elem.find('img-result').eq(1).triggerHandler('click');
+    	expect(modal.open).toHaveBeenCalled();
+    });
+
+    it('modal displays data about result', function() {
     	
-    	//console.log(elem.html());
-    	//viewDetails function fires after button being clicked
-    	//triggers a modal
-    	//modal will display more details about submission
     });
 
 });
 
 //mocked data
 
-
 var content =	[
+	{"contentId": 1,
+	 "contentTitle":"image_1.jpg",
+	 "uploaderId": 123,
+	 "dateUploaded": 1991,
+	 "uploaderComments": 
+	 	{"goal": "create best other", "need": "Not sure.", "other": "..."}
+	 ,
+	 "userComments": [
+	 	{
+	 		"comment": "This is one comment. Good, bad, ugly, anything.",
+	 		"rating": 4
+	 	},
+	 	{
+	 		"comment": "Hey there, love your stuff!",
+	 		"rating": 6
+	 	}
+	 ]
+	},
 
-		{"contentId": 1,
-		 "contentTitle":"image_1.jpg",
-		 "uploaderId": 123,
-		 "dateUploaded": 1991,
-		 "uploaderComments": 
-		 	{"goal": "create best other", "need": "Not sure.", "other": "..."}
-		 ,
-		 "userComments": [
-		 	{
-		 		"comment": "This is one comment. Good, bad, ugly, anything.",
-		 		"rating": 4
-		 	},
-		 	{
-		 		"comment": "Hey there, love your stuff!",
-		 		"rating": 6
-		 	}
-		 ]
-		},
+	{"contentId": 2,
+	 "contentTitle":"image_2.jpg",
+	 "uploaderId": 123,
+	 "dateUploaded": 1990,
+	 "uploaderComments":
+	 	{"goal": "Better linework", "need": "Crit on linework.", "other": "Not sure what to put here. :/"}
+	 ,
+	 "userComments": [
+	 	{
+	 		"comment": "What my foundation was. A war that was based on discrimination. Kendrick Lamar alight...",
+	 		"rating": 4
+	 	},
+	 	{
+	 		"comment": "Ayyo",
+	 		"rating": 6
+	 	}
+	 ]
+	},
 
-		{"contentId": 2,
-		 "contentTitle":"image_2.jpg",
-		 "uploaderId": 123,
-		 "dateUploaded": 1990,
-		 "uploaderComments":
-		 	{"goal": "Better linework", "need": "Crit on linework.", "other": "Not sure what to put here. :/"}
-		 ,
-		 "userComments": [
-		 	{
-		 		"comment": "What my foundation was. A war that was based on discrimination. Kendrick Lamar alight...",
-		 		"rating": 4
-		 	},
-		 	{
-		 		"comment": "Ayyo",
-		 		"rating": 6
-		 	}
-		 ]
-		},
+	{"contentId": 3,
+	 "contentTitle":"image_3.jpg",
+	 "uploaderId": 123,
+	 "dateUploaded": 1992,
+	 "uploaderComments":
+	 	{"goal": "Be better than DaVinci himself", "need": "to git gud", "other": "Wish my linework was better..."}
+	 ,
+	 "userComments": [
+	 	{
+	 		"comment": "I leik it.",
+	 		"rating": 4
+	 	},
+	 	{
+	 		"comment": "Daaaaa daaaaaa daaaaa daaaaa daaaaaa!",
+	 		"rating": 6
+	 	}
+	  ]
+	}
+];
 
-		{"contentId": 3,
-		 "contentTitle":"image_3.jpg",
-		 "uploaderId": 123,
-		 "dateUploaded": 1992,
-		 "uploaderComments":
-		 	{"goal": "Be better than DaVinci himself", "need": "to git gud", "other": "Wish my linework was better..."}
-		 ,
-		 "userComments": [
-		 	{
-		 		"comment": "I leik it.",
-		 		"rating": 4
-		 	},
-		 	{
-		 		"comment": "Daaaaa daaaaaa daaaaa daaaaa daaaaaa!",
-		 		"rating": 6
-		 	}
-		 ]
-		}
-	];
+var fakeModal = {
+    result: {
+        then: function (confirmCallback, cancelCallback) {
+            //Store the callbacks for later when the user clicks on the OK or Cancel button of the dialog
+            this.confirmCallBack = confirmCallback;
+            this.cancelCallback = cancelCallback;
+        }
+    },
+    close: function (item) {
+        //The user clicked OK on the modal dialog, call the stored confirm callback with the selected item
+        this.result.confirmCallBack(item);
+    },
+    dismiss: function (type) {
+        //The user clicked cancel on the modal dialog, call the stored cancel callback
+        this.result.cancelCallback(type);
+    }
+};
 
 //REFERENCES
 

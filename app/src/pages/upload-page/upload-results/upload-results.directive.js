@@ -9,9 +9,9 @@
         .directive('imgUploadResults', imgUploadResults)
         .controller('UploadResultsCtrl', UploadResultsCtrl);
 
-    //imgRatingPage.$inject = [];
+    imgUploadResults.$inject = ['$uibModal'];
 
-    function imgUploadResults() {
+    function imgUploadResults($uibModal) {
 
         var directive = {
             bindToController: true,
@@ -36,6 +36,23 @@
             // scope.getImage = function() {
             //     return ctrl.image;
             // }
+
+            scope.viewDetails = function(result) {
+                // var parentElem = parentSelector ? 
+                // angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+                //console.log(ctrl.result);
+                var modalInstance = $uibModal.open({
+                  templateUrl: 'src/pages/upload-page/upload-results/result/result-modal.view.html',
+                  controllerAs: 'vm',
+                  size: 'sm',
+                  appendTo: element,
+                  controller: function () {
+                    var vm = this;
+                    vm.result = result; 
+                  }
+                });
+
+            }
             
         }
 

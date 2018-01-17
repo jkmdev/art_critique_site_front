@@ -32,25 +32,9 @@
             scope.result = '?????';
 
             scope.$watch('vm.results', function(newValue) {
-                console.log(newValue);
+                //console.log(newValue);
             });
 
-            scope.viewDetails = function(size, parentSelector) {
-                var parentElem = parentSelector ? 
-                angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
-                console.log(ctrl.result);
-                var modalInstance = $uibModal.open({
-                  templateUrl: 'src/pages/upload-page/upload-results/result/result-modal.view.html',
-                  controllerAs: 'vm',
-                  size: 'sm',
-                  appendTo: element,
-                  controller: function () {
-                    var vm = this;
-                    vm.result = ctrl.result; 
-                  }
-                });
-
-            }
         }
     }
 
