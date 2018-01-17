@@ -1,8 +1,3 @@
-//As an artist, I want to be able to view my previous submissions and information about them
-//it must show all previous submissions
-//submissions must be in order of date
-//it must allow me to view more details about that submission when I click on it
-
 
 describe('Upload Results Directive', function() {
 
@@ -15,14 +10,19 @@ describe('Upload Results Directive', function() {
 
 	beforeEach(inject(function ($httpBackend, $http, _$rootScope_,_$controller_,_$compile_) {
 
+		//init
 		$rootScope = _$rootScope_;
-		scope = $rootScope.$new();
-		ctrl = _$controller_('UploadCtrl', {$scope: scope}, {results: content});
 		$compile = _$compile_;
-		elem = $compile('<img-upload-results></img-upload-results>')($rootScope);
-		$rootScope.$digest();
+		scope = $rootScope.$new();
+
+		//controller
+		ctrl = _$controller_('UploadCtrl', {$scope: scope}, {results: content});
 		
-		//https://docs.angularjs.org/api/ng/function/angular.element#angular-s-jqlite
+
+		//dom
+		elem = $compile('<img-upload-results results="results"></img-upload-results>')($rootScope);
+		$rootScope.results = content;
+		$rootScope.$digest();
 
 	}));
 
@@ -32,23 +32,32 @@ describe('Upload Results Directive', function() {
         // httpBackend.flush();
     });
 
-    // it('it must show all valid previous submissions, sorted by date', function() {
-    // 	//obtains json of previous submissions	
-    // 		// expect(ctrl.results).toBeDefined();
-    // 		// expect(ctrl.results[0].dateUploaded).toBe(1990);
-    // 		// expect(ctrl.results[1].dateUploaded).toBe(1991);
-    // 		// expect(ctrl.results[2].dateUploaded).toBe(1992);
+    it('should iterate over an array of results objects', function() {
+    	expect(ctrl.results).toBeDefined();
+    	expect(elem.find('img').length).toEqual(3);
+    });
 
-    // 	//add objects to dom
-    // 		//this might need to be tested in a sub-component where it can be better
-    // 		//controlled for
-    // });
+    it('should show images associated with submissions', function() {
+    	var images = elem.find('img');
+    	expect(images.eq(0).attr('ng-src')).toEqual('../assets/images/image_2.jpg');
+    	expect(images.eq(1).attr('ng-src')).toEqual('../assets/images/image_1.jpg');
+    	expect(images.eq(2).attr('ng-src')).toEqual('../assets/images/image_3.jpg');
+    });
 
-    // it('it must allow me to view more details about the submission when I click on it', function() {
-    // 	//viewDetails function fires after button being clicked
-    // 	//triggers a modal
-    // 	//modal will display more details about submission
-    // });
+    it('should display title associated with submissions, sorted by date', function() {
+    	var divs = elem.find('div');
+    	expect(divs.eq(2).text().trim()).toEqual('image_2.jpg');
+    	expect(divs.eq(4).text().trim()).toEqual('image_1.jpg');
+    	expect(divs.eq(7).text().trim()).toEqual('image_3.jpg');
+    });
+
+    it('it must allow me to view more details about the submission when I click on it', function() {
+    	
+    	//console.log(elem.html());
+    	//viewDetails function fires after button being clicked
+    	//triggers a modal
+    	//modal will display more details about submission
+    });
 
 });
 
@@ -114,3 +123,10 @@ var content =	[
 		 ]
 		}
 	];
+
+//REFERENCES
+
+	//https://docs.angularjs.org/api/ng/function/angular.element#angular-s-jqlite
+	
+	//examples of how an iterative directive should be tested: 
+		//https://github.com/angular/angular.js/blob/master/test/ng/directive/ngRepeatSpec.js

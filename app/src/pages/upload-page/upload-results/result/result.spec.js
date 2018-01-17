@@ -1,6 +1,6 @@
 
 
-describe('Upload Results Directive', function() {
+describe('Upload Result Directive', function() {
 
  	var elem, ctrl, scope, modal;
 
@@ -9,22 +9,26 @@ describe('Upload Results Directive', function() {
 	beforeEach(module('app.upload-page')); //include module
 	beforeEach(module('templates')); //include precompiled templates
 
-	beforeEach(inject(function (_$uibModal_,$httpBackend, $http, _$rootScope_,_$controller_,_$compile_) {
+	beforeEach(inject(function (_$uibModal_, $httpBackend, $http, _$rootScope_,_$controller_,_$compile_) {
 		
+		//init variables
 		$rootScope = _$rootScope_;
-		modal = _$uibModal_;
-		scope = $rootScope.$new();
-		ctrl = _$controller_('ResultCtrl', {$scope: scope}, {result: content});
 		$compile = _$compile_;
+		scope = $rootScope.$new();
+
+		//controller
+		ctrl = _$controller_('ResultCtrl', {$scope: scope}, {result: content});
 		
-		$rootScope.result = content;
+
+		//dom
+		
 		elem = $compile('<img-result result="content"></img-result>')($rootScope);
+		$rootScope.result = content;
 		$rootScope.$digest();
 
-		spyOn(modal, 'open').and.callFake(function(options){
-            actualOptions = options;
-            return fakeModal;
-        });
+  		//modal
+  		modal = _$uibModal_;
+  		spyOn(modal, 'open').and.callThrough();
 
 
 
@@ -34,43 +38,48 @@ describe('Upload Results Directive', function() {
 
 	}));
 
-    it('it must show the image as well as its title', function() {
-    	expect(ctrl.result).toBeDefined();
-    	// console.log(ctrl.result);
-    	// console.log(elem.find('div')[]);
-    	//expect(elem.html()).toContain('image_1.jpg');
-    	//elem.find('div')[0].click();
-    });
-
-    // it('it must display an error message if the content is invalid', function() {
-    // 	// ctrl.result.contentTitle = 123;
-    // 	// expect(ctrl.isValid).toBe(false);
+    // it('it must show the image as well as its title', function() {
+    // 	expect(ctrl.result).toBeDefined();
+    // 	//dump(elem.html());
+    // 	//console.log(ctrl.result);
+    // 	//expect(elem.attr('ng-src')).toBe('hey');
+    // 	//console.log(elem.attr('class'));
+    // 	//console.log(elem.find('div')[0]);
+    // 	//expect(elem.html()).toContain('image_1.jpg');
+    // 	//elem.find('div')[0].click();
     // });
 
-    it('it create a modal when viewDetails is triggered', function() {
-    	//ctrl.
-    });
+    // // it('it must display an error message if the content is invalid', function() {
+    // // 	// ctrl.result.contentTitle = 123;
+    // // 	// expect(ctrl.isValid).toBe(false);
+    // // });
+
+    // it('it creates a modal when viewDetails is triggered', function() {
+    // 	expect(modal.open).not.toHaveBeenCalled();
+    // 	//elem.find('div')[0].triggerHandler('click');
+    // 	//expect(modal.open).toHaveBeenCalled();
+    // });
 
 });
 
 //mocked data
 
 var content =	{
-	 "contentId": 1,
-	 "contentTitle":"image_1.jpg",
-	 "uploaderId": 123,
-	 "dateUploaded": 1991,
-	 "uploaderComments": 
-	 	{"goal": "create best other", "need": "Not sure.", "other": "..."}
+	 contentId: 1,
+	 contentTitle:"image_1.jpg",
+	 uploaderId: 123,
+	 dateUploaded: 1991,
+	 uploaderComments: 
+	 	{goal: "create best other", need: "Not sure.", other: "..."}
 	 ,
-	 "userComments": [
+	 userComments: [
 	 	{
-	 		"comment": "This is one comment. Good, bad, ugly, anything.",
-	 		"rating": 4
+	 		comment: "This is one comment. Good, bad, ugly, anything.",
+	 		rating: 4
 	 	},
 	 	{
-	 		"comment": "Hey there, love your stuff!",
-	 		"rating": 6
+	 		comment: "Hey there, love your stuff!",
+	 		rating: 6
 	 	}
 	 ]
 };
