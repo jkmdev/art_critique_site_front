@@ -29,16 +29,21 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'app/src/**/*.view.html': ['ng-html2js']
+      'app/src/**/*.view.html': ['ng-html2js'],
+      'app/src/**/*.spec.js': ['coverage']
     },
 
-    ngHtml2JsPreprocessor: {
-      //stripPrefix: 'build/',
-      stripPrefix: 'app/',
-      moduleName: 'templates'
-    },
+    ngHtml2JsPreprocessor: 
+      {
+        stripPrefix: 'app/',
+        moduleName: 'templates'
+      },
+      // {
+      //   '**/lib/*.js': 'coverage'
+      // }
+    
 
-    reporters: ['progress'],
+    reporters: ['progress', 'coverage'],
 
         // list of files to exclude
     // exclude: [

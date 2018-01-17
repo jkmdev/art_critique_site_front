@@ -33,10 +33,10 @@ describe('imgUploadResults directive: ', function() {
         });
 
   		//other
-  		// content[0].contentTitle = 'Hey';
-    // 	$rootScope.$digest();
-    // 	dump(content);
-    // 	console.log(images.eq(1).attr('ng-src'));
+	  		// content[0].contentTitle = 'Hey';
+		    // 	$rootScope.$digest();
+		    // 	dump(content);
+		    // 	console.log(images.eq(1).attr('ng-src'));
 
 	}));
 
@@ -65,10 +65,6 @@ describe('imgUploadResults directive: ', function() {
     it('trigger modal when result is clicked', function() {
     	elem.find('img-result').eq(1).triggerHandler('click');
     	expect(modal.open).toHaveBeenCalled();
-    });
-
-    it('modal displays data about result', function() {
-    	
     });
 
 });
