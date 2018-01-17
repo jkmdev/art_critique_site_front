@@ -25,7 +25,7 @@
 				//console.log('searchContent() runs');
 				return $http.get(URLS.allContent)
 					.then(function (result) {
-						console.log('searched');
+						//console.log('searched');
 						allContent = result.data;
 						//console.log('searchContent() callback runs');
 						$rootScope.$broadcast("ContentModel.searchContent(): content Obtained");

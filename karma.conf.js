@@ -16,6 +16,7 @@ module.exports = function(config) {
       'bower_components/ng-file-upload-shim/ng-file-upload-shim.min.js',
       'bower_components/ng-file-upload/ng-file-upload.js',
       'bower_components/angular-bootstrap/ui-bootstrap.min.js',
+      'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
       'app/app.module.js',
       'app/src/models/*.model.js',
       'app/src/**/*.module.js',
@@ -69,7 +70,6 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
 
 
     // Continuous Integration mode

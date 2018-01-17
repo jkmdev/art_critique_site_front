@@ -30,7 +30,7 @@
         function link(scope, element, attrs, ctrl) {
 
             scope.$watch('vm.image', function(newValue) {
-                console.log(newValue);
+                //console.log(newValue);
             });
 
             scope.$on('UserModel.searchContent(): content Obtained', function(event, data) {

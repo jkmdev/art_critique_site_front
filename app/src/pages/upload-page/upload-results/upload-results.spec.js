@@ -32,23 +32,23 @@ describe('Upload Results Directive', function() {
         // httpBackend.flush();
     });
 
-    it('it must show all valid previous submissions, sorted by date', function() {
-    	//obtains json of previous submissions	
-    		// expect(ctrl.results).toBeDefined();
-    		// expect(ctrl.results[0].dateUploaded).toBe(1990);
-    		// expect(ctrl.results[1].dateUploaded).toBe(1991);
-    		// expect(ctrl.results[2].dateUploaded).toBe(1992);
+    // it('it must show all valid previous submissions, sorted by date', function() {
+    // 	//obtains json of previous submissions	
+    // 		// expect(ctrl.results).toBeDefined();
+    // 		// expect(ctrl.results[0].dateUploaded).toBe(1990);
+    // 		// expect(ctrl.results[1].dateUploaded).toBe(1991);
+    // 		// expect(ctrl.results[2].dateUploaded).toBe(1992);
 
-    	//add objects to dom
-    		//this might need to be tested in a sub-component where it can be better
-    		//controlled for
-    });
+    // 	//add objects to dom
+    // 		//this might need to be tested in a sub-component where it can be better
+    // 		//controlled for
+    // });
 
-    it('it must allow me to view more details about the submission when I click on it', function() {
-    	//viewDetails function fires after button being clicked
-    	//triggers a modal
-    	//modal will display more details about submission
-    });
+    // it('it must allow me to view more details about the submission when I click on it', function() {
+    // 	//viewDetails function fires after button being clicked
+    // 	//triggers a modal
+    // 	//modal will display more details about submission
+    // });
 
 });
 

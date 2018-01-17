@@ -28,7 +28,7 @@
 			}
 
 			model.uploadImage = function uploadImage(image) {
-				console.log(image);
+				//console.log(image);
 				Upload.upload({
 		            url: 'assets/images',
 		            data: {file: image, 'username': 'test'}
@@ -45,7 +45,7 @@
 			model.searchContent = function(userId) {
 				//searches database; select * from contentTable where userId = userId
 				return $http.get(URLS.userContent).then(function (result) {
-						console.log(result.data);
+						//console.log(result.data);
 						model.userContent = result.data;	
 						$rootScope.$broadcast("UserModel.searchContent(): content Obtained");
 				});

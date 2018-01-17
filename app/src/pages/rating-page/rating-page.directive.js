@@ -69,8 +69,8 @@
 
             vm.content = ContentModel.getContent()[vm.currentIndex];
 
-            console.log('content:');
-            console.log(vm.content);
+            // console.log('content:');
+            // console.log(vm.content);
 
             if (vm.content !== undefined) { 
                vm.content.uploaderText = vm.content.uploaderComments.goal;
