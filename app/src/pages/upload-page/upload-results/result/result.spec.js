@@ -22,13 +22,15 @@ describe('Upload Result Directive', function() {
 
 		//dom
 		
-		elem = $compile('<img-result result="content"></img-result>')($rootScope);
-		$rootScope.result = content;
+		elem = $compile('<img-result result="result"></img-result>')($rootScope);
+		$rootScope.result = mockResult;
 		$rootScope.$digest();
 
   		//modal
-  		modal = _$uibModal_;
-  		spyOn(modal, 'open').and.callThrough();
+  		// modal = _$uibModal_;
+  		// spyOn(modal, 'open').and.callThrough();
+
+  		//dump(angular.mock.dump(elem.isolateScope()));
 
 
 
@@ -38,16 +40,13 @@ describe('Upload Result Directive', function() {
 
 	}));
 
-    // it('it must show the image as well as its title', function() {
-    // 	expect(ctrl.result).toBeDefined();
-    // 	//dump(elem.html());
-    // 	//console.log(ctrl.result);
-    // 	//expect(elem.attr('ng-src')).toBe('hey');
-    // 	//console.log(elem.attr('class'));
-    // 	//console.log(elem.find('div')[0]);
-    // 	//expect(elem.html()).toContain('image_1.jpg');
-    // 	//elem.find('div')[0].click();
-    // });
+    it('it must show the image associated with the submission', function() {
+    	expect(elem.find('img').attr('ng-src')).toEqual('../assets/images/image_1.jpg');
+    });
+
+    it('it must show the text associated with a submission', function() {
+    	expect(elem.find('div').eq(1).text().trim()).toBe('image_1.jpg');
+    });
 
     // // it('it must display an error message if the content is invalid', function() {
     // // 	// ctrl.result.contentTitle = 123;
@@ -64,7 +63,7 @@ describe('Upload Result Directive', function() {
 
 //mocked data
 
-var content =	{
+var mockResult = {
 	 contentId: 1,
 	 contentTitle:"image_1.jpg",
 	 uploaderId: 123,
@@ -84,31 +83,31 @@ var content =	{
 	 ]
 };
 
-var fakeModal = {
-    result: {
-        then: function (confirmCallback, cancelCallback) {
-            //Store the callbacks for later when the user clicks on the OK or Cancel button of the dialog
-            this.confirmCallBack = confirmCallback;
-            this.cancelCallback = cancelCallback;
-        }
-    },
-    close: function (item) {
-        //The user clicked OK on the modal dialog, call the stored confirm callback with the selected item
-        this.result.confirmCallBack(item);
-    },
-    dismiss: function (type) {
-        //The user clicked cancel on the modal dialog, call the stored cancel callback
-        this.result.cancelCallback(type);
-    }
-};
+// var fakeModal = {
+//     result: {
+//         then: function (confirmCallback, cancelCallback) {
+//             //Store the callbacks for later when the user clicks on the OK or Cancel button of the dialog
+//             this.confirmCallBack = confirmCallback;
+//             this.cancelCallback = cancelCallback;
+//         }
+//     },
+//     close: function (item) {
+//         //The user clicked OK on the modal dialog, call the stored confirm callback with the selected item
+//         this.result.confirmCallBack(item);
+//     },
+//     dismiss: function (type) {
+//         //The user clicked cancel on the modal dialog, call the stored cancel callback
+//         this.result.cancelCallback(type);
+//     }
+// };
 
-var modalOptions = {
-    templateUrl: 'src/pages/upload-page/upload-results/result/result-modal.view.html',
-	  controllerAs: 'vm',
-	  size: 'sm',
-	  //appendTo: element,
-	  controller: function () {
-	    var vm = this;
-	    vm.result = ctrl.result; 
-	  }
-	};
+// var modalOptions = {
+//     templateUrl: 'src/pages/upload-page/upload-results/result/result-modal.view.html',
+// 	  controllerAs: 'vm',
+// 	  size: 'sm',
+// 	  //appendTo: element,
+// 	  controller: function () {
+// 	    var vm = this;
+// 	    vm.result = ctrl.result; 
+// 	  }
+// 	};
