@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for upload-page\uploader\uploader.spec.js</title>
+    <title>Code coverage report for rating-page\carousel\carousel.spec.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -16,13 +16,13 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../index.html">all files</a> / <a href="index.html">upload-page/uploader/</a> uploader.spec.js
+      <a href="../../index.html">all files</a> / <a href="index.html">rating-page/carousel/</a> carousel.spec.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>10/10</span>
+        <span class='fraction'>17/17</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>10/10</span>
+        <span class='fraction'>17/17</span>
       </div>
     </div>
   </div>
@@ -70,7 +70,17 @@
 25
 26
 27
-28</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
@@ -82,55 +92,75 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
-describe('Uploader Directive', function() {
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
+describe('imgCarousel directive: ', function() {
 &nbsp;
- 	var elem, ctrl, scope;
+ 	var elem, ctrl, scope, modal;
 &nbsp;
- 	var httpBackend;
+ 	var httpBackend, $compile, $rootScope, $document;
 &nbsp;
-	beforeEach(module('app.upload-page')); //include module
+	beforeEach(module('app.rating-page')); //include module
 	beforeEach(module('templates')); //include precompiled templates
 &nbsp;
-	beforeEach(inject(function ($httpBackend, $http, $rootScope,_$controller_) {
+	beforeEach(inject(function ($httpBackend, $http, _$rootScope_,_$controller_,_$compile_, _$document_) {
 &nbsp;
+		//init
+		$rootScope = _$rootScope_;
+		$compile = _$compile_;
+		$document = _$document_;
 		scope = $rootScope.$new();
-		ctrl = _$controller_('UploadCtrl', {$scope: scope});
+&nbsp;
+		//dom
+		elem = $compile(' &lt;img-carousel uploader-text="uploaderText" content-title="image_1.jpg"&gt;&lt;/img-carousel&gt;')($rootScope);
+		$rootScope.uploaderText = uploaderText;
+		$rootScope.$digest();
 &nbsp;
 	}));
 &nbsp;
 	afterEach(function() {
-        // httpBackend.verifyNoOutstandingExpectation();
-        // httpBackend.verifyNoOutstandingRequest();
-        // httpBackend.flush();
     });
 &nbsp;
-    it('should upload a new image to the view model', function() {
-&nbsp;
+    it('should iterate over an array of results objects', function() {
+    	//console.log(elem.html());
+    	console.log(elem);
     });
 &nbsp;
-});</pre></td></tr>
+});
+&nbsp;
+//mocked data
+&nbsp;
+var uploaderText = {"goal": "create best other", "need": "Not sure.", "other": "..."};</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Jan 20 2018 22:27:48 GMT-0500 (Eastern Standard Time)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Jan 20 2018 22:13:38 GMT-0500 (Eastern Standard Time)
 </div>
 </div>
 <script src="../../prettify.js"></script>

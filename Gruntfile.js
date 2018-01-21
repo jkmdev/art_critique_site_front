@@ -11,8 +11,6 @@
 			  unit: {
 				configFile: 'karma.conf.js',
 				port: 9999,
-				singleRun: true,
-				browsers: ['PhantomJS'],
 				colors: false,
 				logLevel: 'ERROR'
 			  }

@@ -18,6 +18,10 @@ describe('imgUploadResults directive: ', function() {
 
 		//controller
 		ctrl = _$controller_('UploadCtrl', {$scope: scope}, {results: content});
+		httpBackend = $httpBackend;
+        httpBackend.whenGET('src/data/content.json').respond(
+            200, mockedContent
+        );
 		
 
 		//dom
