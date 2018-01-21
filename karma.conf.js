@@ -57,16 +57,16 @@ module.exports = function(config) {
 
 
     // web server port
-    //port: 9999,
+    port: 9999,
 
 
     // enable / disable colors in the output (reporters and logs)
-    
+    colors: false,
 
 
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-   // logLevel: config.LOG_INFO,
+    logLevel: config.LOG_INFO,
 
 
     // enable / disable watching file and executing tests whenever any file changes

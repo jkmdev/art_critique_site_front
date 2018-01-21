@@ -9,10 +9,7 @@
 	          //grunt task configuration will go here     
 			karma: {  
 			  unit: {
-				configFile: 'karma.conf.js',
-				port: 9999,
-				colors: false,
-				logLevel: 'ERROR'
+				configFile: 'karma.conf.js'
 			  }
 			}
 	    });
