@@ -23,7 +23,7 @@ describe('imgCarousel directive: ', function() {
 
 
 		//controller
-		 ctrl = _$controller_('RatingCtrl', {$scope: scope});
+		 ctrl = _$controller_('RatingCtrl', {$scope: scope}, {content: mockedContent});
 
 		//dom
 		elem = $compile('<img-rating-page><img-carousel uploader-text="uploaderText" content-title="image_3.jpg"></img-carousel></img-rating-page>')($rootScope);

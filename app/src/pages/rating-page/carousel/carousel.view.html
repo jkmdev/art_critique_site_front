@@ -13,8 +13,8 @@
       </div>
     </div>
 
-    <div class="col-md-8" id="uploader-text"> <!--TURN THIS INTO A UI BOOTSTRAP CAROSEL-->
-      {{uploaderText}}
+    <div class="col-md-8" id="vm.content.uploader-text"> <!--TURN THIS INTO A UI BOOTSTRAP CAROSEL-->
+      {{vm.content.uploaderText}}
     </div>
 
   </div>
@@ -23,9 +23,9 @@
 
     <div class="image-continer">
 
-      <img ng-show="contentTitle" ng-src="../assets/images/{{contentTitle}}" class="absolute-center animated fadeIn img-responsive center-block image-content">
+      <img ng-show="vm.content.contentTitle" ng-src="../assets/images/{{vm.content.contentTitle}}" class="absolute-center animated fadeIn img-responsive center-block image-content">
 
-      <div ng-show="!contentTitle" class="loading-text">No images to display...</div>
+      <div ng-show="!vm.content.contentTitle" class="loading-text">No images to display...</div>
 
       <span class="col-md-offset-2 col-md-8" id="no-image" ng-bind="image.empty"> 
       </span>

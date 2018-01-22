@@ -30,7 +30,7 @@ module.exports = function(config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
       'app/src/**/*.view.html': ['ng-html2js'],
-      'app/src/**/*.spec.js': ['coverage']
+      'app/src/pages/**/*.js': ['coverage']
     },
 
     ngHtml2JsPreprocessor: 
@@ -44,6 +44,15 @@ module.exports = function(config) {
     
 
     reporters: ['progress', 'coverage'],
+
+     coverageReporter: {
+            includeAllSources: true,
+            dir: 'coverage2/',
+            reporters: [
+                { type: "html", subdir: "html" },
+                { type: 'text-summary' }
+            ]
+        },
 
         // list of files to exclude
     // exclude: [
