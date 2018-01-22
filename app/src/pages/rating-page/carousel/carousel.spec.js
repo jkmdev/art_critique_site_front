@@ -15,26 +15,35 @@ describe('imgCarousel directive: ', function() {
 		$compile = _$compile_;
 		$document = _$document_;
 		scope = $rootScope.$new();
+		httpBackend = $httpBackend;
+
+		 httpBackend.whenGET('src/data/content.json').respond(
+            200, mockedContent
+        );
+
 
 		//controller
 		 ctrl = _$controller_('RatingCtrl', {$scope: scope});
 
 		//dom
-		elem = $compile(' <img-carousel uploader-text="uploaderText" content-title="image_1.jpg"></img-carousel>')($rootScope);
+		elem = $compile('<img-rating-page><img-carousel uploader-text="uploaderText" content-title="image_3.jpg"></img-carousel></img-rating-page>')($rootScope);
 		$rootScope.uploaderText = uploaderText;
 		$rootScope.$digest();
 
 	}));
 
 	afterEach(function() {
-		httpBackend.verifyNoOutstandingExpectation();
-        httpBackend.verifyNoOutstandingRequest();
+		//httpBackend.verifyNoOutstandingExpectation();
+        //httpBackend.verifyNoOutstandingRequest();
         httpBackend.flush();
     });
 
     it('should iterate over an array of results objects', function() {
     	//console.log(elem.html());
-    	console.log(elem);
+    	var imgCarousel = elem.find('img-carousel');
+
+    	//console.log(elem.find('img-carousel'));
+    	console.log(dump(angular.mock.dump(elem.isolateScope())));
     });
 
 });
