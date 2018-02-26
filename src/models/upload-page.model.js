@@ -27,26 +27,30 @@
 				return model.user;
 			}
 
-			model.uploadImage = function uploadImage(image) {
-				//console.log(image);
-				Upload.upload({
-		            url: 'assets/images',
-		            data: {file: image, 'username': 'test'}
-		        }).then(function (resp) {
-		            console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
-		        }, function (resp) {
-		            console.log('Error status: ' + resp.status);
-		        }, function (evt) {
-		            var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-		            console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
-		        });
+			model.uploadImage = function uploadImage(file) {
+
+				//upload metaData
+				//then upload file?
+
+				console.log(file);
+				// Upload.upload({
+		    //         url: 'assets/images',
+		    //         data: {file: file, 'username': 'test'}
+		    //     }).then(function (resp) {
+		    //         console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
+		    //     }, function (resp) {
+		    //         console.log('Error status: ' + resp.status);
+		    //     }, function (evt) {
+		    //         var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+		    //         console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
+		    //     });
 			}
 
 			model.searchContent = function(userId) {
 				//searches database; select * from contentTable where userId = userId
 				return $http.get(URLS.userContent).then(function (result) {
 						//console.log(result.data);
-						model.userContent = result.data;	
+						model.userContent = result.data;
 						$rootScope.$broadcast("UserModel.searchContent(): content Obtained");
 				});
 
@@ -64,6 +68,5 @@
 			}
 
 		};
-	
-})();
 
+})();

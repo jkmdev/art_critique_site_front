@@ -17,33 +17,33 @@ module.exports = function(config) {
       'bower_components/ng-file-upload/ng-file-upload.js',
       'bower_components/angular-bootstrap/ui-bootstrap.min.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
-      'app/app.module.js',
-      'app/src/models/*.model.js',
-      'app/src/**/*.module.js',
-      'app/src/**/*.directive.js',
-      'app/src/**/*.view.html',
-      'app/src/**/*.spec.js',
-      {pattern:'app/src/data/*.json', included: false}
+      'src/app.module.js',
+      'src/models/*.model.js',
+      'src/**/*.module.js',
+      'src/**/*.directive.js',
+      'src/**/*.view.html',
+      'src/**/*.spec.js',
+      {pattern:'src/data/*.json', included: false}
     ],
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'app/src/**/*.view.html': ['ng-html2js'],
-      'app/src/pages/**/*.js': ['coverage']
+      'src/**/*.view.html': ['ng-html2js'],
+      'src/pages/**/*.js': ['coverage']
     },
 
-    ngHtml2JsPreprocessor: 
+    ngHtml2JsPreprocessor:
       {
-        stripPrefix: 'app/',
+        stripPrefix: 'src/',
         moduleName: 'templates'
       },
       // {
       //   '**/lib/*.js': 'coverage'
       // }
-    
 
-    reporters: ['progress', 'coverage'],
+
+     reporters: ['progress', 'coverage'],
 
      coverageReporter: {
             includeAllSources: true,

@@ -51,6 +51,6 @@ body {
   width: 100%;
 }
 
-
-
-
+.test-border {
+  border: 1px solid black;
+}

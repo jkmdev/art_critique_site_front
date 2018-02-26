@@ -1,6 +1,16 @@
-<div ngf-select="" ngf-drop="" ng-model="vm.image"  class="drop-box" ngf-drop-available="dropAvailable">Select File
+<!-- <div ngf-select=""
+		 ngf-drop=""
+		 ng-model="vm.image"
+		 class="drop-box"
+		 ngf-drop-available="dropAvailable">
+
+		 			Select File
 				  <span ng-show="dropAvailable"> or Drop File</span>
-				</div>
-				              
-				<button type="submit" ng-click="submit()">Submit</button>
-				{{vm.image.name}}
+
+</div> -->
+
+<input type="file" ngf-select="" ng-model="vm.image" name="file" ngf-accept="'image/*'" required="">
+
+<!-- <button type="submit" ng-click="submit()">Submit</button> -->
+{{vm.image.name}}
+{{vm.image}}

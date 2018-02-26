@@ -42,7 +42,7 @@
                 // angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
                 //console.log(ctrl.result);
                 var modalInstance = $uibModal.open({
-                  templateUrl: 'src/pages/upload-page/upload-results/result/result-modal.view.html',
+                  templateUrl: 'pages/upload-page/upload-results/result/result-modal.view.html',
                   controllerAs: 'vm',
                   size: 'sm',
                   appendTo: element,
