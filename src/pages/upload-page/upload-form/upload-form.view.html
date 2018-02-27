@@ -47,14 +47,28 @@
 
 <div class="row test-border">
 
-  <img-upload image="vm.image"></img-upload>
+  <!-- <img-upload image="vm.image"></img-upload> -->
 
-  <button type="submit" ng-click="submit()">Submit</button>
+  <!-- <button type="submit" ng-click="submit()">Submit</button> -->
 
   <div class="col-md-12">
-    {{vm.genre}}
-    {{vm.uploadForm}}
-    {{vm.uploadForm.image}}
+
+    <div class="col-md-6">
+
+      <input type="file" ngf-select="" ng-model="vm.picFile"
+      name="file" ngf-accept="'image/*'" required="">
+
+      <button type="submit" ng-click="vm.uploadImage(vm.picFile)">Submit</button>
+
+      {{vm.picFile}}
+      <!-- {{vm.uploadForm}} -->
+
+    </div>
+
+    <div class="col-md-6">
+        <img ngf-thumbnail="vm.picFile || '/thumb.jpg'">
+    </div>
+
   </div>
 
 </div>

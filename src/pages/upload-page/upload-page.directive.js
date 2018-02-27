@@ -1,4 +1,4 @@
-(function() {   
+(function() {
     'use strict';
 
     //Function: To facilitate operations between various components on rating
@@ -44,7 +44,7 @@
             scope.submit = function() {
                 ctrl.uploadImage(ctrl.image);
             }
-            
+
         }
 
 	}
@@ -68,8 +68,14 @@
         ///////////
 
         function activate() {
-            vm.user = UserModel.getUser(8);
-            UserModel.searchContent();
+            UserModel.getUserData().then(function(result) {
+              vm.user = result;
+              console.log(vm.user);
+            });
+
+            //vm.user = UserModel.getUserData();
+
+            //UserModel.searchContent();
         }
 
     }

@@ -40,6 +40,7 @@
         vm.uploadForm = {};
 
         vm.image = 'test';
+        vm.picFile = {};
 
         vm.uploadImage = UserModel.uploadImage;
 

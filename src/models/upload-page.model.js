@@ -10,12 +10,16 @@
 		function UserModel(Upload, $rootScope, $http) {
 
 			var model = this;
-			model.userContent = [];
+			model.userData = {};
+
 			var URLS = {
-				userContent: 'data/content.json'
+				baseUrl: 'http://localhost:8080/',
+				userContent: 'data/content.json',
+				getUserInfo: 'user/'
 			};
 
 			model.user = {
+				id: 1,
 				userName: 'ngelic',
 				imagesPosted: 6,
 				commentPoints: 2,
@@ -23,8 +27,13 @@
 				uploaderId: 123
 			};
 
-			model.getUser = function(id) {
-				return model.user;
+			model.getUserData = function() {
+				//return model.user;
+				return $http.get('http://localhost:8080/user/' + model.user.id)
+					.then(function(result) {
+						model.userData = result.data;
+						return model.userData;
+				});
 			}
 
 			model.uploadImage = function uploadImage(file) {
@@ -33,17 +42,18 @@
 				//then upload file?
 
 				console.log(file);
-				// Upload.upload({
-		    //         url: 'assets/images',
-		    //         data: {file: file, 'username': 'test'}
-		    //     }).then(function (resp) {
-		    //         console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
-		    //     }, function (resp) {
-		    //         console.log('Error status: ' + resp.status);
-		    //     }, function (evt) {
-		    //         var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-		    //         console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
-		    //     });
+				Upload.upload({
+		            url: 'assets/images',
+		            data: {file: file, 'username': 'test'}
+		        }).then(function (resp) {
+		            console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
+		        }, function (resp) {
+		            console.log('Error status: ' + resp.status);
+		        }, function (evt) {
+		            var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+		            console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
+		        });
+
 			}
 
 			model.searchContent = function(userId) {
