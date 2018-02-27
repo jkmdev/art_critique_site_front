@@ -1,11 +1,11 @@
 
 
-<p>{{vm.result.dateUploaded}}</p>
+<p>{{vm.result.title}}</p>
 
-<div ng-repeat="uploaderComment in vm.result.uploaderComments">
+<div ng-repeat="uploaderComment in vm.result.uploaderComment">
 	<p>{{uploaderComment}}</p>
 </div>
 
-<div ng-repeat="userComment in vm.result.userComments">
-	<p>{{userComment.rating}} : {{userComment.comment}}</p>
+<div ng-repeat="clientComment in vm.result.clientComments">
+	<p>{{clientComment.commentScore}} : {{clientComment.commentText}}</p>
 </div>
