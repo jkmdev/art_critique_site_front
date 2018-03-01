@@ -1,4 +1,4 @@
-(function() {   
+(function() {
     'use strict';
 
     //Function: To facilitate operations between various components on rating
@@ -29,8 +29,6 @@
 
         function link(scope, element, attrs, ctrl) {
 
-            scope.result = '?????';
-
             scope.$watch('vm.results', function(newValue) {
                 //console.log(newValue);
             });
@@ -57,7 +55,7 @@
 
         function modalController() {
             var vm = this;
-            vm.result = ctrl.result; 
+            vm.result = ctrl.result;
         }
 
     }

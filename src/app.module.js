@@ -12,7 +12,8 @@
             //'ngStorage'
         ])
 
-        .config(configure);
+        .config(configure)
+        .constant('table', table);
 
         configure.$inject = ['$stateProvider'];
 
@@ -39,6 +40,14 @@
             //url route provider for default page goes here
 
         }
+
+        function table () {
+          title: 'A title',
+          rows = [
+            [{value: 'Anime figures', type: 'title'}, {value:'animeValue', type: 'currency'}],
+            [{value: 'Comic Books', type: 'title'},{value:'comicValue', type: 'currency'}]
+          ]
+        };
 
 })();
 

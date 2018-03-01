@@ -1,4 +1,4 @@
-(function() {   
+(function() {
     'use strict';
 
     //Function: To facilitate operations between various components on rating
@@ -38,22 +38,22 @@
             // }
 
             scope.viewDetails = function(result) {
-                // var parentElem = parentSelector ? 
+                // var parentElem = parentSelector ?
                 // angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
                 //console.log(ctrl.result);
                 var modalInstance = $uibModal.open({
                   templateUrl: 'pages/upload-page/upload-results/result/result-modal.view.html',
                   controllerAs: 'vm',
-                  size: 'sm',
+                  size: 'lg',
                   appendTo: element,
                   controller: function () {
                     var vm = this;
-                    vm.result = result; 
+                    vm.result = result;
                   }
                 });
 
             }
-            
+
         }
 
     }

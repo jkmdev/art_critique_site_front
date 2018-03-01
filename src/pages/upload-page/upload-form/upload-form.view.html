@@ -8,7 +8,7 @@
   <div class="col-md-6">
       <!-- <select ng-model="vm.uploadForm.genre"
         ng-option="option.name for option in vm.genre.options track by option.id"> -->
-      <select ng-model="vm.uploadForm.genre">
+      <select ng-model="vm.uploadForm.type">
           <option ng-repeat="option in vm.genre.options" ng-value="option.name">
               {{option.name}}
           </option>
@@ -21,7 +21,7 @@
 <div class="row test-border">
 
   <div class="col-md-12">
-    <textarea ng-model="vm.uploadForm.goalComment">
+    <textarea ng-model="vm.uploadForm.uploaderComment.goalComment">
     </textarea>
   </div>
 
@@ -30,7 +30,7 @@
 <div class="row test-border">
 
   <div class="col-md-12">
-    <textarea ng-model="vm.uploadForm.needComment">
+    <textarea ng-model="vm.uploadForm.uploaderComment.needComment">
     </textarea>
   </div>
 
@@ -39,7 +39,7 @@
 <div class="row test-border">
 
   <div class="col-md-12">
-    <textarea ng-model="vm.uploadForm.otherComment">
+    <textarea ng-model="vm.uploadForm.uploaderComment.otherComment">
     </textarea>
   </div>
 
@@ -58,7 +58,7 @@
       <input type="file" ngf-select="" ng-model="vm.picFile"
       name="file" ngf-accept="'image/*'" required="">
 
-      <button type="submit" ng-click="vm.uploadImage(vm.picFile)">Submit</button>
+      <button type="submit" ng-click="vm.uploadImage(vm.uploadForm, vm.picFile)">Submit</button>
 
       {{vm.picFile}}
       <!-- {{vm.uploadForm}} -->

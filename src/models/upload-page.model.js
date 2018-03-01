@@ -36,24 +36,42 @@
 				});
 			}
 
-			model.uploadImage = function uploadImage(file) {
+			model.uploadImage = function uploadImage(metaData, file) {
 
-				//upload metaData
-				//then upload file?
+				console.log(metaData);
+				metaData.imageKey = file.name;
+				model.uploadImageMetaData(metaData);
+				// console.log(metaData);
+				// console.log(file);
 
-				console.log(file);
-				Upload.upload({
-		            url: 'assets/images',
-		            data: {file: file, 'username': 'test'}
-		        }).then(function (resp) {
-		            console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
-		        }, function (resp) {
-		            console.log('Error status: ' + resp.status);
-		        }, function (evt) {
-		            var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-		            console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
-		        });
+				// model.uploadImageMetaData(metaData).then(function(result) {
+				// 		console.log(result.data);
+				// });
 
+			}
+
+			model.uploadImageMetaData = function(metaData) {
+
+					return $http.post('http://localhost:8080/user/' + model.user.id + '/image', metaData)
+						.then(function(result) {
+							model.userData = result.data;
+							return model.userData;
+					});
+
+			}
+
+			model.uploadImageFile = function(file) {
+					Upload.upload({
+									url: 'assets/images',
+									data: {file: file, 'username': 'test'}
+							}).then(function (resp) {
+									console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
+							}, function (resp) {
+									console.log('Error status: ' + resp.status);
+							}, function (evt) {
+									var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+									console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
+							});
 			}
 
 			model.searchContent = function(userId) {
