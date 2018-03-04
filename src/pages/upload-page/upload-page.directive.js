@@ -70,7 +70,7 @@
         function activate() {
             UserModel.getUserData().then(function(result) {
               vm.user = result;
-              console.log(vm.user);
+              //console.log(vm.user);
             });
 
             //vm.user = UserModel.getUserData();

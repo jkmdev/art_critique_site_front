@@ -38,9 +38,14 @@
 
 			model.uploadImage = function uploadImage(metaData, file) {
 
-				console.log(metaData);
+				//console.log(metaData);
 				metaData.imageKey = file.name;
-				model.uploadImageMetaData(metaData);
+				model.uploadImageMetaData(metaData).then(function(result, status) {
+					console.log(result);
+					model.uploadImageFile(file, result.imageKey);
+				}).catch(function(result){
+					console.log(result);
+				});
 				// console.log(metaData);
 				// console.log(file);
 
@@ -60,18 +65,20 @@
 
 			}
 
-			model.uploadImageFile = function(file) {
-					Upload.upload({
-									url: 'assets/images',
-									data: {file: file, 'username': 'test'}
-							}).then(function (resp) {
-									console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
-							}, function (resp) {
-									console.log('Error status: ' + resp.status);
-							}, function (evt) {
-									var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-									console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
-							});
+			model.uploadImageFile = function(file, imageKey) {
+
+				console.log(file);
+
+				Upload.upload({
+			         url: 'http://localhost:8080/images/upload',
+			         fields: {'imageKey': imageKey}, // additional data to send
+			         file: file
+			     }).progress(function (evt) {
+			         var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+			         console.log('progress: ' + progressPercentage + '% ' + evt.config.file.name);
+			     }).success(function (data, status, headers, config) {
+			         console.log('file ' + config.file.name + 'uploaded. Response: ' + data);
+			     });
 			}
 
 			model.searchContent = function(userId) {
