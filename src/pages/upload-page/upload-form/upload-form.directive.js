@@ -6,8 +6,9 @@
         .directive('imgUploadForm', imgUploadForm)
         .controller('UploadFormCtrl', UploadFormCtrl);
 
+    imgUploadForm.$inject = ['toaster'];
     /* @ngInject */
-    function imgUploadForm() {
+    function imgUploadForm(toaster) {
         var directive = {
             restrict: 'EA',
             templateUrl: 'pages/upload-page/upload-form/upload-form.view.html',
@@ -23,8 +24,8 @@
 
         function link(scope, el, attr, ctrl) {
 
-          scope.submit = function() {
-            ctrl.uploadImage();
+          scope.submit = function(uploadForm, file) {
+            ctrl.uploadImage(uploadForm, file);
           }
 
         }

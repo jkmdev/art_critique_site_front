@@ -43,6 +43,9 @@
     </textarea>
   </div>
 
+  <toaster-container></toaster-container>
+
+
 </div>
 
 <div class="row test-border">
@@ -58,7 +61,7 @@
       <input type="file" ngf-select="" ng-model="vm.picFile"
       name="file" ngf-accept="'image/*'" required="">
 
-      <button type="submit" ng-click="vm.uploadImage(vm.uploadForm, vm.picFile)">Submit</button>
+      <button type="submit" ng-click="submit(vm.uploadForm, vm.picFile)">Submit</button>
 
       {{vm.picFile}}
       <!-- {{vm.uploadForm}} -->
