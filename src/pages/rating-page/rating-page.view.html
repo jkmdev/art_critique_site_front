@@ -6,15 +6,11 @@
 
     <div class="row">
 
-    	{{vm.content.contentTitle}}
-
-      <img-carousel uploader-text="vm.content.uploaderText" content-title="vm.content.contentTitle"></img-carousel>
+      <img-carousel uploader-comment="vm.content.uploaderComment" content-title="vm.content.imageKey"></img-carousel>
 
     </div>
-
-<!--USER FEEDBACK-->    
-
+    
+<!--USER FEEDBACK-->
     <img-comments current-user-comment="vm.currentUserComment" user-comments="vm.content.userComments"></img-comments>
 
 </div>
-

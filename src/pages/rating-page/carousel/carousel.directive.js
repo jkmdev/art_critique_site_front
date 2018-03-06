@@ -7,7 +7,7 @@
         .module('app.rating-page')
         .directive('imgCarousel', imgCarousel);
 
-    //directive.$inject = [];
+    //imgCarousel.$inject = [];
 
     function imgCarousel() {
 
@@ -19,14 +19,18 @@
             link: link,
             restrict: 'EA',
             scope: {
-                contentTitle: '=', 
-                uploaderText: '='
+                contentTitle: '=',
+                uploaderComment: '='
             }
         };
 
         return directive;
 
         function link(scope, element, attrs, ctrl) {
+
+            scope.$watch(attrs.uploaderComment, function (value){
+      				console.log(value);
+      			});
 
             scope.nextImage = function() {
                 ctrl.nextImage();
@@ -40,6 +44,14 @@
                 } else if (panel == 3) {
                     ctrl.content.uploaderText = ctrl.content.uploaderComments.other;
                 }
+            }
+
+            scope.changeUploaderTextTo = function(text) {
+              if (text !== null) {
+                scope.uploaderText = text;
+              } else {
+                scope.uploaderText = '---';
+              }
             }
 
         }

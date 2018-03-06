@@ -45,10 +45,10 @@
         vm.title = 'RatingCtrl';
 
         vm.content = {};
-        vm.currentIndex = 0; 
+        vm.currentIndex = 0;
         vm.currentUserComment = '';
         vm.queueSize = 3; //turn into constant later
-        
+
         vm.saveContent = ContentModel.saveContent;
         vm.searchContent = ContentModel.searchContent;
         vm.getContent = ContentModel.getContent;
@@ -67,18 +67,23 @@
 
             //console.log('setContent() runs');
 
-            vm.content = ContentModel.getContent()[vm.currentIndex];
+            //vm.content = ContentModel.getContent()[vm.currentIndex];
+
+            ContentModel.getLatestImages().then(function(result) {
+              console.log(result);
+              vm.content = result[vm.currentIndex];
+            });
 
             // console.log('content:');
             // console.log(vm.content);
 
-            if (vm.content !== undefined) { 
-               vm.content.uploaderText = vm.content.uploaderComments.goal;
-            }   
+            // if (vm.content !== undefined) {
+            //    vm.content.uploaderText = vm.content.uploaderComments.goal;
+            // }
 
         }
 
-        function nextImage() { 
+        function nextImage() {
 
             if (vm.content !== undefined) {
 

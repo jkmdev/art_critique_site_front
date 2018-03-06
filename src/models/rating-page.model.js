@@ -17,6 +17,13 @@
 				allContent: 'data/content.json'
 			};
 
+			model.getLatestImages = function getLatestImages() {
+				return $http.get('http://localhost:8080/images/recent')
+					.then(function (result) {
+						return result.data;
+					});
+			}
+
 			model.getContentAtIndex = function getContentAtIndex(index) {
 				return allContent[index];
 			}
@@ -48,6 +55,5 @@
 			}
 
 		};
-	
-})();
 
+})();
