@@ -30,9 +30,7 @@
             scope.$on('ContentModel.searchContent(): content Obtained', function(event, data) {
                 ctrl.setContent();
             });
-            // scope.on('vm.contentTitle', function(val) {
-            //     console.log('eck');
-            // });
+
         }
 
 	}
@@ -65,21 +63,9 @@
 
         function setContent() {
 
-            //console.log('setContent() runs');
-
-            //vm.content = ContentModel.getContent()[vm.currentIndex];
-
             ContentModel.getLatestImages().then(function(result) {
-              console.log(result);
-              vm.content = result[vm.currentIndex];
+              vm.content = ContentModel.getContentAtIndex(vm.currentIndex);
             });
-
-            // console.log('content:');
-            // console.log(vm.content);
-
-            // if (vm.content !== undefined) {
-            //    vm.content.uploaderText = vm.content.uploaderComments.goal;
-            // }
 
         }
 
@@ -87,13 +73,22 @@
 
             if (vm.content !== undefined) {
 
-                vm.content.userComments.unshift(
-                    { rating: 0, "comment": vm.currentUserComment}
-                );
+                if (vm.currentUserComment !=='') {
+
+                  vm.content.clientComments.unshift(
+                      { commentText: vm.currentUserComment,
+                        commentScore: 0,
+                        idUser: 4}
+                  );
+
+                }
+
                 vm.saveContent(vm.content);
 
                 vm.currentIndex++;
-                vm.setContent();
+                vm.content = ContentModel.getContentAtIndex(vm.currentIndex);
+                vm.currentUserComment = '';
+                //vm.setContent();
                 //vm.setContent(ContentModel.getContentAtIndex(vm.currentIndex));
             }
 

@@ -36,16 +36,6 @@
                 ctrl.nextImage();
             }
 
-            scope.changePanel = function(panel) {
-                if (panel == 1) {
-                    ctrl.content.uploaderText = ctrl.content.uploaderComments.goal;
-                } else if (panel == 2) {
-                    ctrl.content.uploaderText = ctrl.content.uploaderComments.need;
-                } else if (panel == 3) {
-                    ctrl.content.uploaderText = ctrl.content.uploaderComments.other;
-                }
-            }
-
             scope.changeUploaderTextTo = function(text) {
               if (text !== null) {
                 scope.uploaderText = text;

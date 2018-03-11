@@ -20,7 +20,8 @@
 			model.getLatestImages = function getLatestImages() {
 				return $http.get('http://localhost:8080/images/recent')
 					.then(function (result) {
-						return result.data;
+						//return result.data;
+						allContent = result.data;
 					});
 			}
 
@@ -29,29 +30,25 @@
 			}
 
 			model.searchContent = function searchContent() {
-				//console.log('searchContent() runs');
 				return $http.get(URLS.allContent)
 					.then(function (result) {
-						//console.log('searched');
 						allContent = result.data;
-						//console.log('searchContent() callback runs');
 						$rootScope.$broadcast("ContentModel.searchContent(): content Obtained");
-						//broadcastService.contentObtainedIn('ContentModel.getContent() content Obtained');
-						//return allContent;
 					});
 			}
 
 			model.getContent = function getContent() {
-				//console.log('getContent() runs');
 				return allContent;
 			}
 
 			model.saveContent = function saveContent(newContent) {
-				angular.forEach(model.allContent, function(originalContent, key) {
-					if (originalContent.contentId == newContent.contentId) {
-						originalContent = newContent;
-					}
-				});
+
+				return $http.put('http://localhost:8080/images/' + newContent.imageKey, newContent)
+					.then(function (result) {
+						allContent = result.data;
+						return result.data
+					});
+
 			}
 
 		};

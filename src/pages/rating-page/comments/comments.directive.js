@@ -12,13 +12,15 @@
     function imgComments() {
 
         var directive = {
+            bindToController: true,
             templateUrl: "pages/rating-page/comments/comments.view.html",
-            require: '^^imgRatingPage',
+            controller: CommentCtrl,
+            controllerAs: 'vm',
             link: link,
             restrict: 'EA',
             scope: {
-                currentUserComment: '=',
-                userComments: '='
+              currentUserComment: '=',
+              clientComments: '='
             }
         };
 
@@ -26,16 +28,26 @@
 
         function link(scope, element, attrs, ctrl) {
 
+          scope.$watch('vm.userComments', function(newValue) {
+              console.log(newValue);
+          });
+
             scope.increaseScore = function(content) {
-                content.rating++;
+                content.commentScore++;
             }
 
             scope.decreaseScore = function(content) {
-                content.rating--;
+                content.commentScore--;
             }
 
         }
 
 	}
+
+  //CommentCtrl.$inject = [];
+
+  function CommentCtrl() {
+
+  }
 
 })();
