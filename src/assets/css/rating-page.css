@@ -23,7 +23,7 @@
 }
 
 .arrow {
-  font-size: 80px;
+  font-size: 50px;
   color: #61892F;
   padding-top: 20px;
 }
@@ -124,11 +124,6 @@
 #current-comment-cont {
   margin-top: 20px;
   margin-bottom: 60px;
-  border: 1px solid black;
-}
-
-user-comments-cont {
-
 }
 
 #current-comment {
