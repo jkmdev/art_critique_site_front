@@ -1,23 +1,27 @@
  <div class="row">
 
-	 <div id="current-comment-cont" class="col-md-offset-2 col-md-8">
-	  	<textarea id="current-comment" ng-model="vm.currentUserComment" placeholder="Enter your comment here (2000 characters max)."  maxlength="2000"></textarea>
+	 <div id="current-comment-cont" class="col-md-offset-2 col-md-7">
+	  	<textarea id="current-comment" ng-model="currentUserComment" placeholder="Enter your comment here (2000 characters max)."  maxlength="2000"></textarea>
 	 </div>
+
+   <div class="col-md-1">
+     <span class="glyphicon glyphicon-triangle-right arrow" ng-click="nextImage()" ></span>
+   </div>
 
  </div>
 
  <div id="user-comments-cont" class="row">
 
-	 <div id="user-comments" class="col-md-offset-2 col-md-8" ng-repeat="content in vm.clientComments">
+	 <div id="user-comments" class="col-md-offset-2 col-md-8" ng-repeat="content in clientComments">
 	 	<div class="row">
-			<div class="user-comments-arrows col-md-1">
-				<div class="row user-comments-uparrow" ng-click="increaseScore(content)">
-				</div>
-				<div class="row user-comments-downarrow" ng-click="decreaseScore(content)">
-				</div>
-	 		</div>
-	 		<div class="user-comment-score col-md-1">
-	 			{{content.commentScore}}
+	 		<div class="col-md-2">
+        <div class="row user-comments-uparrow" ng-click="increaseScore(content)">
+        </div>
+          <div class="user-comment-score">
+            {{content.commentScore}}
+          </div>
+        <div class="row user-comments-downarrow" ng-click="decreaseScore(content)">
+        </div>
 	 		</div>
 	 		<div class="user-comment col-md-10">
 		 		{{content.commentText}}

@@ -32,10 +32,6 @@
       				console.log(value);
       			});
 
-            scope.nextImage = function() {
-                ctrl.nextImage();
-            }
-
             scope.changeUploaderTextTo = function(text) {
               if (text !== null) {
                 scope.uploaderText = text;

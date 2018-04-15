@@ -23,9 +23,9 @@
 }
 
 .arrow {
-  font-size: 100px;
+  font-size: 80px;
   color: #61892F;
-  padding-top: 250px;
+  padding-top: 20px;
 }
 
 /*****IMAGE CONTAINER*****/
@@ -159,20 +159,20 @@ user-comments-cont {
 }
 
 .user-comment-score {
-  height: 80px;
+  height: 30px;
   border: 1px solid black;
   text-align: center;
   vertical-align: middle;
-  line-height: 80px;
+  line-height: 30px;
 }
 
 .user-comments-downarrow {
-  height: 50%;
+  height: 40px;
   border: 1px solid black;
 }
 
 .user-comments-uparrow {
-  height: 50%;
+  height: 40px;
   border: 1px solid black;
 }
 
@@ -181,3 +181,25 @@ user-comments-cont {
 /*  margin: 20px;*/
 }
 
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+#footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: green;
+  text-align: center;
+}

@@ -12,10 +12,11 @@
     function imgComments() {
 
         var directive = {
-            bindToController: true,
+            //bindToController: true,
             templateUrl: "pages/rating-page/comments/comments.view.html",
-            controller: CommentCtrl,
-            controllerAs: 'vm',
+            //controller: CommentCtrl,
+            //controllerAs: 'vm',
+            require: '^^imgRatingPage',
             link: link,
             restrict: 'EA',
             scope: {
@@ -32,13 +33,17 @@
               console.log(newValue);
           });
 
-            scope.increaseScore = function(content) {
-                content.commentScore++;
-            }
+          scope.nextImage = function() {
+              ctrl.nextImage();
+          }
 
-            scope.decreaseScore = function(content) {
-                content.commentScore--;
-            }
+          scope.increaseScore = function(content) {
+              content.commentScore++;
+          }
+
+          scope.decreaseScore = function(content) {
+              content.commentScore--;
+          }
 
         }
 
