@@ -27,6 +27,7 @@
         return directive;
 
         function link(scope, element, attrs, ctrl) {
+
             scope.$on('ContentModel.searchContent(): content Obtained', function(event, data) {
                 ctrl.setContent();
             });
