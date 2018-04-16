@@ -1,6 +1,8 @@
 (function(){
   "use strict";
 
+  const webpackConfig = require('./webpack.config');
+
 	module.exports = function(grunt) {
 
 	    //grunt wrapper function
@@ -9,6 +11,13 @@
 
 	      //grunt task configuration will go here
 
+        webpack: {
+           options: {
+             stats: !process.env.NODE_ENV || process.env.NODE_ENV === 'development'
+           },
+           prod: webpackConfig,
+           dev: Object.assign({ watch: true }, webpackConfig)
+        }
 
   			karma: {
   			  unit: {
