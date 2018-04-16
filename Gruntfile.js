@@ -3,19 +3,26 @@
 
 	module.exports = function(grunt) {
 
-	    //grunt wrapper function 
+	    //grunt wrapper function
 	    grunt.initConfig({
-	        pkg: grunt.file.readJSON('package.json'),
-	          //grunt task configuration will go here     
-			karma: {  
-			  unit: {
-				configFile: 'karma.conf.js'
-			  }
-			}
+	      pkg: grunt.file.readJSON('package.json'),
+
+	      //grunt task configuration will go here
+
+
+  			karma: {
+  			  unit: {
+  				configFile: 'karma.conf.js'
+  			  }
+  			}
+
 	    });
-		
-		//load grunt tasks
-	    grunt.loadNpmTasks('grunt-karma');  
+
+		  //load grunt tasks
+      grunt.loadNpmTasks('grunt-webpack');
+      grunt.loadNpmTasks('webpack-dev-server');
+	    grunt.loadNpmTasks('grunt-karma');
+
 	    grunt.registerTask('test', ['karma']);
 
 	}
