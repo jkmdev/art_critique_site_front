@@ -17,7 +17,7 @@
            },
            prod: webpackConfig,
            dev: Object.assign({ watch: true }, webpackConfig)
-        }
+        },
 
   			karma: {
   			  unit: {
@@ -32,6 +32,7 @@
       grunt.loadNpmTasks('webpack-dev-server');
 	    grunt.loadNpmTasks('grunt-karma');
 
+      grunt.registerTask('webpack', ['webpack']);
 	    grunt.registerTask('test', ['karma']);
 
 	}
