@@ -8,5 +8,13 @@ module.exports = {
   },
   devServer: {
     contentBase: path.join(__dirname, "src")
-  }
+  },
+  module: {
+       rules: [{
+           test: /\.scss$/,
+           use: [{
+               loader: "sass-loader" // compiles Sass to CSS
+           }]
+       }]
+   }
 }
