@@ -1,0 +1,25 @@
+{
+	"version": 3,
+	"file": "main.css",
+	"sources": [
+		"../scss/main.scss",
+		"../scss/abstracts/_functions.scss",
+		"../scss/abstracts/_mixins.scss",
+		"../scss/abstracts/_placeholders.scss",
+		"../scss/abstracts/_variables.scss",
+		"../scss/base/_base.scss",
+		"../scss/base/_typography.scss",
+		"../scss/components/_carousel.scss",
+		"../scss/components/_comments.scss",
+		"../scss/components/_result.scss",
+		"../scss/components/_uploader.scss",
+		"../scss/layout/_footer.scss",
+		"../scss/layout/_navigation.scss",
+		"../scss/pages/_rating.scss",
+		"../scss/pages/_upload.scss",
+		"../scss/themes/_theme.scss",
+		"../scss/vendor/_bootstrap-overrides.scss"
+	],
+	"names": [],
+	"mappings": "AMEA,AAAA,aAAa,CAAC;EACZ,KAAK,EAAE,KAAK,GACb"
+}

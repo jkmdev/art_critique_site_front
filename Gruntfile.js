@@ -69,3 +69,7 @@
 				//       	'app/src/pages/rating-page/*.spec.js'
 				// 	]
 				// },
+
+
+//TODO: move carousel and other non-page elements to components folder
+//TODO: MAYBE** use bootstrap 4? Might be best to use on angulaar2 project
