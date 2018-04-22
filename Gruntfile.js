@@ -31,7 +31,7 @@
               },
               dist: {
                   files: {
-                      'src/assets/css/test.css': 'src/assets/css/test.scss'
+                      'src/assets/css/main.css': 'src/assets/scss/main.scss'
                   }
               }
           },
