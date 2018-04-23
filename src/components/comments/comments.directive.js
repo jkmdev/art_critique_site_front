@@ -13,7 +13,7 @@
 
         var directive = {
             //bindToController: true,
-            templateUrl: "pages/rating-page/comments/comments.view.html",
+            templateUrl: "components/comments/comments.view.html",
             //controller: CommentCtrl,
             //controllerAs: 'vm',
             require: '^^imgRatingPage',

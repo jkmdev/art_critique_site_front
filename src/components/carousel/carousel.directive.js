@@ -13,7 +13,7 @@
 
         var directive = {
             // bindToController: true,
-            templateUrl: "pages/rating-page/carousel/carousel.view.html",
+            templateUrl: "components/carousel/carousel.view.html",
             // controller: CarouselCtrl,
             require: '^^imgRatingPage',
             link: link,

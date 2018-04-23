@@ -11,7 +11,7 @@
     function imgUploadForm(toaster) {
         var directive = {
             restrict: 'EA',
-            templateUrl: 'pages/upload-page/upload-form/upload-form.view.html',
+            templateUrl: 'components/upload-form/upload-form.view.html',
             scope: {
             },
             link: link,

@@ -15,7 +15,7 @@
 
         var directive = {
             bindToController: true,
-            templateUrl: "pages/upload-page/upload-results/upload-results.view.html",
+            templateUrl: "components/upload-results/upload-results.view.html",
             controller: UploadResultsCtrl,
             controllerAs: 'vm',
             link: link,
@@ -42,7 +42,7 @@
                 // angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
                 //console.log(ctrl.result);
                 var modalInstance = $uibModal.open({
-                  templateUrl: 'pages/upload-page/upload-results/result/result-modal.view.html',
+                  templateUrl: 'components/result/result-modal.view.html',
                   controllerAs: 'vm',
                   size: 'lg',
                   appendTo: element,

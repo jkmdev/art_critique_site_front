@@ -17,7 +17,7 @@
 
         var directive = {
             bindToController: true,
-            templateUrl: 'pages/upload-page/uploader/uploader.view.html',
+            templateUrl: 'components/uploader/uploader.view.html',
             controller: UploadCtrl,
             link: link,
             controllerAs: 'vm',
