@@ -1,4 +1,9 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype"); }
+
 .primary-font {
-  color: green; }
+  color: #03a9f5;
+  font-family: 'Roboto'; }
 
 /*# sourceMappingURL=main.css.map */

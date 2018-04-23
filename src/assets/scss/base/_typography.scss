@@ -1,5 +1,12 @@
-$primary-color: #333;
+
+
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+}
 
 .primary-font {
-  color: green;
+  color: $blue;
+  font-family: 'Roboto';
 }
