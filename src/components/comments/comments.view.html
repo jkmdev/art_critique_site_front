@@ -1,16 +1,20 @@
 
  <div class="row" id="current-comment-cont">
 
-   <div class="col-md-offset-2 col-md-1 text-center">
+   <!-- <div class="col-md-offset-2 col-md-1 text-center">
      <span class="glyphicon glyphicon-triangle-left arrow" ng-click=""></span>
-   </div>
+   </div> -->
 
-	 <div class="col-md-6 test-border">
+	 <div class="col-md-offset-1 col-md-9 test-border">
 	  	<textarea id="current-comment" ng-model="currentUserComment" placeholder="Enter your comment here (2000 characters max)."  maxlength="2000"></textarea>
 	 </div>
 
-   <div class="col-md-1 text-center">
+   <!-- <div class="col-md-1 text-center">
      <span class="glyphicon glyphicon-triangle-right arrow" ng-click="nextImage()" ></span>
+   </div> -->
+
+   <div class="col-md-1">
+     <span ng-click="submitComment()">SUBMIT</span>
    </div>
 
  </div>

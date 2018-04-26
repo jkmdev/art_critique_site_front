@@ -1,0 +1,103 @@
+
+/*****UPLOADER COMMENT*****/
+
+.uploader-comment-cont {
+  margin-top:40px;
+  height: 500px;
+}
+
+.uploader-text {
+  @extend %h5;
+  height: 50px;
+  background-color: #ffffff;
+  border: 1px solid $gray;
+}
+
+#options-selection {
+  height: 100%;
+}
+
+.options-panel {
+  background-color: #ffffff;
+  height: 50px;
+  color: white;
+}
+
+#goal-panel {
+  background-color: green;
+}
+
+#feedback-panel {
+  background-color: blue;
+}
+
+#misc-panel {
+  background-color: orange;
+}
+
+#image-options {
+  height: 50px;
+}
+
+.uploader-request {
+  font-size: 14px;
+  font-family: "Arial";
+  color: #6B6E70;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.arrow {
+  font-size: 50px;
+  color: #61892F;
+  padding-top: 20px;
+}
+
+/*****IMAGE CONTAINER*****/
+
+.image-viewer-container {
+  background-color: #222629;
+  margin-top: 40px;
+  height: 500px;
+  box-shadow: 0 0 20px 5px rgba(79, 90, 94, 0.35);
+  overflow: hidden;
+}
+
+.image-container {
+  position: relative;
+}
+
+
+#no-image {
+  font-size: 18px;
+  text-align:center;
+  margin-top: 210px;
+  top: -50px;
+  color: #6B6E70;
+}
+
+.image-settings {
+  max-height: 520px;
+  background-color: #474B4F;
+}
+
+.image-container-project {
+  margin-top: 1px;
+  background-color: #6B6E70;
+  height: 25px;
+}
+
+.image-content {
+  max-width: 750px;
+  max-height: 480px;
+  padding-top: 10px;
+}
+
+.loading-anim {
+  position: absolute;
+  color: white;
+}
+
+.loading-text {
+  color: white;
+}

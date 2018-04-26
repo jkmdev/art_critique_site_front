@@ -33,6 +33,10 @@
               console.log(newValue);
           });
 
+          scope.submitComment = function() {
+              ctrl.submitComment();
+          }
+
           scope.nextImage = function() {
               ctrl.nextImage();
           }

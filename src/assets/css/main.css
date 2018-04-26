@@ -1,9 +1,135 @@
 @font-face {
   font-family: 'Roboto';
-  src: url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype"); }
+  src: url("../fonts/Roboto/RobotoCondensed-Regular.ttf") format("truetype"); }
 
-.primary-font {
+@font-face {
+  font-family: 'Roboto-Bold';
+  src: url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype"); }
+
+.site-title {
   color: #03a9f5;
-  font-family: 'Roboto'; }
+  font-family: 'Roboto-Bold';
+  font-size: 30px; }
+
+#bootstrap-overrides .navbar-default .navbar-nav > li > a {
+  color: #6B6B6B;
+  font-family: 'Roboto';
+  font-size: 18px; }
+
+.uploader-text {
+  color: #6B6B6B;
+  font-family: 'Roboto';
+  font-size: 14px; }
+
+/*****UPLOADER COMMENT*****/
+.uploader-comment-cont {
+  margin-top: 40px;
+  height: 500px; }
+
+.uploader-text {
+  height: 50px;
+  background-color: white;
+  border: 1px solid #BBBBBB; }
+
+#image-options {
+  height: 50px; }
+
+.uploader-request {
+  font-size: 14px;
+  font-family: "Arial";
+  color: #6B6E70;
+  line-height: 1.2;
+  text-align: left; }
+
+.arrow {
+  font-size: 50px;
+  color: #61892F;
+  padding-top: 20px; }
+
+/*****IMAGE CONTAINER*****/
+.image-viewer-container {
+  background-color: #222629;
+  margin-top: 40px;
+  height: 500px;
+  box-shadow: 0 0 20px 5px rgba(79, 90, 94, 0.35);
+  overflow: hidden; }
+
+.image-container {
+  position: relative; }
+
+#no-image {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 210px;
+  top: -50px;
+  color: #6B6E70; }
+
+#options-selection {
+  height: 100%; }
+
+.options-panel {
+  height: 50px;
+  border: 1px solid #6B6E70; }
+
+#goal-panel {
+  background-color: green; }
+
+#feedback-panel {
+  background-color: blue; }
+
+#misc-panel {
+  background-color: orange; }
+
+.image-settings {
+  max-height: 520px;
+  background-color: #474B4F; }
+
+.image-container-project {
+  margin-top: 1px;
+  background-color: #6B6E70;
+  height: 25px; }
+
+.image-content {
+  max-width: 750px;
+  max-height: 480px;
+  padding-top: 10px; }
+
+.loading-anim {
+  position: absolute;
+  color: white; }
+
+.loading-text {
+  color: white; }
+
+/*****NAVBAR*****/
+.header {
+  background-color: #ffffff;
+  width: 100%;
+  height: 50px; }
+
+.site-title {
+  padding: 2px; }
+
+#navbar-tog {
+  color: #FFFFFF; }
+
+#navbar-settings {
+  max-width: 50%;
+  width: auto;
+  height: 40px;
+  padding: 7px;
+  list-style-type: none; }
+
+.header {
+  box-shadow: 0px 3px 6px #BBBBBB; }
+
+#bootstrap-overrides .navbar-default .navbar-nav > li > a:hover {
+  color: #03a9f5; }
+
+#bootstrap-overrides .nav {
+  margin-top: 0px; }
+
+#bootstrap-overrides .uploader-comment-cont {
+  z-index: 0; }
 
 /*# sourceMappingURL=main.css.map */
