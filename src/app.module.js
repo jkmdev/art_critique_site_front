@@ -13,11 +13,11 @@
         ])
 
         .config(configure)
-        .constant('table', table);
+        .constant('URLs', URLs);
 
-        configure.$inject = ['$stateProvider'];
+        configure.$inject = ['$stateProvider', '$sceDelegateProvider'];
 
-        function configure ($stateProvider) {
+        function configure ($stateProvider, $sceDelegateProvider) {
 
             $stateProvider
                 // .state('app', {
@@ -37,16 +37,15 @@
 
             ;
 
-            //url route provider for default page goes here
+            $sceDelegateProvider.resourceUrlWhitelist([
+                'self',
+                'https://s3.amazonaws.com/anneandycdn/**'
+              ]);
 
         }
 
-        function table () {
-          title: 'A title',
-          rows = [
-            [{value: 'Anime figures', type: 'title'}, {value:'animeValue', type: 'currency'}],
-            [{value: 'Comic Books', type: 'title'},{value:'comicValue', type: 'currency'}]
-          ]
+        function URLs () {
+          bucketURL: 'https://s3.amazonaws.com/anneandycdn/'
         };
 
 })();

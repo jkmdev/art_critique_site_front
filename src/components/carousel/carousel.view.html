@@ -1,46 +1,56 @@
-<div class="col-md-offset-1 col-md-10 image-viewer-container">
+
+<div class="col-md-offset-1 col-md-10 carousel">
 
   <div class="row" id="image-options">
 
-    <div class="col-md-4" id="options-selection"> <!--TURN THIS INTO A UI BOOTSTRAP CAROSEL-->
+    <div class="col-md-5" id="options-selection"> <!--TURN THIS INTO A UI BOOTSTRAP CAROSEL-->
       <div class="row">
-        <div id="goal-panel" class="col-md-4 options-panel" ng-click="changeUploaderTextTo(uploaderComment.goalComment)">
+
+        <div class="col-md-4 option-panel" ng-class="{'option-panel-selected': optionIsSelected('goalComment')}"
+        ng-click="changeUploaderTextTo('goalComment')">
           GOALS
         </div>
-        <div id="feedback-panel" class="col-md-4 options-panel" ng-click="changeUploaderTextTo(uploaderComment.needComment)" >
+        <div class="col-md-4 option-panel" ng-class="{'option-panel-selected': optionIsSelected('needComment')}"
+         ng-click="changeUploaderTextTo('needComment')" >
           ASKING FOR
         </div>
-        <div id="misc-panel" class="col-md-4 options-panel" ng-click="changeUploaderTextTo(uploaderComment.otherComment)">
+        <div class="col-md-4 option-panel" ng-class="{'option-panel-selected': optionIsSelected('otherComment')}"
+         ng-click="changeUploaderTextTo('otherComment')">
           OTHER
         </div>
       </div>
     </div>
 
-    <div class="col-md-8" id="uploader-text"> <!--TURN THIS INTO A UI BOOTSTRAP CAROSEL-->
+    <div class="col-md-7 option-dialogue">
       {{uploaderText}}
     </div>
 
   </div>
 
-
-
   <div class="row">
 
-    <div class="image-continer">
+    <div class="col-md-1 text-center">
+      <span class="glyphicon glyphicon-triangle-left arrow" ng-click="previousImage()"></span>
+    </div>
 
-      <img ng-show="contentTitle" ng-src="https://s3.amazonaws.com/anneandycdn/{{contentTitle}}" class="absolute-center animated fadeIn img-responsive center-block image-content">
+    <div class="image-continer col-md-10">
+
+      <img ng-show="contentTitle" ng-src="{{getFullImageUrl(contentTitle)}}"
+      class="absolute-center animated fadeIn img-responsive center-block image-content">
 
       <div ng-show="!contentTitle" class="loading-text">No images to display...</div>
 
-      <span class="col-md-offset-2 col-md-8" id="no-image" ng-bind="image.empty">
-      </span>
+      <span class="col-md-offset-2 col-md-8" id="no-image" ng-bind="image.empty"></span>
 
     </div>
+
+
+     <div class="col-md-1 text-center">
+       <span class="glyphicon glyphicon-triangle-right arrow" ng-click="nextImage()" ></span>
+     </div>
 
   </div>
 
 </div>
-
-
 
 <!-- <span class="animated fadeIn">{{image.currentImage}}</span> -->

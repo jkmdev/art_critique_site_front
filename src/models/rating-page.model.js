@@ -9,7 +9,7 @@
 
 		// !rating model, moreso ContentModel
 
-		function ContentModel($rootScope, $http) {
+		function ContentModel($rootScope, $http, $sceDelegateProvider) {
 
 			var model = this;
 			var allContent = [];

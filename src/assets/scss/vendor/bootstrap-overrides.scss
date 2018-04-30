@@ -1,8 +1,8 @@
 #bootstrap-overrides .navbar-default .navbar-nav>li>a {
 	@extend %h3;
-	&:hover{
-		color: $blue;
-	}
+	// &:hover{
+	// 	color: $blue;
+	// }
 }
 
 #bootstrap-overrides .navbar-default .navbar-nav>li>a:hover {

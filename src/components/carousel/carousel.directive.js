@@ -7,9 +7,9 @@
         .module('app.rating-page')
         .directive('imgCarousel', imgCarousel);
 
-    //imgCarousel.$inject = [];
+    imgCarousel.$inject = ['$sce'];
 
-    function imgCarousel() {
+    function imgCarousel($sce) {
 
         var directive = {
             // bindToController: true,
@@ -32,12 +32,29 @@
       				console.log(value);
       			});
 
-            scope.changeUploaderTextTo = function(text) {
-              if (text !== null) {
-                scope.uploaderText = text;
+            scope.getFullImageUrl = function(image) {
+                return "https://s3.amazonaws.com/anneandycdn/" + image;
+            }
+
+            scope.changeUploaderTextTo = function(selectedCommentType) {
+              if (scope.uploaderComment[selectedCommentType] !== null) {
+                scope.uploaderText = scope.uploaderComment[selectedCommentType];
+                scope.selectedCommentType = selectedCommentType;
               } else {
                 scope.uploaderText = '---';
               }
+            }
+
+            scope.optionIsSelected = function(selectedCommentType) {
+              return selectedCommentType == scope.selectedCommentType;
+            }
+
+            scope.nextImage = function() {
+              ctrl.nextImage();
+            }
+
+            scope.previousImage = function() {
+              ctrl.previousImage();
             }
 
         }
