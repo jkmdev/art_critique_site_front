@@ -1,0 +1,23 @@
+.current-comment-cont {
+  margin-bottom: 60px;
+  height: 120px;
+}
+
+.current-comment {
+  background-color: white;
+  @extend %shadow;
+  border: none;
+  padding: 10px;
+  color: $main-font-color;
+  width:100%;
+  height: 100px;
+  resize: none;
+}
+
+.square-submit-button {
+  background-color: $main-theme-colour;
+  @extend %shadow;
+  height: 100px;
+  color: white;
+  @include center-text(100px);
+}

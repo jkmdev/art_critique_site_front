@@ -1,20 +1,4 @@
 
-/*****RATING*****/
-
-.rating-star {
-
-  margin-top: 20px;
-	padding: 10px;
-	font-size: 40px;
-  color: #61892F;
-}
-
-/*****USER COMMENT*****/
-
-#current-comment-cont {
-  margin-top: 20px;
-  margin-bottom: 60px;
-}
 
 #current-comment {
   margin-top: 5px;

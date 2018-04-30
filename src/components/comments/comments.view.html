@@ -1,12 +1,11 @@
 
- <div class="row" id="current-comment-cont">
+ <div class="row current-comment-cont">
 
-	 <div class="col-md-offset-1 col-md-9 test-border">
-	  	<textarea id="current-comment" ng-model="currentUserComment" placeholder="Enter your comment here (2000 characters max)."  maxlength="2000"></textarea>
+	 <div class="col-md-offset-1 col-md-9 no-padding">
+	  	<textarea class="current-comment" ng-model="currentUserComment" placeholder="Enter your comment here (500 characters max)."  maxlength="500"></textarea>
 	 </div>
 
-
-   <div class="col-md-1">
+   <div class="col-md-1 square-submit-button no-padding">
      <span ng-click="submitComment()">SUBMIT</span>
    </div>
 
