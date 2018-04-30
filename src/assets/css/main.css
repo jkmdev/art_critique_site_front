@@ -50,9 +50,13 @@ body {
   color: white; }
 
 .arrow {
+  opacity: 0.5;
   font-size: 50px;
-  color: #61892F;
+  color: white;
   padding-top: 20px; }
+
+.arrow-container {
+  background-color: black; }
 
 /*****NAVBAR*****/
 .header {

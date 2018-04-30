@@ -47,7 +47,6 @@
         vm.currentIndex = 0;
         vm.currentUserComment = '';
         vm.queueSize = 3; //turn into constant later
-        vm.selectedCommentType = 'goalComment';
 
         vm.saveContent = ContentModel.saveContent;
         vm.searchContent = ContentModel.searchContent;
