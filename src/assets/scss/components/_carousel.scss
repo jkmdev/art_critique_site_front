@@ -41,6 +41,7 @@
 
 .image-content {
   width: 100%;
+  position: absolute;
   //max-height: 300px;
 }
 
@@ -52,9 +53,25 @@
   opacity: 0.5;
   font-size: 50px;
   color: white;
-  padding-top: 20px;  
+  padding-top: 40px;
 }
 
 .arrow-container {
+  opacity: 0.2;
   background-color: black;
+  &:hover {
+    opacity: 0.7;
+    @extend %change;
+  }
+
+}
+
+.rowoverlay{
+  position: absolute;
+  top: 0;
+  left:0;
+  z-index:1;
+  bottom:0;
+  right:0;
+  height:100%;
 }

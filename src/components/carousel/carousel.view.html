@@ -1,6 +1,4 @@
 
-{{uploaderComment}}
-
 <div class="col-md-offset-1 col-md-10 carousel">
 
   <div class="row" id="image-options">
@@ -29,27 +27,30 @@
 
   </div>
 
-  <div class="row">
+  <div class="image-continer col-md-12">
 
-    <div class="col-md-1 text-center arrow-container">
-      <span class="glyphicon glyphicon-triangle-left arrow" ng-click="previousImage()"></span>
-    </div>
+    <div class="row rowoverlay">
 
-    <div class="image-continer col-md-10">
+      <div class="col-md-1 text-center arrow-container" ng-click="previousImage()">
+        <span class="glyphicon glyphicon-triangle-left arrow" ></span>
+      </div>
 
-      <img ng-show="contentTitle" ng-src="{{getFullImageUrl(contentTitle)}}"
-      class="absolute-center animated fadeIn img-responsive center-block image-content">
-
-      <div ng-show="!contentTitle" class="loading-text">No images to display...</div>
-
-      <span class="col-md-offset-2 col-md-8" id="no-image" ng-bind="image.empty"></span>
+      <div class="col-md-1 col-md-offset-10 text-center arrow-container"  ng-click="nextImage()">
+        <span class="glyphicon glyphicon-triangle-right arrow"></span>
+      </div>
 
     </div>
 
+    <div class="row">
 
-     <div class="col-md-1 text-center">
-       <span class="glyphicon glyphicon-triangle-right arrow" ng-click="nextImage()" ></span>
-     </div>
+        <img ng-show="contentTitle" class="col-md-12" ng-src="{{getFullImageUrl(contentTitle)}}"
+        class="absolute-center animated fadeIn img-responsive center-block image-content">
+
+        <div ng-show="!contentTitle" class="loading-text">No images to display...</div>
+
+        <span class="col-md-offset-2 col-md-8" id="no-image" ng-bind="image.empty"></span>
+
+    </div>
 
   </div>
 
