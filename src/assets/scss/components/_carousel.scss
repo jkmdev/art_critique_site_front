@@ -4,17 +4,17 @@
 %options-style {
   height: 50px;
   @include center-text(50px);
-  background-color: white;
   color: $main-font-color;
+  background-color: white;
 }
 
 .option-panel {
   @extend %options-style;
   &:hover {
-    border-bottom: 3px solid $main-theme-colour;
+    border-bottom: 5px solid $main-theme-colour;
   }
   &-selected {
-    border-bottom: 3px solid $main-theme-colour;
+    border-bottom: 5px solid $main-theme-colour;
   }
 }
 

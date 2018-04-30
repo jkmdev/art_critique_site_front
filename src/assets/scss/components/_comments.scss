@@ -1,5 +1,5 @@
 .current-comment-cont {
-  margin-bottom: 60px;
+  margin-bottom: 10px;
   height: 120px;
 }
 
@@ -20,4 +20,29 @@
   height: 100px;
   color: white;
   @include center-text(100px);
+}
+
+.comment-title {
+  color: $main-font-color;
+  padding-left: 0px;
+  //border-bottom: 1px solid $main-font-color;
+}
+
+.user-comment {
+  background-color: white;
+  @extend %shadow;
+  padding: 20px;
+  margin-top: 20px;
+  height: 115px;
+}
+
+
+.user-comments-arrow {
+  padding-left: 25px;
+}
+
+.user-comment-score {
+  height: 30px;
+  @include center-text(30px);
+  font-family: 'Roboto-Bold';
 }

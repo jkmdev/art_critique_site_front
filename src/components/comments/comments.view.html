@@ -11,20 +11,28 @@
 
  </div>
 
+
+
  <div id="user-comments-cont" class="row">
 
-	 <div id="user-comments" class="col-md-offset-2 col-md-8" ng-repeat="content in clientComments">
-	 	<div class="row">
-	 		<div class="col-md-2">
-        <div class="row user-comments-uparrow" ng-click="increaseScore(content)">
+   <div class="col-md-offset-1 col-md-10 comment-title">
+      <h4>Comments</h4>
+   </div>
+
+	 <div class="col-md-offset-1 col-md-10 no-padding" ng-repeat="content in clientComments">
+	 	<div class="user-comment">
+	 		<div class="col-md-1">
+        <div class="row user-comments-arrow">
+          <img ng-src="../assets/images/arrow-up.png" ng-click="increaseScore(content)">
         </div>
           <div class="user-comment-score">
             {{content.commentScore}}
           </div>
-        <div class="row user-comments-downarrow" ng-click="decreaseScore(content)">
+        <div class="row user-comments-arrow">
+          <img ng-src="../assets/images/arrow-down.png" ng-click="decreaseScore(content)">
         </div>
 	 		</div>
-	 		<div class="user-comment col-md-10">
+	 		<div class="col-md-11">
 		 		{{content.commentText}}
 		 	</div>
 	 	</div>
