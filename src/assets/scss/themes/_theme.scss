@@ -6,3 +6,7 @@
   background-color: white;
   @extend %shadow;
 }
+
+.card {
+  @extend %card;
+}

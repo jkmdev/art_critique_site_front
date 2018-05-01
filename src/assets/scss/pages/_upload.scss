@@ -1,5 +1,20 @@
-.user-header {
+
+
+.user-stats-cont {
+	padding: 10px;
+	@extend %card;
 	margin-top: 20px;
 	height: 150px;
-  @extend %card;
+}
+
+.user-stats-header {
+	background-color: $main-font-color;
+	color: white;
+	font-size: 24px;
+	padding: 5px 5px 5px 15px;
+}
+
+.upload-icon {
+	padding-top: 20px;
+	padding-left: 20px;
 }

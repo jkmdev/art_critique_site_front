@@ -32,7 +32,7 @@
         }
     }
 
-    UploadFormCtrl.$inject = ['UserModel', 'table'];
+    UploadFormCtrl.$inject = ['UserModel'];
 
     /* @ngInject */
     function UploadFormCtrl(UserModel) {

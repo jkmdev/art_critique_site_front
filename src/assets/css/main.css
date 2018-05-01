@@ -9,7 +9,7 @@
     opacity: 0.7; } }
 
 body {
-  background-color: #FAF9FA;
+  background-image: url("../../assets/images/bg.png");
   font-family: 'Roboto'; }
 
 @font-face {
@@ -155,14 +155,25 @@ body {
   padding: 7px;
   list-style-type: none; }
 
-.user-header {
+.user-stats-cont {
+  padding: 10px;
   margin-top: 20px;
   height: 150px; }
 
-.carousel, .current-comment, .square-submit-button, .user-comment, .header, .uploaded-result, .user-header {
+.user-stats-header {
+  background-color: #6B6B6B;
+  color: white;
+  font-size: 24px;
+  padding: 5px 5px 5px 15px; }
+
+.upload-icon {
+  padding-top: 20px;
+  padding-left: 20px; }
+
+.carousel, .current-comment, .square-submit-button, .user-comment, .header, .uploaded-result, .user-stats-cont, .card {
   box-shadow: 0px 3px 6px #BBBBBB; }
 
-.uploaded-result, .user-header {
+.uploaded-result, .user-stats-cont, .card {
   background-color: white; }
 
 #bootstrap-overrides .nav {

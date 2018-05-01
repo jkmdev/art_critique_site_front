@@ -47,7 +47,7 @@
 
             scope.viewDetails = function(result) {
                 var modalInstance = $uibModal.open({
-                  templateUrl: 'components/upload-form/upload-form.view.html',
+                  templateUrl: 'components/upload-form/upload-form-modal.view.html',
                   controllerAs: 'vm',
                   size: 'lg',
                   appendTo: element,
