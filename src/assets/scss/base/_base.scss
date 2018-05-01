@@ -2,3 +2,5 @@ body {
   background-image: url("../../assets/images/bg.png");
   font-family: 'Roboto';
 }
+
+textarea, input, button, select { outline: none; }

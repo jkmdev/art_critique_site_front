@@ -1,0 +1,15 @@
+.upload-form {
+  background-color: white;
+  height: 635px;
+  width: 500px;
+  border-radius: 5px;
+}
+
+.image-viewer {
+  background-color: $gray;
+  height: 200px;
+  overflow: none;
+  img {
+    height: 100%;
+  }
+}

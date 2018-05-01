@@ -7,6 +7,57 @@
   @extend %shadow;
 }
 
+%button {
+  height: 35px;
+  width: 120px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
 .card {
   @extend %card;
+}
+
+.input {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid $gray;
+  resize: none;
+  height: 35px;
+  font-weight: bold;
+  padding: 5px;
+  margin-bottom: 20px;
+  &:focus {
+    border-color: $main-theme-colour;
+  }
+
+}
+
+.textarea {
+  height: 100px;
+}
+
+.choose-button {
+  @extend %button;
+  button {
+    background-color: $main-theme-colour;
+    border: none;
+    outline: none;
+  }
+}
+
+.submit-button {
+  @extend %button;
+  background-color: $main-theme-colour;
+  border: none;
+  outline: none;
+  color: white;
+  letter-spacing: 2px;
+  font-family: 'Roboto-bold';
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
