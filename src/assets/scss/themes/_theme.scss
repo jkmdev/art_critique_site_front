@@ -14,8 +14,25 @@
   margin-top: 20px;
 }
 
+%comments-cont {
+	background-color: $light-gray;
+	max-height: 250px;
+	overflow: auto;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	border: 1px solid $gray;
+}
+
+
 .card {
   @extend %card;
+}
+
+.modal-card {
+  background-color: white;
+  border-radius: 5px;
+  min-height: 600px;
+  min-width: 500px;
 }
 
 .input {
@@ -30,7 +47,6 @@
   &:focus {
     border-color: $main-theme-colour;
   }
-
 }
 
 .textarea {
@@ -60,4 +76,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.image-viewer-lg {
+  background-color: $gray;
+  height: 200px;
+  overflow: none;
+  img {
+    height: 100%;
+  }
+}
+
+.image-viewer-sm {
+  background-color: $gray;
+  height: 300px;
+  overflow: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  img {
+    height: 100%;
+  }
 }

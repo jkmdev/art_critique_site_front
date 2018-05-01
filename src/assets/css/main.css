@@ -139,18 +139,17 @@ textarea, input, button, select {
   text-align: center;
   line-height: 100px; }
 
+.uploader-comments-cont {
+  padding: 10px; }
+
+.result {
+  height: 900px; }
+
 .upload-form {
   background-color: white;
   height: 635px;
-  width: 500px;
+  width: 900px;
   border-radius: 5px; }
-
-.image-viewer {
-  background-color: #BBBBBB;
-  height: 200px;
-  overflow: none; }
-  .image-viewer img {
-    height: 100%; }
 
 /*****NAVBAR*****/
 .header {
@@ -198,6 +197,20 @@ textarea, input, button, select {
   border-radius: 5px;
   margin-top: 20px; }
 
+.user-comments-cont, .uploader-comments-cont {
+  background-color: #F2F2F2;
+  max-height: 250px;
+  overflow: auto;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border: 1px solid #BBBBBB; }
+
+.modal-card {
+  background-color: white;
+  border-radius: 5px;
+  min-height: 600px;
+  min-width: 500px; }
+
 .input {
   width: 100%;
   border-radius: 5px;
@@ -230,6 +243,22 @@ textarea, input, button, select {
   display: flex;
   justify-content: center;
   align-items: center; }
+
+.image-viewer-lg {
+  background-color: #BBBBBB;
+  height: 200px;
+  overflow: none; }
+  .image-viewer-lg img {
+    height: 100%; }
+
+.image-viewer-sm {
+  background-color: #BBBBBB;
+  height: 300px;
+  overflow: none;
+  margin-top: 20px;
+  margin-bottom: 20px; }
+  .image-viewer-sm img {
+    height: 100%; }
 
 #bootstrap-overrides .nav {
   margin-top: 0px; }

@@ -17,3 +17,16 @@
 	line-height: 100px;
   @include center-text(100px);
 }
+
+.user-comments-cont {
+	@extend %comments-cont;
+}
+
+.uploader-comments-cont {
+	@extend %comments-cont;
+	padding: 10px;
+}
+
+.result {
+	height: 900px;
+}
