@@ -25,6 +25,7 @@
         function link(scope, el, attr, ctrl) {
 
           scope.submit = function(uploadForm, file) {
+            console.log("First");
             ctrl.uploadImage(uploadForm, file);
           }
 

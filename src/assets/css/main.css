@@ -120,6 +120,22 @@ body {
   line-height: 30px;
   font-family: 'Roboto-Bold'; }
 
+.uploaded-result {
+  height: 100px;
+  overflow: hidden; }
+
+.uploaded-result-image {
+  width: 50%;
+  float: left; }
+
+.uploaded-result-title {
+  height: 100%;
+  width: 50%;
+  float: right;
+  line-height: 100px;
+  text-align: center;
+  line-height: 100px; }
+
 /*****NAVBAR*****/
 .header {
   background-color: #ffffff;
@@ -139,8 +155,15 @@ body {
   padding: 7px;
   list-style-type: none; }
 
-.carousel, .current-comment, .square-submit-button, .user-comment, .header {
+.user-header {
+  margin-top: 20px;
+  height: 150px; }
+
+.carousel, .current-comment, .square-submit-button, .user-comment, .header, .uploaded-result, .user-header {
   box-shadow: 0px 3px 6px #BBBBBB; }
+
+.uploaded-result, .user-header {
+  background-color: white; }
 
 #bootstrap-overrides .nav {
   margin-top: 0px; }

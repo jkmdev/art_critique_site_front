@@ -1,0 +1,19 @@
+
+.uploaded-result {
+	height: 100px;
+	overflow: hidden;
+  @extend %card;
+}
+
+.uploaded-result-image {
+	width: 50%;
+	float: left;
+}
+
+.uploaded-result-title {
+	height: 100%;
+	width: 50%;
+	float: right;
+	line-height: 100px;
+  @include center-text(100px);
+}

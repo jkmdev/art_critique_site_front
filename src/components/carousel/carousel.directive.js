@@ -31,7 +31,7 @@
             scope.selectedCommentType = 'goalComment';
 
             scope.$watch(attrs.uploaderComment, function (value){
-      				console.log(value);
+      				//console.log(value);
       			});
 
             scope.getFullImageUrl = function(image) {

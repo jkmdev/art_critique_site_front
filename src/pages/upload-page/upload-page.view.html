@@ -4,11 +4,11 @@
 
 	<img-upload-form class="col-md-12 test-border"></img-upload-form>
 
-	<div class="row">
+	<div class="row" ng-click="viewDetails()">
 
 		<div class="col-md-12">
 
-			<div id="user-header">
+			<div class="user-header">
 
 				<div class="user-header-stats col-md-4">
 					<h2>Username: {{vm.user.userName}}</h2>
@@ -28,12 +28,6 @@
 	<div class="row">
 
 		<img-upload-results results="vm.user.images"></img-upload-results>
-<!-- 		<div class="col-md-12">
-			<div ng-repeat="result in vm.uploadedResults | orderBy:'dateUploaded'">
-					<img-result result="result"></img-result>
-					<br>
-			</div>
-		</div> -->
 
 	</div>
 

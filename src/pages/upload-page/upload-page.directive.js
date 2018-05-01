@@ -9,9 +9,9 @@
         .directive('imgUploadPage', imgUploadPage)
         .controller('UploadPageCtrl', UploadPageCtrl);
 
-    //imgRatingPage.$inject = [];
+    imgUploadPage.$inject = ['$uibModal'];
 
-    function imgUploadPage() {
+    function imgUploadPage($uibModal) {
 
         var directive = {
             bindToController: true,
@@ -44,6 +44,21 @@
             scope.submit = function() {
                 ctrl.uploadImage(ctrl.image);
             }
+
+            scope.viewDetails = function(result) {
+                var modalInstance = $uibModal.open({
+                  templateUrl: 'components/upload-form/upload-form.view.html',
+                  controllerAs: 'vm',
+                  size: 'lg',
+                  appendTo: element,
+                  controller: function () {
+                    var vm = this;
+                    //vm.result = result;
+                  }
+                });
+
+            }
+
 
         }
 

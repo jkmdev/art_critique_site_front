@@ -36,6 +36,9 @@
 			}
 
 			model.uploadImage = function uploadImage(metaData, file) {
+
+				console.log("Second");
+
 				metaData.imageKey = file.name;
 				model.uploadImageMetaData(metaData).then(function(result, status) {
 					model.uploadImageFile(file, result.imageKey);
@@ -46,6 +49,8 @@
 
 			model.uploadImageMetaData = function(metaData) {
 
+					console.log("Third");
+
 					return $http.post('http://localhost:8080/user/' + model.user.id + '/image', metaData)
 						.then(function(result) {
 							model.userData = result.data;
@@ -55,6 +60,9 @@
 			}
 
 			model.uploadImageFile = function(file, imageKey) {
+
+				console.log("Fourth");
+
 				Upload.upload({
 			         url: 'http://localhost:8080/images/upload',
 			         fields: {'imageKey': imageKey}, // additional data to send
