@@ -1,0 +1,77 @@
+
+/*****UPLOADER COMMENT*****/
+
+%options-style {
+  height: 50px;
+  @include center-text(50px);
+  color: $main-font-color;
+  background-color: white;
+}
+
+.option-panel {
+  @extend %options-style;
+  &:hover {
+    border-bottom: 5px solid $main-theme-colour;
+  }
+  &-selected {
+    border-bottom: 5px solid $main-theme-colour;
+  }
+}
+
+.option-dialogue {
+  @extend %options-style;
+}
+
+///////////////////////////////////////////////////
+
+/*****IMAGE CONTAINER*****/
+
+.carousel {
+  background-color: #222629;
+  margin-top: 40px;
+  height: 500px;
+  @include center-text(450px);
+  @extend %shadow;
+  overflow: hidden;
+}
+//
+// .image-container {
+//   position: relative;
+// }
+
+.image-content {
+  width: 100%;
+  position: absolute;
+  //max-height: 300px;
+}
+
+.loading-text {
+  color: white;
+}
+
+.arrow {
+  opacity: 0.5;
+  font-size: 50px;
+  color: white;
+  padding-top: 40px;
+}
+
+.arrow-container {
+  opacity: 0.2;
+  background-color: black;
+  &:hover {
+    opacity: 0.7;
+    @extend %change;
+  }
+
+}
+
+.rowoverlay{
+  position: absolute;
+  top: 0;
+  left:0;
+  z-index:1;
+  bottom:0;
+  right:0;
+  height:100%;
+}

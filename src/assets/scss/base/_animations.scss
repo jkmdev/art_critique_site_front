@@ -1,0 +1,10 @@
+
+%change {
+  animation-name: example;
+  animation-duration: 0.4s;
+}
+
+@keyframes example {
+    from {opacity: 0.2;}
+    to {opacity: 0.7;}
+}

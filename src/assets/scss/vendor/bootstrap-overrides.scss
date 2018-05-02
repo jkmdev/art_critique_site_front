@@ -1,0 +1,41 @@
+#bootstrap-overrides .navbar-default .navbar-nav>li>a {
+	@extend %h3;
+	// &:hover{
+	// 	color: $blue;
+	// }
+}
+
+#bootstrap-overrides .navbar-default .navbar-nav>li>a:hover {
+  //color: #61892F;
+}
+
+#bootstrap-overrides .nav {
+	margin-top: 0px;
+}
+
+#bootstrap-overrides .no-padding {
+		padding:0px;
+}
+
+#bootstrap-overrides h1 {
+  font-family: 'Roboto-bold';
+  font-size: 30px;
+  color: $main-theme-colour;
+}
+
+#bootstrap-overrides h2 {
+  font-family: 'Roboto-bold';
+  font-size: 24px;
+  color: $main-theme-colour;
+}
+
+//
+// #bootstrap-overrides .current-comment-cont {
+// 	margin:0px;
+// 	padding:0px;
+// }
+//
+// #bootstrap-overrides .current-comment {
+// 	margin:0px;
+// 	padding:0px;
+// }

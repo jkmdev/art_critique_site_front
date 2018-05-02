@@ -2,18 +2,25 @@
 
 	<!-- Upload content -->
 
-	<img-upload-form class="col-md-12 test-border"></img-upload-form>
+	<!-- <img-upload-form class="col-md-12 test-border"></img-upload-form> -->
 
 	<div class="row">
 
-		<div class="col-md-12">
+		<div class="col-md-offset-1 col-md-10">
 
-			<div id="user-header">
+			<div class="user-stats-cont no-padding">
 
-				<div class="user-header-stats col-md-4">
-					<h2>Username: {{vm.user.userName}}</h2>
-					<h5>Date Joined: {{vm.user.dateJoined}}</h5>
-				</div>
+					<div class="user-stats-header col-md-12">
+						Username: {{vm.user.userName}}
+					</div>
+
+					<div class="user-stats col-md-4">
+						<h5>Date Joined: {{vm.user.dateJoined}}</h5>
+					</div>
+
+					<div class="col-md-offset-6 col-md-2 upload-results">
+						<img class="upload-icon" src="../../assets/images/upload-image.png" ng-click="viewDetails()"></img>
+					</div>
 
 			</div>
 
@@ -27,13 +34,7 @@
 
 	<div class="row">
 
-		<img-upload-results results="vm.user.images"></img-upload-results>
-<!-- 		<div class="col-md-12">
-			<div ng-repeat="result in vm.uploadedResults | orderBy:'dateUploaded'">
-					<img-result result="result"></img-result>
-					<br>
-			</div>
-		</div> -->
+		<img-upload-results class="col-md-offset-1 col-md-10" results="vm.user.images"></img-upload-results>
 
 	</div>
 

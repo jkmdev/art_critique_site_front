@@ -1,0 +1,59 @@
+
+<div class="col-md-offset-1 col-md-10 carousel">
+
+  <div class="row" id="image-options">
+
+    <div class="col-md-5" id="options-selection"> <!--TURN THIS INTO A UI BOOTSTRAP CAROSEL-->
+      <div class="row">
+
+        <div class="col-md-4 option-panel" ng-class="{'option-panel-selected': optionIsSelected('goalComment')}"
+        ng-click="changeUploaderTextTo('goalComment')">
+          GOALS
+        </div>
+        <div class="col-md-4 option-panel" ng-class="{'option-panel-selected': optionIsSelected('needComment')}"
+         ng-click="changeUploaderTextTo('needComment')" >
+          ASKING FOR
+        </div>
+        <div class="col-md-4 option-panel" ng-class="{'option-panel-selected': optionIsSelected('otherComment')}"
+         ng-click="changeUploaderTextTo('otherComment')">
+          OTHER
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-7 option-dialogue">
+      {{uploaderText}}
+    </div>
+
+  </div>
+
+  <div class="image-continer col-md-12">
+
+    <div class="row rowoverlay">
+
+      <div class="col-md-1 text-center arrow-container" ng-click="previousImage()">
+        <span class="glyphicon glyphicon glyphicon-chevron-left arrow" ></span>
+      </div>
+
+      <div class="col-md-1 col-md-offset-10 text-center arrow-container"  ng-click="nextImage()">
+        <span class="glyphicon glyphicon glyphicon-chevron-right arrow"></span>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+        <img ng-show="contentTitle" class="col-md-12" ng-src="{{getFullImageUrl(contentTitle)}}"
+        class="absolute-center img-responsive center-block image-content">
+
+        <div ng-show="!contentTitle" class="loading-text">No images to display...</div>
+
+        <span class="col-md-offset-2 col-md-8" id="no-image" ng-bind="image.empty"></span>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- <span class="animated fadeIn">{{image.currentImage}}</span> -->

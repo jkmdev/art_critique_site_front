@@ -1,0 +1,41 @@
+
+ <div class="row current-comment-cont">
+
+	 <div class="col-md-offset-1 col-md-9 no-padding">
+	  	<textarea class="current-comment" ng-model="currentUserComment" placeholder="Enter your comment here (500 characters max)."  maxlength="500"></textarea>
+	 </div>
+
+   <div class="col-md-1 square-submit-button no-padding">
+     <span ng-click="submitComment()">SUBMIT</span>
+   </div>
+
+ </div>
+
+
+
+ <div id="user-comments-cont" class="row">
+
+   <div class="col-md-offset-1 col-md-10 comment-title">
+      <h4>Comments</h4>
+   </div>
+
+	 <div class="col-md-offset-1 col-md-10 no-padding" ng-repeat="content in clientComments">
+	 	<div class="user-comment">
+	 		<div class="col-md-1">
+        <div class="row user-comments-arrow">
+          <img ng-src="../assets/images/arrow-up.png" ng-click="increaseScore(content)">
+        </div>
+          <div class="user-comment-score">
+            {{content.commentScore}}
+          </div>
+        <div class="row user-comments-arrow">
+          <img ng-src="../assets/images/arrow-down.png" ng-click="decreaseScore(content)">
+        </div>
+	 		</div>
+	 		<div class="col-md-11">
+		 		{{content.commentText}}
+		 	</div>
+	 	</div>
+	 </div>
+
+ </div>

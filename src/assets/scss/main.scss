@@ -1,0 +1,45 @@
+
+
+//MAIN SCSS file, imports all other scss files
+//is the only file turned into css by grunt
+
+//Reference: https://sass-guidelin.es/#the-7-1-pattern
+
+//abstracts
+
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'abstracts/placeholders';
+@import 'abstracts/variables';
+
+//base
+
+@import 'base/animations';
+@import 'base/base';
+@import 'base/typography';
+
+//componenets
+
+@import 'components/carousel';
+@import 'components/comments';
+@import 'components/result';
+@import 'components/uploader';
+@import 'components/upload-form';
+
+//layout
+
+@import 'layout/footer';
+@import 'layout/navigation';
+
+//pages
+
+@import 'pages/rating';
+@import 'pages/upload';
+
+//themes
+
+@import 'themes/theme';
+
+//vendor
+
+@import 'vendor/bootstrap-overrides';

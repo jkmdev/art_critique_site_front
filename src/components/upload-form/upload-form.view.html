@@ -1,0 +1,83 @@
+
+<div class="row">
+
+  <div class="col-md-12 text-center">
+    <h2>Select a new image to upload and enter its details</h2>
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-md-4">
+
+    <input class="" type="file" ngf-select="" ng-model="vm.picFile"
+    name="file" ngf-accept="'image/*'" required="">
+
+  </div>
+
+  <div class="col-md-6">
+      <input class="input" ng-model="vm.uploadForm.title" ng-maxlength="20" ng-minlength="2" placeholder="Image Title"></input>
+  </div>
+
+  <div class="col-md-2">
+      <!-- <select ng-model="vm.uploadForm.genre"
+        ng-option="option.name for option in vm.genre.options track by option.id"> -->
+      <select class="input" ng-model="vm.uploadForm.type">
+          <option ng-repeat="option in vm.genre.options" ng-value="option.name">
+              {{option.name}}
+          </option>
+      </select>
+
+  </div>
+
+</div>
+
+<!-- <div class="row">
+
+  <div class="col-md-12">
+    <textarea ng-model="vm.uploadForm.uploaderComment.goalComment">
+    </textarea>
+  </div>
+
+</div> -->
+
+<div class="row">
+
+  <div class="col-md-12">
+    <textarea class="input textarea" ng-model="vm.uploadForm.uploaderComment.needComment"
+      placeholder="What kinds of feedback you are looking for in the critique...">
+    </textarea>
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-md-12">
+    <textarea class="input textarea" ng-model="vm.uploadForm.uploaderComment.otherComment"
+    placeholder="Other Comments...">
+    </textarea>
+  </div>
+
+  <toaster-container></toaster-container>
+
+</div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-md-12 image-viewer-lg">
+      <img class="center-block" ngf-thumbnail="vm.picFile || '/thumb.jpg'">
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-md-12 centered">
+    <button class="submit-button" type="submit" ng-click="submit(vm.uploadForm, vm.picFile)">Submit</button>
+  </div>
+
+</div>

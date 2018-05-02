@@ -8,23 +8,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="bower_components/angular/angular.js"></script>
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
     <title>Image Rater Application</title>
-
-    <!-- Bootstrap -->
-    <link href="bower_components\bootstrap\dist\css\bootstrap.min.css" rel="stylesheet">
-
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
     <!-- CSS Dependencies -->
 
-    <link href="assets/css/test.scss" rel="stylesheet">
-    <link href="assets/css/bootstrap-overrides.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
     <link href="assets/css/layout.css" rel="stylesheet">
-    <link href="assets/css/rating-page.css" rel="stylesheet">
-    <link href="assets/css/user-page.css" rel="stylesheet">
-    <link href="../bower_components/animate.css/animate.min.css" rel="stylesheet"/>
     <link href="../bower_components/AngularJS-Toaster/toaster.min.css" rel="stylesheet">
+    <link href="bower_components\bootstrap\dist\css\bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
     <!-- JS Dependencies -->
 
@@ -36,7 +29,6 @@
     <script src="../bower_components/ng-file-upload/ng-file-upload.js"></script>
     <script src="../bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
     <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
-    <script src="../bower_components/angular-animate/angular-animate.js"></script>
 
     <!-- Application FIless -->
 
@@ -49,15 +41,16 @@
 
     <script src="pages/rating-page/rating-page.module.js"></script>
     <script src="pages/rating-page/rating-page.directive.js"></script>
-    <script src="pages/rating-page/carousel/carousel.directive.js"></script>
-    <script src="pages/rating-page/comments/comments.directive.js"></script>
 
     <script src="pages/upload-page/upload-page.module.js"></script>
     <script src="pages/upload-page/upload-page.directive.js"></script>
-    <script src="pages/upload-page/uploader/uploader.directive.js"></script>
-    <script src="pages/upload-page/upload-results/upload-results.directive.js"></script>
-    <script src="pages/upload-page/upload-results/result/result.directive.js"></script>
-    <script src="pages/upload-page/upload-form/upload-form.directive.js"></script>
+
+    <script src="components/carousel/carousel.directive.js"></script>
+    <script src="components/comments/comments.directive.js"></script>
+    <script src="components/result/result.directive.js"></script>
+    <script src="components/upload-form/upload-form.directive.js"></script>
+    <script src="components/upload-results/upload-results.directive.js"></script>
+    <script src="components/uploader/uploader.directive.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

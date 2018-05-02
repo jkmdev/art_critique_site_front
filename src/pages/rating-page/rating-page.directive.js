@@ -36,9 +36,9 @@
 
 	}
 
-    RatingCtrl.$inject = ['ContentModel', '$http'];
+    RatingCtrl.$inject = ['ContentModel', '$http', '$sce'];
 
-    function RatingCtrl(ContentModel, $http) {
+    function RatingCtrl(ContentModel, $http, $sce) {
 
         var vm = this;
         vm.title = 'RatingCtrl';
@@ -52,9 +52,12 @@
         vm.searchContent = ContentModel.searchContent;
         vm.getContent = ContentModel.getContent;
 
+        vm.submitComment = submitComment;
         vm.setContent = setContent;
         vm.nextImage = nextImage;
+        vm.previousImage = previousImage;
         vm.activate = activate;
+        vm.updatePageContent = updatePageContent;
 
         activate();
 
@@ -63,37 +66,47 @@
         }
 
         function setContent() {
-
             ContentModel.getLatestImages().then(function(result) {
               vm.content = ContentModel.getContentAtIndex(vm.currentIndex);
             });
+        }
 
+        function submitComment() {
+          if (currentContentIsValid()) {
+              if (currentUserCommentIsValid()) {
+                vm.content.clientComments.unshift(
+                    { commentText: vm.currentUserComment,
+                      commentScore: 0,
+                      idUser: 4}
+                );
+              }
+              vm.saveContent(vm.content);
+            }
+        }
+
+        function currentContentIsValid() {
+          return vm.content !== undefined;
+        }
+
+        function currentUserCommentIsValid() {
+          return vm.currentUserComment !== '';
         }
 
         function nextImage() {
-
-            if (vm.content !== undefined) {
-
-                if (vm.currentUserComment !=='') {
-
-                  vm.content.clientComments.unshift(
-                      { commentText: vm.currentUserComment,
-                        commentScore: 0,
-                        idUser: 4}
-                  );
-
-                }
-
-                vm.saveContent(vm.content);
-
-                vm.currentIndex++;
-                vm.content = ContentModel.getContentAtIndex(vm.currentIndex);
-                vm.currentUserComment = '';
-                //vm.setContent();
-                //vm.setContent(ContentModel.getContentAtIndex(vm.currentIndex));
-            }
-
+          vm.updatePageContent(vm.currentIndex++);
         }
+
+        function previousImage() {
+          vm.updatePageContent(vm.currentIndex--);
+        }
+
+        function updatePageContent() {
+            if (currentContentIsValid()) {
+              vm.content = ContentModel.getContentAtIndex(vm.currentIndex);
+              vm.currentUserComment = '';
+            }
+        }
+
 
     }
 

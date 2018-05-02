@@ -7,33 +7,55 @@
 
 	    //grunt wrapper function
 	    grunt.initConfig({
-	      pkg: grunt.file.readJSON('package.json'),
 
-	      //grunt task configuration will go here
-
-        webpack: {
-           options: {
-             stats: !process.env.NODE_ENV || process.env.NODE_ENV === 'development'
-           },
-           prod: webpackConfig,
-           dev: Object.assign({ watch: true }, webpackConfig)
-        },
-
-  			karma: {
-  			  unit: {
-  				configFile: 'karma.conf.js'
-  			  }
-  			}
+	        pkg: grunt.file.readJSON('package.json'),
+	          //grunt task configuration will go here
+    			karma: {
+    			  unit: {
+    				configFile: 'karma.conf.js'
+    			  }
+    			},
+          serve: {
+              options: {
+                  port: 8000,
+                  'aliases': {
+                    'src/app.module.js': {
+                        //tasks: ['html2js', 'concat'],
+                        tasks: ['html2js', 'concat'],
+                        output: 'main.js'
+                    }
+                  }
+              }
+          },
+          sass: {
+              options: {
+                  sourceMap: true
+              },
+              dist: {
+                  files: {
+                      'src/assets/css/main.css': 'src/assets/scss/main.scss'
+                  }
+              }
+          },
+          uglify: {
+            my_target: {
+              files: {
+                'dest/output.min.js': ['src/input1.js', 'src/input2.js']
+              }
+            }
+          }
 
 	    });
 
-		  //load grunt tasks
-      grunt.loadNpmTasks('grunt-webpack');
-      grunt.loadNpmTasks('webpack-dev-server');
+		//load grunt tasks
 	    grunt.loadNpmTasks('grunt-karma');
+      grunt.loadNpmTasks('grunt-serve');
+      grunt.loadNpmTasks('grunt-contrib-uglify');
+      grunt.loadNpmTasks('grunt-sass');
 
-      grunt.registerTask('webpack', ['webpack']);
 	    grunt.registerTask('test', ['karma']);
+      //grunt.registerTask('connect', ['connect']);
+      //grunt.registerTask('uglify', ['uglify']);
 
 	}
 
@@ -49,3 +71,7 @@
 				//       	'app/src/pages/rating-page/*.spec.js'
 				// 	]
 				// },
+
+
+//TODO: move carousel and other non-page elements to components folder
+//TODO: MAYBE** use bootstrap 4? Might be best to use on angulaar2 project
