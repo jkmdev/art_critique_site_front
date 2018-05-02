@@ -1,6 +1,4 @@
 
-import './style.css';
-
 (function() {
     'use strict';
 
